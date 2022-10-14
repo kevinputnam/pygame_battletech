@@ -1,6 +1,7 @@
 import pygame
 import scene
 import character
+import collision_maps
 from pygame.locals import *
 
 # Globals
@@ -51,22 +52,7 @@ class GameWorld():
         scene2.actions = [{'name':'start_timer','milliseconds':debug_wait_time},
                           {'name':'change_scene','scene_id':3}]
         scene3 = scene.Scene(3,"campus map",'assets/backgrounds/campus.png')
-        scene3.collisions = [(6,28),(7,28),(8,28),(9,28),(10,28),(11,28),
-                             (12,28),(13,28),(14,28),(15,28),(16,28),(17,28),
-                             (6,29),(6,30),(6,31),(6,32),(6,33),(6,34),(6,35),
-                             (7,35),(8,35),(9,35),(10,35),(11,35),(12,35),
-                             (13,35),(13,34),(13,33),(14,33),(15,33),(16,33),
-                             (17,33),(17,32),(17,31),(17,30),(17,29),
-                             (0,40),(1,40),(2,40),(3,40),(4,40),(5,40),(6,40),
-                             (7,40),(8,40),(9,40),(10,40),(11,40),(12,40),
-                             (13,40),(14,40),(15,40),(16,40),(17,40),(17,41),
-                             (17,42),(17,43),(17,44),(17,45),(17,46),(17,47),
-                             (17,48),(17,49),(17,50),(17,51),(17,52),(17,53),
-                             (17,54),(17,55),
-                             (22,42),(23,42),(24,42),(25,42),(26,42),(27,42),
-                             (22,43),(23,43),(24,43),(25,43),(26,43),(27,43),
-                             (22,44),(23,44),(24,44),(25,44),(26,44),(27,44),
-                             (22,45),(23,45),(24,45),(25,45),(26,45),(27,45)]
+        scene3.collisions = collision_maps.campus
         scene3.player = character.Character(winWidth/2,winHeight/2,'assets/sprites/jamie_grear_sprite.png',16,{'down':[0,1],'up':[2,3],'right':[4,5],'left':[6,7]})
         return {0:scene0,1:scene1,2:scene2,3:scene3}
 
@@ -77,12 +63,21 @@ class GameWorld():
         self.player = None
         self.current_scene_id = scene_id
         self.current_scene = self.scenes[scene_id]
-        for collision in self.current_scene.collisions:
-            colBlock = pygame.Surface((8,8))
-            colBlock.set_alpha(128)
-            colBlock.fill((255,255,255))
-            self.collision_rects.append({'surface':colBlock,'location':collision
-                })
+        scene_columns = self.current_scene.background.get_width()/8
+        cur_col = 0
+        cur_row = 0
+        for tile in self.current_scene.collisions:
+            if tile != 0:
+                colBlock  = pygame.Surface((8,8))
+                colBlock.set_alpha(128)
+                colBlock.fill((255,255,255))
+                collision = (cur_col,cur_row)
+                self.collision_rects.append({'surface':colBlock,'location':collision})
+            cur_col += 1
+            if cur_col >= scene_columns:
+                cur_col = 0
+                cur_row += 1
+        #for collision in self.current_scene.collisions:
         if self.current_scene.player:
             self.player = self.current_scene.player
         for action in self.current_scene.actions:
@@ -91,7 +86,6 @@ class GameWorld():
             self.moving_sprites.add(self.current_scene.player)
 
     def main(self):
-        # Initialise screen
         pygame.init()
         screen = pygame.display.set_mode((winWidth*scaling, winHeight*scaling))
         pygame.display.set_caption(gameName)
