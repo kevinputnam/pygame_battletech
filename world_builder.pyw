@@ -115,56 +115,56 @@ class Application(tk.Frame):
         self.scenePicker = ttk.Combobox(self.buttonFrame,values=self.optionList,width=10)
         self.scenePicker.pack(side="top",pady=3)
 
-        button6 = tk.Button(self.buttonFrame)
-        self.formatButton(button6,"gray")
-        button6["text"]='Switch Scene'
-        button6["command"] = partial(self.switchScene)
-        button6.pack(side="top",pady=3,fill=tk.BOTH)
+        self.btn_switch_scene = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_switch_scene,"gray")
+        self.btn_switch_scene["text"]='Switch Scene'
+        self.btn_switch_scene["command"] = partial(self.switchScene)
+        self.btn_switch_scene.pack(side="top",pady=3,fill=tk.BOTH)
 
-        button = tk.Button(self.buttonFrame)
-        self.formatButton(button,"gray")
-        button["text"]='Add Scene'
-        button["command"] = partial(self.addScene)
-        button.pack(side="top",pady=3,fill=tk.BOTH)
+        self.btn_add_scene = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_add_scene,"gray")
+        self.btn_add_scene["text"]='Add Scene'
+        self.btn_add_scene["command"] = partial(self.addScene)
+        self.btn_add_scene.pack(side="top",pady=3,fill=tk.BOTH)
 
-        button4 = tk.Button(self.buttonFrame)
-        self.formatButton(button4,"gray")
-        button4['text']='Remove Scene'
-        button4['command']=partial(self.removeScene)
-        button4.pack(side="top",pady=3, fill=tk.BOTH)
+        self.btn_rmv_scene = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_rmv_scene,"gray")
+        self.btn_rmv_scene['text']='Remove Scene'
+        self.btn_rmv_scene['command']=partial(self.removeScene)
+        self.btn_rmv_scene.pack(side="top",pady=3, fill=tk.BOTH)
 
         separator = ttk.Separator(self.buttonFrame, orient='horizontal')
         separator.pack(side="top",pady=3, fill=tk.BOTH)
 
-        #button1 = tk.Button(self.buttonFrame)
-        #self.formatButton(button1,"gray")
-        #button1["text"]='Edit Collisions'
-        #button1["command"] = partial(self.editCollisions)
-        #button1.pack(side="top",pady=3,fill=tk.BOTH)
+        #self.btn_edit_collisions = tk.Button(self.buttonFrame)
+        #self.formatButton(self.btn_edit_collisions,"gray")
+        #self.btn_edit_collisions["text"]='Edit Collisions'
+        #self.btn_edit_collisions["command"] = partial(self.editCollisions)
+        #self.btn_edit_collisions.pack(side="top",pady=3,fill=tk.BOTH)
 
-        #button2 = tk.Button(self.buttonFrame)
-        #self.formatButton(button2,"gray")
-        #button2["text"]='Edit Triggers'
-        #button2["command"] = partial(self.editTriggers)
-        #button2.pack(side="top",pady=3, fill=tk.BOTH)
+        #self.btn_edit_triggers = tk.Button(self.buttonFrame)
+        #self.formatButton(self.btn_edit_triggers,"gray")
+        #self.btn_edit_triggers["text"]='Edit Triggers'
+        #self.btn_edit_triggers["command"] = partial(self.editTriggers)
+        #self.btn_edit_triggers.pack(side="top",pady=3, fill=tk.BOTH)
 
-        button3 = tk.Button(self.buttonFrame)
-        self.formatButton(button3,"gray")
-        button3["text"]='Change Image'
-        button3["command"] = partial(self.changeImage)
-        button3.pack(side="top",pady=3, fill=tk.BOTH)
+        self.btn_change_img = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_change_img,"gray")
+        self.btn_change_img["text"]='Change Image'
+        self.btn_change_img["command"] = partial(self.changeImage)
+        self.btn_change_img.pack(side="top",pady=3, fill=tk.BOTH)
 
-        button5 = tk.Button(self.buttonFrame)
-        self.formatButton(button5,"gray")
-        button5["text"]='Change Name'
-        button5["command"] = partial(self.changeName)
-        button5.pack(side="top",pady=3, fill=tk.BOTH)
+        self.btn_change_name = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_change_name,"gray")
+        self.btn_change_name["text"]='Change Name'
+        self.btn_change_name["command"] = partial(self.changeName)
+        self.btn_change_name.pack(side="top",pady=3, fill=tk.BOTH)
 
-        button7 = tk.Button(self.buttonFrame)
-        self.formatButton(button7,"gray")
-        button7["text"]='Print Collision Map'
-        button7["command"] = partial(self.getCollisionMap)
-        button7.pack(side="top",pady=3, fill=tk.BOTH)
+        self.btn_print_collision_map = tk.Button(self.buttonFrame)
+        self.formatButton(self.btn_print_collision_map,"gray")
+        self.btn_print_collision_map["text"]='Get Collision Map'
+        self.btn_print_collision_map["command"] = partial(self.getCollisionMap)
+        self.btn_print_collision_map.pack(side="top",pady=3, fill=tk.BOTH)
 
     def formatButton(self,button,txtColor):
         btnFont = font.Font(family='Verdana', size=-12, weight='bold')
