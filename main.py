@@ -52,7 +52,7 @@ class GameWorld():
         scene2.actions = [{'name':'start_timer','milliseconds':debug_wait_time},
                           {'name':'change_scene','scene_id':3}]
         scene3 = scene.Scene(3,"campus map",'assets/backgrounds/campus.png')
-        scene3.collisions = collision_maps.campus
+        scene3.collisions = collision_maps.camp_2
         scene3.player = character.Character(winWidth/2,winHeight/2,'assets/sprites/jamie_grear_sprite.png',16,{'down':[0,1],'up':[2,3],'right':[4,5],'left':[6,7]})
         return {0:scene0,1:scene1,2:scene2,3:scene3}
 
