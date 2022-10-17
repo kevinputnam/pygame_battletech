@@ -206,7 +206,7 @@ class Application(tk.Frame):
                 tile_x = int((self.mapImg.width()-1)/tileSize)
             if tile_y >= self.mapImg.height()/tileSize:
                 tile_y = int((self.mapImg.height()-1)/tileSize)
-            print('x: '+ str(tile_x) +' y: ' + str(tile_y))
+            #print('x: '+ str(tile_x) +' y: ' + str(tile_y))
 
             map_x = tile_x*tileSize
             map_y = tile_y*tileSize

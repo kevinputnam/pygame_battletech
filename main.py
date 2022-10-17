@@ -1,6 +1,7 @@
 import pygame
+import world
 import scene
-import character
+import actor
 import collision_maps
 from pygame.locals import *
 
@@ -24,11 +25,10 @@ b_b = pygame.K_s
 
 debug_wait_time = 500
 
-class GameWorld():
+class GameWorld(world.World):
 
 
-    def __init__(self):
-
+    def __init__(self,game_world_path):
         self.current_scene_id = 0
         self.collision_rects = []
         self.npcs = []
@@ -38,25 +38,9 @@ class GameWorld():
         self.actions = []
         self.clock = pygame.time.Clock()
         self.moving_sprites = pygame.sprite.Group()
+        super().__init__(game_world_path)
 
-
-    def setup_scenes(self):
-        # setup scenes
-        scene0 = scene.Scene(0,"my logo",'assets/backgrounds/logoscreen.bmp')
-        scene0.actions = [{'name':'start_timer','milliseconds':debug_wait_time},
-                          {'name':'change_scene','scene_id':1}]
-        scene1 = scene.Scene(1,"battletech logo",'assets/backgrounds/titlescreen.bmp')
-        scene1.actions = [{'name':'start_timer','milliseconds':debug_wait_time},
-                          {'name':'change_scene','scene_id':2}]
-        scene2 = scene.Scene(2,"jamie grear splash",'assets/backgrounds/jamie_grear.png')
-        scene2.actions = [{'name':'start_timer','milliseconds':debug_wait_time},
-                          {'name':'change_scene','scene_id':3}]
-        scene3 = scene.Scene(3,"campus map",'assets/backgrounds/campus.png')
-        scene3.collisions = collision_maps.camp_2
-        scene3.player = character.Character(winWidth/2,winHeight/2,'assets/sprites/jamie_grear_sprite.png',16,{'down':[0,1],'up':[2,3],'right':[4,5],'left':[6,7]})
-        return {0:scene0,1:scene1,2:scene2,3:scene3}
-
-    def start_scene(self,scene_id):
+    def start_scene(self,scene_id,player_x,player_y):
         self.collision_rects = []
         self.npcs = []
         self.actions = []
@@ -66,6 +50,8 @@ class GameWorld():
         scene_columns = self.current_scene.background.get_width()/8
         cur_col = 0
         cur_row = 0
+
+        #draw transparent collision blocks
         for tile in self.current_scene.collisions:
             if tile != 0:
                 colBlock  = pygame.Surface((8,8))
@@ -77,11 +63,15 @@ class GameWorld():
             if cur_col >= scene_columns:
                 cur_col = 0
                 cur_row += 1
-        #for collision in self.current_scene.collisions:
+
         if self.current_scene.player:
             self.player = self.current_scene.player
+            self.player.rect.topleft = [player_x,player_y]
+
+        # fill the action queue
         for action in self.current_scene.actions:
             self.actions.append(action)
+
         if self.current_scene.player:
             self.moving_sprites.add(self.current_scene.player)
 
@@ -90,8 +80,6 @@ class GameWorld():
         screen = pygame.display.set_mode((winWidth*scaling, winHeight*scaling))
         pygame.display.set_caption(gameName)
         win = pygame.Surface((winWidth,winHeight))
-
-        self.scenes = self.setup_scenes()
 
         text = None
         current_action = None
@@ -105,7 +93,7 @@ class GameWorld():
         player_offset_x = 0
         player_offset_y = 0
         player_direction = 'none'
-        self.start_scene(0)
+        self.start_scene(0,0,0)
 
         # Main event loop
         while 1:
@@ -153,13 +141,18 @@ class GameWorld():
                     current_action = None
                 if current_action:
                     if current_action['name'] == 'start_timer':
-                        wait_end_time = current_action['milliseconds'] + pygame.time.get_ticks()
+                        wait_end_time = int(self.getParam(current_action['milliseconds'])) + pygame.time.get_ticks()
                         waiting = True
                         print('timer ending: ' + str(wait_end_time))
 
                     if current_action['name'] == 'change_scene':
                         print('changing scene')
-                        self.start_scene(current_action['scene_id'])
+                        pos_x = 0
+                        pos_y = 0
+                        if 'player_pos' in current_action:
+                            pos_x = current_action['player_pos'][0]
+                            pos_y = current_action['player_pos'][1]
+                        self.start_scene(current_action['scene_id'],pos_x,pos_y)
             else:
                 if pygame.time.get_ticks() >= wait_end_time:
                     waiting = False
@@ -216,5 +209,5 @@ class GameWorld():
             pygame.display.flip()
             self.clock.tick(60)
 
-game = GameWorld()
+game = GameWorld('test_world.json')
 game.main()
