@@ -27,7 +27,6 @@ debug_wait_time = 500
 
 class GameWorld(world.World):
 
-
     def __init__(self,game_world_path):
         self.current_scene_id = 0
         self.collision_rects = []
@@ -64,15 +63,15 @@ class GameWorld(world.World):
                 cur_col = 0
                 cur_row += 1
 
-        if self.current_scene.player:
-            self.player = self.current_scene.player
-            self.player.rect.topleft = [player_x,player_y]
-
         # fill the action queue
         for action in self.current_scene.actions:
             self.actions.append(action)
 
         if self.current_scene.player:
+            self.player = self.current_scene.player
+            self.player.rect.topleft = [player_x*8,player_y*8]
+            self.player_pos = [player_x*8,player_y*8]
+
             self.moving_sprites.add(self.current_scene.player)
 
     def main(self):
@@ -153,6 +152,38 @@ class GameWorld(world.World):
                             pos_x = current_action['player_pos'][0]
                             pos_y = current_action['player_pos'][1]
                         self.start_scene(current_action['scene_id'],pos_x,pos_y)
+
+                        if self.player:
+
+                            map_size_x = self.current_scene.background.get_width()
+                            map_size_y = self.current_scene.background.get_height()
+                            p_x = pos_x*8
+                            p_y = pos_y*8
+
+                            #maximum offsets for the map
+                            max_map_x = winWidth - map_size_x
+                            max_map_y = winHeight - map_size_y
+
+                            # shift map under player at center screen
+                            offset_x = int(winWidth/2 - p_x)
+                            offset_y = int(winHeight/2 - p_y)
+
+                            # if the map needs to move to the right - move player left (-)
+                            if offset_x > 0:
+                                player_offset_x = -1 * offset_x
+                            # if the map has gone as far as it can - move the player right (+)
+                            elif offset_x < max_map_x:
+                                player_offset_x = -1*(offset_x - max_map_x)
+                                offset_x = max_map_x
+
+                            # if the map needs to move down - move player up (-)
+                            if offset_y > 0:
+                                player_offset_y = -1 * offset_y
+                            # if the map has gone as far up as it can - move the player down (+)
+                            elif offset_y < max_map_y:
+                                player_offset_y = -1*(offset_y - max_map_y)
+                                offset_y = max_map_y
+
             else:
                 if pygame.time.get_ticks() >= wait_end_time:
                     waiting = False
@@ -168,31 +199,35 @@ class GameWorld(world.World):
                     if player_rect.colliderect(col_rect_dy):
                         dy = 0
 
-            offset_player_x = True
-            if offset_x + dx > 0:
+                offset_player_x = True
+                if offset_x + dx > 0:
+                    offset_x = 0
+                elif offset_x + dx < winWidth - self.current_scene.background.get_width():
+                    offset_x = winWidth - self.current_scene.background.get_width()
+                else:
+                    offset_x += dx
+                    offset_player_x = False
+
+                offset_player_y = True
+                if offset_y + dy > 0:
+                    offset_y = 0
+                elif offset_y + dy < winHeight - self.current_scene.background.get_height():
+                    offset_y = winHeight - self.current_scene.background.get_height()
+                else:
+                    offset_y += dy
+                    offset_player_y = False
+
+                if offset_player_x:
+                    if self.player_pos[0] - dx <= winWidth - self.player.sprite_size and self.player_pos[0] -dx >= 0:
+                        player_offset_x -= dx
+
+                if offset_player_y:
+                    if self.player_pos[1] - dy <= winHeight - self.player.sprite_size and self.player_pos[1] - dy >= 0:
+                        player_offset_y -= dy
+
+            else:
                 offset_x = 0
-            elif offset_x + dx < winWidth - self.current_scene.background.get_width():
-                offset_x = winWidth - self.current_scene.background.get_width()
-            else:
-                offset_x += dx
-                offset_player_x = False
-
-            offset_player_y = True
-            if offset_y + dy > 0:
                 offset_y = 0
-            elif offset_y + dy < winHeight - self.current_scene.background.get_height():
-                offset_y = winHeight - self.current_scene.background.get_height()
-            else:
-                offset_y += dy
-                offset_player_y = False
-
-            if offset_player_x:
-                if self.player_pos[0] - dx <= winWidth - self.player.sprite_size and self.player_pos[0] -dx >= 0:
-                    player_offset_x -= dx
-
-            if offset_player_y:
-                if self.player_pos[1] - dy <= winHeight - self.player.sprite_size and self.player_pos[1] - dy >= 0:
-                    player_offset_y -= dy
 
             win.blit(self.current_scene.background,(background_x + offset_x,background_y+offset_y))
 

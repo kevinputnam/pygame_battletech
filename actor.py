@@ -19,7 +19,7 @@ class Actor(pygame.sprite.Sprite):
 
     def update(self,direction,pos_x,pos_y):
 
-        self.rect.topleft = [pos_x,pos_y]
+        self.rect.topleft = [pos_x,pos_y] # map coordinate in pixels (not tiles)
 
         if direction in self.directions:
 

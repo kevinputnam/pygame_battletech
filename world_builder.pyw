@@ -98,6 +98,12 @@ class Application(tk.Frame):
         self.mapCanvas.bind('<Button-1>',self.canvasClick)
         self.mapCanvas.bind('<B1-Motion>',self.canvasDrag)
 
+        coordLbl = tk.Label(self,text="Tile coordinates (x,y): ",fg="gray")
+        coordLbl.place(x=10,y=640)
+
+        self.xyCoordValLbl = tk.Label(self,text="(-,-)",fg="gray")
+        self.xyCoordValLbl.place(x=150,y=640)
+
         self.statusView = scrolledtext.ScrolledText(self)
         self.statusView.place(x=10,y=670,width=780)
         self.statusView["padx"]="3"
@@ -206,7 +212,8 @@ class Application(tk.Frame):
                 tile_x = int((self.mapImg.width()-1)/tileSize)
             if tile_y >= self.mapImg.height()/tileSize:
                 tile_y = int((self.mapImg.height()-1)/tileSize)
-            #print('x: '+ str(tile_x) +' y: ' + str(tile_y))
+            print('x: '+ str(tile_x) +' y: ' + str(tile_y))
+            self.xyCoordValLbl["text"] = "("+str(tile_x)+","+str(tile_y)+")"
 
             map_x = tile_x*tileSize
             map_y = tile_y*tileSize
