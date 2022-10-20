@@ -69,10 +69,21 @@ class GameWorld(world.World):
 
         if self.current_scene.player:
             self.player = self.current_scene.player
-            self.player.rect.topleft = [player_x*8,player_y*8]
-            self.player_pos = [player_x*8,player_y*8]
-
+            self.player.map_x = player_x*8
+            self.player.map_y = player_y*8
+            if self.player.map_x + self.player.sprite_size > self.current_scene.background.get_width():
+                self.player.map_x = self.current_scene.background.get_width() - self.player.sprite_size
+            if self.player.map_y + self.player.sprite_size > self.current_scene.background.get_height():
+                self.player.map_y = self.current_scene.background.get_height() - self.player.sprite_size
             self.moving_sprites.add(self.current_scene.player)
+
+    def player_off_map(self,x_pos,y_pos):
+        if x_pos > self.current_scene.background.get_width() - self.player.sprite_size or x_pos < 0:
+            return True
+        elif y_pos > self.current_scene.background.get_height() - self.player.sprite_size or y_pos < 0:
+            return True
+        return False
+
 
     def main(self):
         pygame.init()
@@ -153,37 +164,6 @@ class GameWorld(world.World):
                             pos_y = current_action['player_pos'][1]
                         self.start_scene(current_action['scene_id'],pos_x,pos_y)
 
-                        if self.player:
-
-                            map_size_x = self.current_scene.background.get_width()
-                            map_size_y = self.current_scene.background.get_height()
-                            p_x = pos_x*8
-                            p_y = pos_y*8
-
-                            #maximum offsets for the map
-                            max_map_x = winWidth - map_size_x
-                            max_map_y = winHeight - map_size_y
-
-                            # shift map under player at center screen
-                            offset_x = int(winWidth/2 - p_x)
-                            offset_y = int(winHeight/2 - p_y)
-
-                            # if the map needs to move to the right - move player left (-)
-                            if offset_x > 0:
-                                player_offset_x = -1 * offset_x
-                            # if the map has gone as far as it can - move the player right (+)
-                            elif offset_x < max_map_x:
-                                player_offset_x = -1*(offset_x - max_map_x)
-                                offset_x = max_map_x
-
-                            # if the map needs to move down - move player up (-)
-                            if offset_y > 0:
-                                player_offset_y = -1 * offset_y
-                            # if the map has gone as far up as it can - move the player down (+)
-                            elif offset_y < max_map_y:
-                                player_offset_y = -1*(offset_y - max_map_y)
-                                offset_y = max_map_y
-
             else:
                 if pygame.time.get_ticks() >= wait_end_time:
                     waiting = False
@@ -191,6 +171,8 @@ class GameWorld(world.World):
 
             if self.player:
                 player_rect = self.player.rect
+
+                #check for collisions with blocked tiles
                 for collision in self.collision_rects:
                     col_rect_dx = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x+dx,collision['location'][1]*8+offset_y))
                     col_rect_dy = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x,collision['location'][1]*8+offset_y+dy))
@@ -199,31 +181,44 @@ class GameWorld(world.World):
                     if player_rect.colliderect(col_rect_dy):
                         dy = 0
 
-                offset_player_x = True
-                if offset_x + dx > 0:
-                    offset_x = 0
-                elif offset_x + dx < winWidth - self.current_scene.background.get_width():
-                    offset_x = winWidth - self.current_scene.background.get_width()
-                else:
-                    offset_x += dx
-                    offset_player_x = False
+                #resolve displaying screen elements (camera centered on player)
+                new_player_x = self.player.map_x - dx
+                new_player_y = self.player.map_y - dy
 
-                offset_player_y = True
-                if offset_y + dy > 0:
-                    offset_y = 0
-                elif offset_y + dy < winHeight - self.current_scene.background.get_height():
-                    offset_y = winHeight - self.current_scene.background.get_height()
-                else:
-                    offset_y += dy
-                    offset_player_y = False
+                #check to see if moving will take the player off the map
+                if not self.player_off_map(new_player_x, new_player_y):
+                    self.player.map_x = new_player_x
+                    self.player.map_y = new_player_y
+                    map_size_x = self.current_scene.background.get_width()
+                    map_size_y = self.current_scene.background.get_height()
+                    p_x = self.player.map_x
+                    p_y = self.player.map_y
 
-                if offset_player_x:
-                    if self.player_pos[0] - dx <= winWidth - self.player.sprite_size and self.player_pos[0] -dx >= 0:
-                        player_offset_x -= dx
+                    #maximum offsets for the map
+                    max_map_x = winWidth - map_size_x
+                    max_map_y = winHeight - map_size_y
 
-                if offset_player_y:
-                    if self.player_pos[1] - dy <= winHeight - self.player.sprite_size and self.player_pos[1] - dy >= 0:
-                        player_offset_y -= dy
+                    # shift map under player at center screen
+                    offset_x = int(winWidth/2 - p_x)
+                    offset_y = int(winHeight/2 - p_y)
+
+                    # if the map needs to move to the right - move player left (-)
+                    if offset_x > 0:
+                        player_offset_x = -1 * offset_x
+                        offset_x = 0
+                    # if the map has gone as far as it can - move the player right (+)
+                    elif offset_x < max_map_x:
+                        player_offset_x = -1*(offset_x - max_map_x)
+                        offset_x = max_map_x
+
+                    # if the map needs to move down - move player up (-)
+                    if offset_y > 0:
+                        player_offset_y = -1 * offset_y
+                        offset_y = 0
+                    # if the map has gone as far up as it can - move the player down (+)
+                    elif offset_y < max_map_y:
+                        player_offset_y = -1*(offset_y - max_map_y)
+                        offset_y = max_map_y
 
             else:
                 offset_x = 0

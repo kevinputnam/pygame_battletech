@@ -16,6 +16,8 @@ class Actor(pygame.sprite.Sprite):
         self.image = self.sprites[self.current_index]
         self.rect = self.image.get_rect()
         self.rect.topleft = [pos_x,pos_y]
+        self.map_x = 0
+        self.map_y = 0
 
     def update(self,direction,pos_x,pos_y):
 
