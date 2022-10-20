@@ -2,6 +2,7 @@ import pygame
 import world
 import scene
 import actor
+import messages
 import collision_maps
 from pygame.locals import *
 
@@ -46,6 +47,8 @@ class GameWorld(world.World):
         self.player = None
         self.current_scene_id = scene_id
         self.current_scene = self.scenes[scene_id]
+        self.message = None
+        self.message_height = 0
         scene_columns = self.current_scene.background.get_width()/8
         cur_col = 0
         cur_row = 0
@@ -84,7 +87,6 @@ class GameWorld(world.World):
             return True
         return False
 
-
     def main(self):
         pygame.init()
         screen = pygame.display.set_mode((winWidth*scaling, winHeight*scaling))
@@ -118,13 +120,12 @@ class GameWorld(world.World):
                     if not waiting:
                         if event.key == b_a:
                             # Display some text
-                            font = pygame.font.Font(None, 24)
-                            text = font.render("Hello There", 1, (255, 255, 255))
-                            textpos = text.get_rect()
-                            textpos.centerx = win.get_rect().centerx
+                            lines_of_text = ["This is a test. It is a very long message","because I want to see the best way of","breaking it up so I can see it on three","lines. I can also consider increasing","the size of the box vertically to make","sure it fits. "]
+                            (self.message_height,self.message) = messages.build_message(lines_of_text)
                             print('a button pressed.')
                         if event.key == b_b:
                             text = None
+                            self.message = None
                             print('b button pressed.')
 
 
@@ -232,8 +233,8 @@ class GameWorld(world.World):
                 self.player_pos = (win.get_rect().centerx+player_offset_x,win.get_rect().centery+player_offset_y)
             self.moving_sprites.draw(win)
             self.moving_sprites.update(player_direction,self.player_pos[0],self.player_pos[1])
-            if text:
-                win.blit(text, textpos)
+            if self.message:
+                win.blit(self.message,(4,winHeight - self.message_height - 4))
             scaled_win = pygame.transform.scale(win,screen.get_size())
             screen.blit(scaled_win, (0, 0))
             pygame.display.flip()
