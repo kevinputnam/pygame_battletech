@@ -96,6 +96,7 @@ class GameWorld(world.World):
         text = None
         current_action = None
         waiting = False
+        hold = False
         wait_end_time = 0
         background_x = 0
         background_y = 0
@@ -127,9 +128,9 @@ class GameWorld(world.World):
                             text = None
                             self.message = None
                             print('b button pressed.')
+                            hold = False
 
-
-            if not waiting:
+            if not waiting and not hold:
                 keys = pygame.key.get_pressed()
                 dx = 0
                 dy = 0
@@ -146,7 +147,7 @@ class GameWorld(world.World):
                 if keys[b_down]:
                     dy -= controller_d
                     player_direction = 'down'
-                if self.current_scene.actions:
+                if self.actions:
                     current_action = self.actions.pop(0)
                 else:
                     current_action = None
@@ -156,7 +157,7 @@ class GameWorld(world.World):
                         waiting = True
                         print('timer ending: ' + str(wait_end_time))
 
-                    if current_action['name'] == 'change_scene':
+                    elif current_action['name'] == 'change_scene':
                         print('changing scene')
                         pos_x = 0
                         pos_y = 0
@@ -165,10 +166,18 @@ class GameWorld(world.World):
                             pos_y = current_action['player_pos'][1]
                         self.start_scene(current_action['scene_id'],pos_x,pos_y)
 
+                    elif current_action['name'] == 'message':
+                        message_lines = []
+                        for line in current_action['text_lines']:
+                            message_lines.append(self.getParam(line))
+                        (self.message_height,self.message) = messages.build_message(message_lines)
+                        hold = True
+
             else:
-                if pygame.time.get_ticks() >= wait_end_time:
-                    waiting = False
-                    print('timer ended')
+                if wait_end_time != 0:
+                    if pygame.time.get_ticks() >= wait_end_time:
+                        waiting = False
+                        wait_end_time = 0
 
             if self.player:
                 player_rect = self.player.rect

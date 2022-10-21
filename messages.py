@@ -2,6 +2,7 @@ import pygame
 
 
 # line lengths should be approximately 40 characters
+# it will display no more than 6 lines of text
 def build_message(lines_of_text):
     max_lines = 6
     line_height = 14
