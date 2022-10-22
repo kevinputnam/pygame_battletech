@@ -93,6 +93,7 @@ class GameWorld(world.World):
         pygame.display.set_caption(gameName)
         win = pygame.Surface((winWidth,winHeight))
 
+        triggered = False
         text = None
         current_action = None
         waiting = False
@@ -173,6 +174,9 @@ class GameWorld(world.World):
                             message_lines.append(self.get_param(line))
                         (self.message_height,self.message) = messages.build_message(message_lines)
                         hold = True
+                        dx=0
+                        dy=0
+                        player_direction = 'none'
 
             else:
                 if wait_end_time != 0:
@@ -205,15 +209,13 @@ class GameWorld(world.World):
                     trigger_y= trigger['location'][1]*8
                     trigger_rect.topleft = [trigger_x,trigger_y]
                     if player_map_rect.colliderect(trigger_rect):
-                        # do something
-                        message_lines = ["This is a trigger!"]
-                        (self.message_height,self.message) = messages.build_message(message_lines)
-                        # in the case of message or other modal thing that
-                        # returns the player to the same context, these
-                        # settings are useful
-                        hold = True
-                        new_player_x = self.player.map_x
-                        new_player_y = self.player.map_y
+                        if not triggered: #only trigger once until off and back
+                            triggered = True
+                            # do something
+                            for action in trigger['actions']:
+                                self.actions.append(action)
+                    else:
+                        triggered = False
 
                 #check to see if moving will take the player off the map
                 if not self.player_off_map(new_player_x, new_player_y):
