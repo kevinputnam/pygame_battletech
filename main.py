@@ -153,7 +153,7 @@ class GameWorld(world.World):
                     current_action = None
                 if current_action:
                     if current_action['name'] == 'start_timer':
-                        wait_end_time = int(self.getParam(current_action['milliseconds'])) + pygame.time.get_ticks()
+                        wait_end_time = int(self.get_param(current_action['milliseconds'])) + pygame.time.get_ticks()
                         waiting = True
                         print('timer ending: ' + str(wait_end_time))
 
@@ -162,14 +162,15 @@ class GameWorld(world.World):
                         pos_x = 0
                         pos_y = 0
                         if 'player_pos' in current_action:
-                            pos_x = current_action['player_pos'][0]
-                            pos_y = current_action['player_pos'][1]
+                            p_pos = current_action['player_pos']
+                            pos_x = p_pos[0]
+                            pos_y = p_pos[1]
                         self.start_scene(current_action['scene_id'],pos_x,pos_y)
 
                     elif current_action['name'] == 'message':
                         message_lines = []
                         for line in current_action['text_lines']:
-                            message_lines.append(self.getParam(line))
+                            message_lines.append(self.get_param(line))
                         (self.message_height,self.message) = messages.build_message(message_lines)
                         hold = True
 
@@ -194,6 +195,25 @@ class GameWorld(world.World):
                 #resolve displaying screen elements (camera centered on player)
                 new_player_x = self.player.map_x - dx
                 new_player_y = self.player.map_y - dy
+
+                #check to see if the player will hit a trigger (map coords)
+                player_map_rect = pygame.Surface([self.player.sprite_size,self.player.sprite_size]).get_rect()
+                player_map_rect.topleft = [new_player_x,new_player_y]
+                for trigger in self.current_scene.triggers:
+                    trigger_rect = pygame.Surface([8,8]).get_rect()
+                    trigger_x= trigger['location'][0]*8
+                    trigger_y= trigger['location'][1]*8
+                    trigger_rect.topleft = [trigger_x,trigger_y]
+                    if player_map_rect.colliderect(trigger_rect):
+                        # do something
+                        message_lines = ["This is a trigger!"]
+                        (self.message_height,self.message) = messages.build_message(message_lines)
+                        # in the case of message or other modal thing that
+                        # returns the player to the same context, these
+                        # settings are useful
+                        hold = True
+                        new_player_x = self.player.map_x
+                        new_player_y = self.player.map_y
 
                 #check to see if moving will take the player off the map
                 if not self.player_off_map(new_player_x, new_player_y):
