@@ -71,7 +71,8 @@
                      {
                         "name":"move",
                         "what":"player",
-                        "location":[1,7]
+                        "location":[1,7],
+                        "direction":"down"
                      }
                  ]
              }

@@ -180,7 +180,7 @@ class GameWorld(world.World):
                         if current_action['what'] == 'player':
                             dx=0
                             dy=0
-                            player_direction = 'down'
+                            player_direction = current_action['direction']
                             self.player.map_x = current_action['location'][0]*8
                             self.player.map_y = current_action['location'][1]*8
 
@@ -215,7 +215,7 @@ class GameWorld(world.World):
                     trigger_y= trigger['location'][1]*8
                     trigger_rect.topleft = [trigger_x,trigger_y]
                     if player_map_rect.colliderect(trigger_rect):
-                        if not triggered: #only trigger once until off and back
+                        if not triggered: #only trigger once until off
                             triggered = True
                             # do something
                             for action in trigger['actions']:
