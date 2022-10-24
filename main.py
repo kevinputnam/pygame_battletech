@@ -24,8 +24,6 @@ b_down = pygame.K_DOWN
 b_a = pygame.K_a
 b_b = pygame.K_s
 
-debug_wait_time = 500
-
 class GameWorld(world.World):
 
     def __init__(self,game_world_path):
@@ -177,6 +175,14 @@ class GameWorld(world.World):
                         dx=0
                         dy=0
                         player_direction = 'none'
+
+                    elif current_action['name'] == 'move':
+                        if current_action['what'] == 'player':
+                            dx=0
+                            dy=0
+                            player_direction = 'down'
+                            self.player.map_x = current_action['location'][0]*8
+                            self.player.map_y = current_action['location'][1]*8
 
             else:
                 if wait_end_time != 0:
