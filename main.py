@@ -145,9 +145,11 @@ class GameWorld(world.World):
                         if top_line >= len(text_lines) - 4:
                             top_line = len(text_lines) - 5
 
+            scroll_percent = top_line / (len(text_lines) - 5)
+
             lines = text_lines[top_line:top_line+5]
 
-            (message_height,message) = messages.build_message(lines)
+            (message_height,message) = messages.build_message(lines,scroll=True,scroll_percent=scroll_percent)
 
             self.win.blit(message,(4,winHeight - message_height - 4))
             scaled_win = pygame.transform.scale(self.win,self.screen.get_size())

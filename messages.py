@@ -12,7 +12,7 @@ text_color = (255,255,255)# white
 
 # line lengths should be approximately 40 characters
 # it will display no more than 6 lines of text
-def build_message(lines_of_text,dismiss_str='press B'):
+def build_message(lines_of_text,dismiss_str='press B', scroll=False,scroll_percent=None):
     max_lines = 6
     font = pygame.font.Font(None, 16)
 
@@ -43,9 +43,27 @@ def build_message(lines_of_text,dismiss_str='press B'):
         if line_counter == max_lines:
             break
         line_pos = line_rect.get_rect()
-        line_pos.topleft = (4,4+line_height*line_counter)
+        line_pos.topleft = (10,4+line_height*line_counter)
         message_box.blit(line_rect,line_pos)
         line_counter += 1
+
+    if scroll:
+        arrow_rect = font.render("^",1,text_color)
+        up_rect = arrow_rect
+        up_pos = up_rect.get_rect()
+        up_pos.topleft = (2,2)
+        message_box.blit(up_rect,up_pos)
+        down_rect = pygame.transform.rotate(arrow_rect,180)
+        down_pos = down_rect.get_rect()
+        down_pos.topleft = (2,message_box_height - 24)
+        message_box.blit(down_rect,down_pos)
+
+        scroll_rect = font.render("*",1,text_color)
+        scroll_pos = scroll_rect.get_rect()
+        total_vertical_distance = message_box_height - 24 -2 - 4
+        vertical_pos =  2 + 4 + int(total_vertical_distance*scroll_percent)
+        scroll_pos.topleft = [3,vertical_pos]
+        message_box.blit(scroll_rect,scroll_pos)
 
     message_box.blit(dismiss_text,dismiss_pos)
     message_container.blit(message_box,(4,4))
