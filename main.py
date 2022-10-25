@@ -142,7 +142,7 @@ class GameWorld(world.World):
                             top_line = 0
                     if event.key == b_down:
                         top_line += 1
-                        if top_line >= len(text_lines) - 6:
+                        if top_line >= len(text_lines) - 4:
                             top_line = len(text_lines) - 5
 
             lines = text_lines[top_line:top_line+5]
