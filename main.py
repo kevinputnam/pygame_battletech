@@ -215,13 +215,13 @@ class GameWorld(world.World):
                     trigger_y= trigger['location'][1]*8
                     trigger_rect.topleft = [trigger_x,trigger_y]
                     if player_map_rect.colliderect(trigger_rect):
-                        if not triggered: #only trigger once until off
-                            triggered = True
+                        if not trigger['triggered']: #only trigger once until off
+                            trigger['triggered'] = True
                             # do something
                             for action in trigger['actions']:
                                 self.actions.append(action)
                     else:
-                        triggered = False
+                        trigger['triggered'] = False
 
                 #check to see if moving will take the player off the map
                 if not self.player_off_map(new_player_x, new_player_y):
