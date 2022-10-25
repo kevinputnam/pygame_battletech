@@ -2,10 +2,13 @@ import pygame
 
 
 line_height = 14
-#background_color = (255, 255, 240) # ivory
-#border_color = (136, 8, 8) # dark red
-background_color = (230,230,250)# very light blue
-border_color = (0,0,0)# black
+#background_color = (230,230,250)# very light blue
+#border_color = (0,0,0)# black
+#text_color = (0,0,0)# black
+background_color = (0,0,0) # black
+border_color = (0,0,0) # black
+text_color = (255,255,255)# white
+
 
 # line lengths should be approximately 40 characters
 # it will display no more than 6 lines of text
@@ -16,7 +19,7 @@ def build_message(lines_of_text,dismiss_str='press B'):
     line_rects = []
     line_counter = 0
     for line in lines_of_text:
-        line_rect = font.render(line,1,(0,0,0))
+        line_rect = font.render(line,1,text_color)
         line_counter += 1
         line_rects.append(line_rect)
 
@@ -31,7 +34,7 @@ def build_message(lines_of_text,dismiss_str='press B'):
     message_container = pygame.Surface((232,message_box_height + 8))
     message_container.fill(border_color)
 
-    dismiss_text = font.render(dismiss_str,1,(0,0,0))
+    dismiss_text = font.render(dismiss_str,1,text_color)
     dismiss_pos = dismiss_text.get_rect()
     dismiss_pos.bottomright = (220,message_box_height - 4)
 

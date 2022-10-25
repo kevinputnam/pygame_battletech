@@ -93,7 +93,7 @@ class GameWorld(world.World):
             option_lines.append(' '*6 + option)
 
         font = pygame.font.Font(None, 16)
-        cursor_rect = font.render('>',1,(0,0,0))
+        cursor_rect = font.render('>',1,messages.text_color)
 
         go = True
         option_index = 0
@@ -103,9 +103,9 @@ class GameWorld(world.World):
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == b_b:
-                        return -1 #cancel
+                        return "-1" #cancel
                     if event.key == b_a:
-                        return option_index
+                        return str(option_index)
                     if event.key == b_up:
                         option_index -= 1
                         if option_index < 0:
