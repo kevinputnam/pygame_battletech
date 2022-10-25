@@ -77,6 +77,16 @@
                         "direction":"down"
                      }
                  ]
+             },
+             {"location":[53,47],
+              "triggered":false,
+                 "actions":[
+                     {
+                        "name":"menu",
+                        "options":["Good.","Bad.","Had worse.","Better."],
+                        "variable":"menu_selection"
+                     }
+                 ]
              }
             ],
             "actions":[

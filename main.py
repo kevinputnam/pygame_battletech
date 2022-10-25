@@ -1,3 +1,4 @@
+import sys
 import pygame
 import world
 import scene
@@ -85,11 +86,51 @@ class GameWorld(world.World):
             return True
         return False
 
+    def show_menu(self,options):
+        num_options = len(options)
+        option_lines = []
+        for option in options:
+            option_lines.append(' '*6 + option)
+
+        font = pygame.font.Font(None, 16)
+        cursor_rect = font.render('>',1,(0,0,0))
+
+        go = True
+        option_index = 0
+        while go:
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == b_b:
+                        return -1 #cancel
+                    if event.key == b_a:
+                        return option_index
+                    if event.key == b_up:
+                        option_index -= 1
+                        if option_index < 0:
+                            option_index = num_options - 1
+                    if event.key == b_down:
+                        option_index += 1
+                        if option_index >= num_options:
+                            option_index = 0
+
+            (menu_height,message) = messages.build_message(option_lines,'A - select / B - cancel')
+            cursor_pos = cursor_rect.get_rect()
+            cursor_pos.topleft = (8,8+messages.line_height*option_index)
+            message.blit(cursor_rect,cursor_pos)
+
+            self.win.blit(message,(4,winHeight - menu_height - 4))
+            scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
+            self.screen.blit(scaled_win, (0, 0))
+            pygame.display.flip()
+
+
     def main(self):
         pygame.init()
-        screen = pygame.display.set_mode((winWidth*scaling, winHeight*scaling))
+        self.screen = pygame.display.set_mode((winWidth*scaling, winHeight*scaling))
         pygame.display.set_caption(gameName)
-        win = pygame.Surface((winWidth,winHeight))
+        self.win = pygame.Surface((winWidth,winHeight))
 
         triggered = False
         text = None
@@ -184,6 +225,10 @@ class GameWorld(world.World):
                             self.player.map_x = current_action['location'][0]*8
                             self.player.map_y = current_action['location'][1]*8
 
+                    elif current_action['name'] == 'menu':
+                        self.variables[current_action['variable']] = self.show_menu(current_action['options'])
+                        print(self.variables[current_action['variable']])
+
             else:
                 if wait_end_time != 0:
                     if pygame.time.get_ticks() >= wait_end_time:
@@ -262,18 +307,18 @@ class GameWorld(world.World):
                 offset_x = 0
                 offset_y = 0
 
-            win.blit(self.current_scene.background,(background_x + offset_x,background_y+offset_y))
+            self.win.blit(self.current_scene.background,(background_x + offset_x,background_y+offset_y))
 
             for collision in self.collision_rects:
-                win.blit(collision['surface'],(collision['location'][0]*8 + offset_x,collision['location'][1]*8 + offset_y))
+                self.win.blit(collision['surface'],(collision['location'][0]*8 + offset_x,collision['location'][1]*8 + offset_y))
             if self.player:
-                self.player_pos = (win.get_rect().centerx+player_offset_x,win.get_rect().centery+player_offset_y)
-            self.moving_sprites.draw(win)
+                self.player_pos = (self.win.get_rect().centerx+player_offset_x,self.win.get_rect().centery+player_offset_y)
+            self.moving_sprites.draw(self.win)
             self.moving_sprites.update(player_direction,self.player_pos[0],self.player_pos[1])
             if self.message:
-                win.blit(self.message,(4,winHeight - self.message_height - 4))
-            scaled_win = pygame.transform.scale(win,screen.get_size())
-            screen.blit(scaled_win, (0, 0))
+                self.win.blit(self.message,(4,winHeight - self.message_height - 4))
+            scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
+            self.screen.blit(scaled_win, (0, 0))
             pygame.display.flip()
             self.clock.tick(60)
 
