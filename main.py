@@ -125,6 +125,34 @@ class GameWorld(world.World):
             self.screen.blit(scaled_win, (0, 0))
             pygame.display.flip()
 
+    def show_scroll_message(self,text_lines):
+
+        top_line = 0
+        go = True
+        while go:
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == b_b:
+                        return
+                    if event.key == b_up:
+                        top_line -= 1
+                        if top_line < 0:
+                            top_line = 0
+                    if event.key == b_down:
+                        top_line += 1
+                        if top_line >= len(text_lines) - 6:
+                            top_line = len(text_lines) - 5
+
+            lines = text_lines[top_line:top_line+5]
+
+            (message_height,message) = messages.build_message(lines)
+
+            self.win.blit(message,(4,winHeight - message_height - 4))
+            scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
+            self.screen.blit(scaled_win, (0, 0))
+            pygame.display.flip()
 
     def main(self):
         pygame.init()
@@ -216,6 +244,12 @@ class GameWorld(world.World):
                         dx=0
                         dy=0
                         player_direction = 'none'
+
+                    elif current_action['name'] == 'scroll_message':
+                        message_lines = []
+                        for line in current_action['text_lines']:
+                            message_lines.append(self.get_param(line))
+                        self.show_scroll_message(message_lines)
 
                     elif current_action['name'] == 'move':
                         if current_action['what'] == 'player':
