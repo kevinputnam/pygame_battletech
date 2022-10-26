@@ -43,7 +43,7 @@ def build_message(lines_of_text,dismiss_str='press B', scroll=False,scroll_perce
         if line_counter == max_lines:
             break
         line_pos = line_rect.get_rect()
-        line_pos.topleft = (10,4+line_height*line_counter)
+        line_pos.topleft = (11,4+line_height*line_counter)
         message_box.blit(line_rect,line_pos)
         line_counter += 1
 
@@ -51,18 +51,18 @@ def build_message(lines_of_text,dismiss_str='press B', scroll=False,scroll_perce
         arrow_rect = font.render("^",1,text_color)
         up_rect = arrow_rect
         up_pos = up_rect.get_rect()
-        up_pos.topleft = (2,2)
+        up_pos.topleft = (1,2)
         message_box.blit(up_rect,up_pos)
         down_rect = pygame.transform.rotate(arrow_rect,180)
         down_pos = down_rect.get_rect()
-        down_pos.topleft = (2,message_box_height - 24)
+        down_pos.topleft = (1,message_box_height - 24)
         message_box.blit(down_rect,down_pos)
 
         scroll_rect = font.render("*",1,text_color)
         scroll_pos = scroll_rect.get_rect()
         total_vertical_distance = message_box_height - 24 -2 - 4
         vertical_pos =  2 + 4 + int(total_vertical_distance*scroll_percent)
-        scroll_pos.topleft = [3,vertical_pos]
+        scroll_pos.topleft = [2,vertical_pos]
         message_box.blit(scroll_rect,scroll_pos)
 
     message_box.blit(dismiss_text,dismiss_pos)
