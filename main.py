@@ -190,9 +190,6 @@ class GameWorld(world.World):
                         print('select key pressed.')
                     if not waiting:
                         if event.key == b_a:
-                            # Display some text
-                            lines_of_text = ["This is a test. It is a very long message","because I want to see the best way of","breaking it up so I can see it on three","lines. I can also consider increasing","the size of the box vertically to make","sure it fits. "]
-                            (self.message_height,self.message) = messages.build_message(lines_of_text)
                             print('a button pressed.')
                         if event.key == b_b:
                             text = None
