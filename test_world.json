@@ -1,4 +1,9 @@
 {
+    "gamename": "Battletech : Pirate's Bane",
+    "author":"Kevin Putnam",
+    "scaling":2,
+    "win_width":360,
+    "win_height":240,
     "variables" : {
         "splash_wait_time":"500"
     },
@@ -67,6 +72,10 @@
                      }
                  ]
              },
+                {"location":[1,20],
+                 "triggered":false,
+                 "actions":[]
+             },
                 {"location":[49,25],
                  "triggered":false,
                  "actions":[
@@ -112,9 +121,68 @@
               "triggered":false,
                  "actions":[
                      {
+                        "name":"message",
+                        "text_lines":[
+                            "How are you feeling today?"
+                        ]
+                     },
+                     {
                         "name":"menu",
                         "options":["Good.","Bad.","Had worse.","Better."],
                         "variable":"menu_selection"
+                     },
+                     {
+                        "name":"case",
+                        "variable":"menu_selection",
+                        "cases":{
+                            "0": [
+                            {"name":"message",
+                             "text_lines": [
+                                "Glad to hear it!"
+                             ]
+                            }
+                            ],
+                            "1": [
+                            {"name":"message",
+                             "text_lines": [
+                                "Sorry to hear that. Try again later."
+                             ]
+                            }
+                            ],
+                            "2": [
+                            {"name":"message",
+                             "text_lines": [
+                                "You get what you put into life."
+                             ]
+                            }
+                            ],
+                            "3": [
+                            {"name":"message",
+                             "text_lines": [
+                                "I knew you could do it. I expect big",
+                                "things!"
+                             ]
+                            }
+                            ]
+                        }
+                     },
+                     {
+                        "name":"the_if",
+                        "eval":"`$menu_selection` == 1",
+                        "actions":[
+                            {"name":"message",
+                             "text_lines": [
+                                "Sorry to hear that. Try again later."
+                             ]
+                            }
+                        ],
+                        "else": [
+                            {"name":"message",
+                             "text_lines": [
+                                 "Woo hoo!"
+                             ]
+                         }
+                        ]
                      }
                  ]
              }

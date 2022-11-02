@@ -9,9 +9,14 @@ from pygame.locals import *
 
 # Globals
 gameName = "Battletech : Pirate's Bane"
-scaling = 3
-winWidth = 240
-winHeight = 160
+# new
+scaling = 2
+winWidth = 360
+winHeight = 240
+# old
+# scaling = 3
+# winWidth = 240
+# winHeight = 160
 
 # main buttons
 b_start = pygame.K_RETURN
@@ -30,7 +35,9 @@ class GameWorld(world.World):
     def __init__(self,game_world_path):
         self.current_scene_id = 0
         self.collision_rects = []
+        self.actors = []
         self.npcs = []
+        self.things = []
         self.player = None
         self.player_pos = (0,0)
         self.current_scene = None
@@ -86,6 +93,71 @@ class GameWorld(world.World):
             return True
         return False
 
+    def run_actions(self, action_list):
+        while action_list:
+            current_action = action_list.pop(0)
+            if current_action:
+                if current_action['name'] == 'start_timer':
+                    self.wait_end_time = int(self.get_param(current_action['milliseconds'])) + pygame.time.get_ticks()
+                    self.waiting = True
+                    return
+
+                elif current_action['name'] == 'change_scene':
+                    pos_x = 0
+                    pos_y = 0
+                    if 'player_pos' in current_action:
+                        p_pos = current_action['player_pos']
+                        pos_x = p_pos[0]
+                        pos_y = p_pos[1]
+                    self.start_scene(current_action['scene_id'],pos_x,pos_y)
+
+                elif current_action['name'] == 'message':
+                    message_lines = []
+                    for line in current_action['text_lines']:
+                        message_lines.append(self.get_param(line))
+                    (self.message_height,self.message) = messages.build_message(message_lines)
+                    self.hold = True
+                    self.dx=0
+                    self.dy=0
+                    self.player_direction = 'none'
+                    return
+
+                elif current_action['name'] == 'scroll_message':
+                    message_lines = []
+                    for line in current_action['text_lines']:
+                        message_lines.append(self.get_param(line))
+                    self.show_scroll_message(message_lines)
+
+                elif current_action['name'] == 'move':
+                    if current_action['what'] == 'player':
+                        self.dx=0
+                        self.dy=0
+                        player_direction = current_action['direction']
+                        self.player.map_x = current_action['location'][0]*8
+                        self.player.map_y = current_action['location'][1]*8
+
+                elif current_action['name'] == 'menu':
+                    self.variables[current_action['variable']] = self.show_menu(current_action['options'])
+
+                elif current_action['name'] == 'if':
+                    actions = []
+                    if eval(self.get_param(current_action['eval'])):
+                        for action in current_action['actions']:
+                            actions.append(action)
+                    else:
+                        for action in current_action['else']:
+                            actions.append(action)
+                    self.run_actions(actions)
+
+                elif current_action['name'] == 'case':
+                    actions = []
+                    case = str(self.variables[current_action['variable']])
+                    if case in current_action['cases']:
+                        for action in current_action['cases'][case]:
+                            actions.append(action)
+                    self.run_actions(actions)
+
+    # this is modal, so it has its own loop and draw code
     def show_menu(self,options):
         num_options = len(options)
         option_lines = []
@@ -124,9 +196,10 @@ class GameWorld(world.World):
             scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
             self.screen.blit(scaled_win, (0, 0))
             pygame.display.flip()
+            self.clock.tick(60)
 
+    # this is modal, so it has its own loop and draw code
     def show_scroll_message(self,text_lines):
-
         top_line = 0
         go = True
         while go:
@@ -137,11 +210,11 @@ class GameWorld(world.World):
                     if event.key == b_b:
                         return
                     if event.key == b_up:
-                        top_line -= 1
+                        top_line -= 5
                         if top_line < 0:
                             top_line = 0
                     if event.key == b_down:
-                        top_line += 1
+                        top_line += 5
                         if top_line >= len(text_lines) - 4:
                             top_line = len(text_lines) - 5
 
@@ -149,12 +222,13 @@ class GameWorld(world.World):
 
             lines = text_lines[top_line:top_line+5]
 
-            (message_height,message) = messages.build_message(lines,scroll=True,scroll_percent=scroll_percent)
+            (message_height,message) = messages.build_message(lines,dismiss_str='Down - more / B - dismiss',scroll=True,scroll_percent=scroll_percent)
 
             self.win.blit(message,(4,winHeight - message_height - 4))
             scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
             self.screen.blit(scaled_win, (0, 0))
             pygame.display.flip()
+            self.clock.tick(60)
 
     def main(self):
         pygame.init()
@@ -165,9 +239,9 @@ class GameWorld(world.World):
         triggered = False
         text = None
         current_action = None
-        waiting = False
-        hold = False
-        wait_end_time = 0
+        self.waiting = False
+        self.hold = False
+        self.wait_end_time = 0
         background_x = 0
         background_y = 0
         controller_d = 2
@@ -175,7 +249,7 @@ class GameWorld(world.World):
         offset_y = 0
         player_offset_x = 0
         player_offset_y = 0
-        player_direction = 'none'
+        self.player_direction = 'none'
         self.start_scene(0,0,0)
 
         # Main event loop
@@ -188,101 +262,55 @@ class GameWorld(world.World):
                         print('return key pressed.')
                     if event.key == b_select:
                         print('select key pressed.')
-                    if not waiting:
+                    if not self.waiting:
                         if event.key == b_a:
                             print('a button pressed.')
                         if event.key == b_b:
                             text = None
                             self.message = None
                             print('b button pressed.')
-                            hold = False
+                            self.hold = False
 
-            if not waiting and not hold:
+            if not self.waiting and not self.hold:
                 keys = pygame.key.get_pressed()
-                dx = 0
-                dy = 0
-                player_direction = 'none'
+                self.dx = 0
+                self.dy = 0
+                self.player_direction = 'none'
                 if keys[b_left]:
-                    dx += controller_d
-                    player_direction = 'left'
+                    self.dx += controller_d
+                    self.player_direction = 'left'
                 if keys[b_right]:
-                    dx -= controller_d
-                    player_direction = 'right'
+                    self.dx -= controller_d
+                    self.player_direction = 'right'
                 if keys[b_up]:
-                    dy += controller_d
-                    player_direction = 'up'
+                    self.dy += controller_d
+                    self.player_direction = 'up'
                 if keys[b_down]:
-                    dy -= controller_d
-                    player_direction = 'down'
+                    self.dy -= controller_d
+                    self.player_direction = 'down'
                 if self.actions:
-                    current_action = self.actions.pop(0)
-                else:
-                    current_action = None
-                if current_action:
-                    if current_action['name'] == 'start_timer':
-                        wait_end_time = int(self.get_param(current_action['milliseconds'])) + pygame.time.get_ticks()
-                        waiting = True
-                        print('timer ending: ' + str(wait_end_time))
-
-                    elif current_action['name'] == 'change_scene':
-                        print('changing scene')
-                        pos_x = 0
-                        pos_y = 0
-                        if 'player_pos' in current_action:
-                            p_pos = current_action['player_pos']
-                            pos_x = p_pos[0]
-                            pos_y = p_pos[1]
-                        self.start_scene(current_action['scene_id'],pos_x,pos_y)
-
-                    elif current_action['name'] == 'message':
-                        message_lines = []
-                        for line in current_action['text_lines']:
-                            message_lines.append(self.get_param(line))
-                        (self.message_height,self.message) = messages.build_message(message_lines)
-                        hold = True
-                        dx=0
-                        dy=0
-                        player_direction = 'none'
-
-                    elif current_action['name'] == 'scroll_message':
-                        message_lines = []
-                        for line in current_action['text_lines']:
-                            message_lines.append(self.get_param(line))
-                        self.show_scroll_message(message_lines)
-
-                    elif current_action['name'] == 'move':
-                        if current_action['what'] == 'player':
-                            dx=0
-                            dy=0
-                            player_direction = current_action['direction']
-                            self.player.map_x = current_action['location'][0]*8
-                            self.player.map_y = current_action['location'][1]*8
-
-                    elif current_action['name'] == 'menu':
-                        self.variables[current_action['variable']] = self.show_menu(current_action['options'])
-                        print(self.variables[current_action['variable']])
-
+                    self.run_actions(self.actions)
             else:
-                if wait_end_time != 0:
-                    if pygame.time.get_ticks() >= wait_end_time:
-                        waiting = False
-                        wait_end_time = 0
+                if self.wait_end_time != 0:
+                    if pygame.time.get_ticks() >= self.wait_end_time:
+                        self.waiting = False
+                        self.wait_end_time = 0
 
             if self.player:
                 player_rect = self.player.rect
 
                 #check for collisions with blocked tiles
                 for collision in self.collision_rects:
-                    col_rect_dx = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x+dx,collision['location'][1]*8+offset_y))
-                    col_rect_dy = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x,collision['location'][1]*8+offset_y+dy))
+                    col_rect_dx = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x+self.dx,collision['location'][1]*8+offset_y))
+                    col_rect_dy = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x,collision['location'][1]*8+offset_y+self.dy))
                     if player_rect.colliderect(col_rect_dx):
-                        dx = 0
+                        self.dx = 0
                     if player_rect.colliderect(col_rect_dy):
-                        dy = 0
+                        self.dy = 0
 
                 #resolve displaying screen elements (camera centered on player)
-                new_player_x = self.player.map_x - dx
-                new_player_y = self.player.map_y - dy
+                new_player_x = self.player.map_x - self.dx
+                new_player_y = self.player.map_y - self.dy
 
                 #check to see if the player will hit a trigger (map coords)
                 player_map_rect = pygame.Surface([self.player.sprite_size,self.player.sprite_size]).get_rect()
@@ -347,7 +375,7 @@ class GameWorld(world.World):
             if self.player:
                 self.player_pos = (self.win.get_rect().centerx+player_offset_x,self.win.get_rect().centery+player_offset_y)
             self.moving_sprites.draw(self.win)
-            self.moving_sprites.update(player_direction,self.player_pos[0],self.player_pos[1])
+            self.moving_sprites.update(self.player_direction,self.player_pos[0],self.player_pos[1])
             if self.message:
                 self.win.blit(self.message,(4,winHeight - self.message_height - 4))
             scaled_win = pygame.transform.scale(self.win,self.screen.get_size())
