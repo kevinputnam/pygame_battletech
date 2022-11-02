@@ -22,7 +22,7 @@ class World():
     def get_param(self,value):
         new_val = value
         for var in self.variables:
-            new_val = new_val.replace('`$'+var+'`',self.variables[var])
+            new_val = new_val.replace('`$'+var+'`',str(self.variables[var]))
         return new_val
 
 

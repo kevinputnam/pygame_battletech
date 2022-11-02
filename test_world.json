@@ -5,7 +5,8 @@
     "win_width":360,
     "win_height":240,
     "variables" : {
-        "splash_wait_time":"500"
+        "splash_wait_time":500,
+        "counter":0
     },
     "scenes" : [
         {
@@ -74,7 +75,30 @@
              },
                 {"location":[1,20],
                  "triggered":false,
-                 "actions":[]
+                 "actions":[
+                    {
+                        "name":"eval",
+                        "variable":"counter",
+                        "statement":"`$counter` + 1"
+                    },
+                    {
+                        "name":"if",
+                        "eval":"`$counter` > 7",
+                        "actions":[
+                            {
+                                "name":"set_var",
+                                "variable":"counter",
+                                "value":0
+                            },
+                            {
+                                "name":"message",
+                                "text_lines":[
+                                    "8 times!"
+                                ]
+                            }
+                        ]
+                    }
+                ]
              },
                 {"location":[49,25],
                  "triggered":false,
@@ -165,24 +189,6 @@
                             }
                             ]
                         }
-                     },
-                     {
-                        "name":"the_if",
-                        "eval":"`$menu_selection` == 1",
-                        "actions":[
-                            {"name":"message",
-                             "text_lines": [
-                                "Sorry to hear that. Try again later."
-                             ]
-                            }
-                        ],
-                        "else": [
-                            {"name":"message",
-                             "text_lines": [
-                                 "Woo hoo!"
-                             ]
-                         }
-                        ]
                      }
                  ]
              }

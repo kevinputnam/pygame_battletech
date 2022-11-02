@@ -132,7 +132,7 @@ class GameWorld(world.World):
                     if current_action['what'] == 'player':
                         self.dx=0
                         self.dy=0
-                        player_direction = current_action['direction']
+                        self.player_direction = current_action['direction']
                         self.player.map_x = current_action['location'][0]*8
                         self.player.map_y = current_action['location'][1]*8
 
@@ -145,9 +145,10 @@ class GameWorld(world.World):
                         for action in current_action['actions']:
                             actions.append(action)
                     else:
-                        for action in current_action['else']:
-                            actions.append(action)
-                    self.run_actions(actions)
+                        if 'else' in current_action:
+                            for action in current_action['else']:
+                                actions.append(action)
+                    action_list = actions + action_list
 
                 elif current_action['name'] == 'case':
                     actions = []
@@ -155,7 +156,13 @@ class GameWorld(world.World):
                     if case in current_action['cases']:
                         for action in current_action['cases'][case]:
                             actions.append(action)
-                    self.run_actions(actions)
+                    action_list = actions + action_list
+
+                elif current_action['name'] == 'set_var':
+                    self.variables[current_action['variable']] = current_action['value']
+
+                elif current_action['name'] == 'eval':
+                    self.variables[current_action['variable']] = eval(self.get_param(current_action['statement']))
 
     # this is modal, so it has its own loop and draw code
     def show_menu(self,options):
