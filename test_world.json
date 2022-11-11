@@ -8,6 +8,8 @@
         "splash_wait_time":500,
         "counter":0
     },
+    "first_scene":0,
+    "start_player_pos":[0,0],
     "scenes" : [
         {
             "id":0,
