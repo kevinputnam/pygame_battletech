@@ -18,6 +18,7 @@ class Actor(pygame.sprite.Sprite):
         self.rect.topleft = [pos_x,pos_y]
         self.map_x = 0
         self.map_y = 0
+        self.inventory = []
 
     def update(self,direction,pos_x,pos_y):
 

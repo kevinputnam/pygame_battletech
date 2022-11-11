@@ -93,7 +93,7 @@
                             {
                                 "name":"message",
                                 "text_lines":[
-                                    "8 times!"
+                                    "8 times! Really?!?"
                                 ]
                             }
                         ]
@@ -208,7 +208,22 @@
                 "sprite_sheet_path":"assets/sprites/jamie_grear_sprite.png",
                 "sprite_size": 16,
                 "directions": {"down":[0,1],"up":[2,3],"right":[4,5],"left":[6,7]}
-            }
+            },
+            "things":[
+                {
+                    "name":"key card",
+                    "sprite_sheet_path":"assets/sprites/access_card.png",
+                    "sprite_size":16,
+                    "directions":{"idle":[0,0]},
+                    "location":[53,53],
+                    "hidden": false,
+                    "description": "It appears to be a keycard of some kind.",
+                    "canTake": true,
+                    "locks": false,
+                    "goesTo": null,
+                    "actions": []
+                }
+            ]
         }
     ]
 }

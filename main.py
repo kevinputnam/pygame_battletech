@@ -37,7 +37,6 @@ class GameWorld(world.World):
         self.collision_rects = []
         self.actors = []
         self.npcs = []
-        self.things = []
         self.player = None
         self.player_pos = (0,0)
         self.current_scene = None
@@ -306,6 +305,16 @@ class GameWorld(world.World):
             if self.player:
                 player_rect = self.player.rect
 
+                #check for collisions with items
+                for item in self.current_scene.items:
+                    item_x = item.rect.topleft[0]*8 + offset_x
+                    item_y = item.rect.topleft[1]*8 + offset_y
+                    item_coord_rect = pygame.Rect(item_x,item_y,item.rect[2],item.rect[3])
+                    if player_rect.colliderect(item_coord_rect):
+                        if item.canTake:
+                            self.current_scene.items.remove(item)
+                            self.player.inventory.append(item)
+
                 #check for collisions with blocked tiles
                 for collision in self.collision_rects:
                     col_rect_dx = collision['surface'].get_rect(topleft=(collision['location'][0]*8+offset_x+self.dx,collision['location'][1]*8+offset_y))
@@ -379,6 +388,9 @@ class GameWorld(world.World):
 
             for collision in self.collision_rects:
                 self.win.blit(collision['surface'],(collision['location'][0]*8 + offset_x,collision['location'][1]*8 + offset_y))
+            for item in self.current_scene.items:
+                if not item.hidden:
+                    self.win.blit(item.image,(item.rect.topleft[0]*8 + offset_x,item.rect.topleft[1]*8+offset_y))
             if self.player:
                 self.player_pos = (self.win.get_rect().centerx+player_offset_x,self.win.get_rect().centery+player_offset_y)
             self.moving_sprites.draw(self.win)
