@@ -49,7 +49,6 @@ def update_gui():
     pygame.display.flip()
     clock.tick(60)
 
-# receives a dictionary of methods that match the buttons
 def process_user_input():
 
     for event in pygame.event.get():

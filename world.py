@@ -18,7 +18,10 @@ class World():
             self.scene_backgrounds.append(s['background'])
             self.scenes.append(scene.Scene(s))
         ## added for refactor
+        self.player = None
         self.actions = []
+        self.actors = []
+        self.things = []
         gui.initialize_display(self.gamename)
         self.initialize_scene(self.first_scene,self.start_player_pos)
 
@@ -35,12 +38,13 @@ class World():
             new_val = new_val.replace('`$'+var+'`',str(self.variables[var]))
         return new_val
 
-#### In Development - Major Refactor - Not used by main.py
+    #### In Development - Major Refactor - Not used by main.py
 
     # main game loop
     def start(self):
         while 1:
             gui.process_user_input()
+            self.process_collisions()
             self.run_actions()
             gui.update_gui()
 
@@ -61,7 +65,11 @@ class World():
         gui.button_behaviors['up'] = [self.test_method,['up']]
         gui.button_behaviors['down'] = [self.test_method,['down']]
 
-#### Action Handler
+    #### Collision Handler
+    def process_collisions(self):
+        pass
+
+    #### Action Handler
 
     def run_actions(self):
         if not gui.timer_active:
@@ -69,14 +77,16 @@ class World():
                 action = self.actions.pop(0)
                 getattr(self,'action_'+action['name'],self.action_default)(action)
 
-
-#### Actions
+    #### Actions
 
     def action_start_timer(self,action):
         gui.start_timer(int(self.get_param(action['milliseconds'])))
 
     def action_change_scene(self,action):
-        print(action['name'])
+        player_pos = [0,0]
+        if 'player_pos' in action:
+            player_pos = action['player_pos']
+        self.initialize_scene(action['scene_id'],player_pos)
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])
