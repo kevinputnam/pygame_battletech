@@ -218,6 +218,7 @@
                     "sprite_size":16,
                     "directions":{"idle":[0,0]},
                     "location":[53,53],
+                    "dimensions":[16,16],
                     "hidden": false,
                     "description": "It appears to be a keycard of some kind.",
                     "canTake": true,

@@ -1,5 +1,6 @@
 import json
 import scene
+import thing
 import re
 import gui
 from os.path import isfile
@@ -18,7 +19,7 @@ class World():
             self.scene_backgrounds.append(s['background'])
             self.scenes.append(scene.Scene(s))
         ## added for refactor
-        self.player = None
+        self.player = thing.Thing({'location':[20,20],'dimensions':[16,16]})
         self.actions = []
         self.actors = []
         self.things = []
@@ -44,7 +45,7 @@ class World():
     def start(self):
         while 1:
             gui.process_user_input()
-            self.process_collisions()
+            self.process_player_collisions()
             self.run_actions()
             gui.update_gui()
 
@@ -52,10 +53,15 @@ class World():
         print('oh, ho! ' + arg + ' pressed!')
 
     def initialize_scene(self,scene_id,player_pos):
-        #temporary workaround
+        # temporary workaround
         gui.load_new_scene(self.scene_backgrounds[scene_id])
+        # reset action and thing lists
+        self.things = []
+        self.actions = []
         for action in self.scenes[scene_id].actions:
             self.actions.append(action)
+        for t in self.scenes[scene_id].items:
+            self.things.append(t)
         gui.button_behaviors['start'] = [self.test_method,['start']]
         gui.button_behaviors['select'] = [self.test_method,['select']]
         gui.button_behaviors['a'] = [self.test_method,['a']]
@@ -66,8 +72,19 @@ class World():
         gui.button_behaviors['down'] = [self.test_method,['down']]
 
     #### Collision Handler
-    def process_collisions(self):
-        pass
+    def process_player_collisions(self):
+        for t in self.things:
+            if self.collision(self.player.get_rect(),t.get_rect()):
+                print("Collision! Do something!")
+                #if t.on_collision:
+
+    def collision(self,rect1,rect2):
+        dx = min(rect1[2], rect2[2]) - max(rect1[0], rect2[0])
+        dy = min(rect1[3], rect2[3]) - max(rect1[1], rect2[1])
+        if (dx>0) and (dy>0):
+            return True
+        else:
+            return False
 
     #### Action Handler
 
