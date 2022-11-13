@@ -23,6 +23,7 @@ clock = None
 timer_active = False
 timer_end_time = 0
 button_behaviors = {}
+the_sprites = pygame.sprite.Group()
 
 def initialize_display(gameName):
     global screen
@@ -44,10 +45,15 @@ def update_gui():
             timer_active = False
             timer_end_time = 0
     win.blit(background,(0,0))
+    the_sprites.draw(win)
     scaled_win = pygame.transform.scale(win,screen.get_size())
     screen.blit(scaled_win, (0, 0))
     pygame.display.flip()
     clock.tick(60)
+
+def add_thing(thing):
+    the_sprites.add(thing.sprite)
+
 
 def process_user_input():
 
@@ -56,23 +62,23 @@ def process_user_input():
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == B_START:
-                button_behaviors['start'][0](button_behaviors['start'][1][0])
+                button_behaviors['start'][0](button_behaviors['start'][1])
             if event.key == B_SELECT:
-                button_behaviors['select'][0](button_behaviors['select'][1][0])
+                button_behaviors['select'][0](button_behaviors['select'][1])
             if event.key == B_A:
-                button_behaviors['a'][0](button_behaviors['a'][1][0])
+                button_behaviors['a'][0](button_behaviors['a'][1])
             if event.key == B_B:
-                button_behaviors['b'][0](button_behaviors['b'][1][0])
+                button_behaviors['b'][0](button_behaviors['b'][1])
 
     keys = pygame.key.get_pressed()
     if keys[B_LEFT]:
-        button_behaviors['left'][0](button_behaviors['left'][1][0])
+        button_behaviors['left'][0](button_behaviors['left'][1])
     if keys[B_RIGHT]:
-        button_behaviors['right'][0](button_behaviors['right'][1][0])
+        button_behaviors['right'][0](button_behaviors['right'][1])
     if keys[B_UP]:
-        button_behaviors['up'][0](button_behaviors['up'][1][0])
+        button_behaviors['up'][0](button_behaviors['up'][1])
     if keys[B_DOWN]:
-        button_behaviors['down'][0](button_behaviors['down'][1][0])
+        button_behaviors['down'][0](button_behaviors['down'][1])
 
 def load_new_scene(background_path):
     global background

@@ -1,3 +1,5 @@
+###### DEPRECATED ########
+
 import sys
 import pygame
 import world

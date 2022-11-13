@@ -11,15 +11,15 @@ class Scene:
         self.scene_type = None # tells the main loop how to handle movement of the player and other stuff
         self.actions = [] # sequential list of actions to perform when scene started
         self.player = None
-        self.items = []
+        self.things = []
 
         for key in scene_data:
-            setattr(self,key,scene_data[key])
+            if key != 'things':
+                setattr(self,key,scene_data[key])
 
-        self.background = pygame.image.load(scene_data['background'])
         if self.player:
-            self.player = actor.Actor(0,0,self.player['sprite_sheet_path'],self.player['sprite_size'],self.player['directions'])
+            self.player = thing.Thing(self.player,self.grid_size)
 
         if 'things' in scene_data:
-            for item in scene_data['things']:
-                self.items.append(thing.Thing(item))
+            for t in scene_data['things']:
+                self.things.append(thing.Thing(t,self.grid_size))
