@@ -20,6 +20,19 @@ class Scene:
         if self.player:
             self.player = thing.Thing(self.player,self.grid_size)
 
+        if 'map_size' in scene_data:
+            columns = scene_data['map_size'][0]/self.grid_size
+            cur_row = 0
+            cur_col = 0
+            if 'collisions' in scene_data:
+                for c in scene_data['collisions']:
+                    if c==1:
+                        self.things.append(thing.Thing({'location':[cur_col,cur_row],'dimensions':[8,8],"on_collision":["block",[]]},self.grid_size))
+                    cur_col += 1
+                    if cur_col >= columns:
+                        cur_col = 0
+                        cur_row += 1
+
         if 'things' in scene_data:
             for t in scene_data['things']:
                 self.things.append(thing.Thing(t,self.grid_size))

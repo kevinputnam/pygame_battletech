@@ -102,16 +102,17 @@ class World():
 
     #### Collision Handler
     def process_player_collisions(self):
-        for t in self.things:
-            # is it going to collide?
+        # is it going to collide?
+        if self.player:
             player_rect = self.player.get_rect()
             player_rect[0] += self.player.dx
             player_rect[1] += self.player.dy
             player_rect[2] += self.player.dx
             player_rect[3] += self.player.dy
-            if self.collision(player_rect,t.get_rect()):
-                if t.on_collision:
-                    getattr(self,'collision_'+t.on_collision[0],self.collision_default)(self.player,t,t.on_collision[1])
+            for t in self.things:
+                if self.collision(player_rect,t.get_rect()):
+                    if t.on_collision:
+                        getattr(self,'collision_'+t.on_collision[0],self.collision_default)(self.player,t,t.on_collision[1])
 
     def collision(self,rect1,rect2):
         dx = min(rect1[2], rect2[2]) - max(rect1[0], rect2[0])
@@ -132,9 +133,24 @@ class World():
     #### Collisions
 
     def collision_push(self,actor,receiver,arg_list):
+        # will need to check to see if this will collide into anything
+        receiver_rect = receiver.get_rect()
+        receiver_rect[0] += actor.dx
+        receiver_rect[1] += actor.dy
+        receiver_rect[2] += actor.dx
+        receiver_rect[3] += actor.dy
+
+        for t in self.things:
+            if self.collision(receiver_rect,t.get_rect()):
+                if t.on_collision:
+                    if t.on_collision[0] == 'block':
+                        actor.dx = 0
+                        actor.dy = 0
+                        return
         receiver.dx = actor.dx
         receiver.dy = actor.dy
-        # will need to check to see if this will collide into anything
+
+
 
     def collision_block(self,actor,reciever,arg_list):
         actor.dx = 0
