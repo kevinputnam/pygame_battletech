@@ -3,6 +3,7 @@ import scene
 import thing
 import re
 import gui
+import messages
 from os.path import isfile
 
 class World():
@@ -14,10 +15,6 @@ class World():
         self.scenes = []
         for s in data['scenes']:
             self.scenes.append(scene.Scene(s))
-        ## added for refactor
-        self.actions = []
-        self.actors = []
-        self.things = []
         gui.initialize_display(self.gamename)
         self.initialize_scene(self.first_scene,self.start_player_pos)
 
@@ -36,8 +33,6 @@ class World():
         for var in self.variables:
             new_val = new_val.replace('`$'+var+'`',str(self.variables[var]))
         return new_val
-
-    #### In Development - Major Refactor - Not used by main.py
 
     # main game loop
     def start(self):
@@ -58,8 +53,9 @@ class World():
             self.player.dx = args['value']
         self.player.direction = args['direction']
 
-
     def initialize_scene(self,scene_id,player_pos):
+        self.actions = []
+        self.things = []
         self.current_scene_id = scene_id
         gui.load_new_scene(self.scenes[scene_id].background,self.scenes[scene_id].map_size)
         # reset action and thing lists
@@ -68,7 +64,6 @@ class World():
             grid_size = self.scenes[scene_id].grid_size
             self.player.location = [player_pos[0]*grid_size,player_pos[1]*grid_size]
             if self.player.sprite:
-                #gui.add_thing(self.player)
                 gui.add_player(self.player)
         self.things = []
         self.actions = []
@@ -78,6 +73,19 @@ class World():
             self.things.append(t)
             if t.sprite:
                 gui.add_thing(t)
+        self.set_map_nav_button_behaviors()
+
+    def display_message(self, text_list):
+        (height,message) = messages.build_message(text_list)
+        gui.message = message
+        gui.message_height = height
+        self.set_message_button_behaviors()
+
+    def dismiss_message(self,nada):
+        gui.message = None
+        self.set_map_nav_button_behaviors()
+
+    def set_map_nav_button_behaviors(self):
         gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
         gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
         gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
@@ -87,6 +95,15 @@ class World():
         gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
         gui.button_behaviors['down'] = [self.move_player,{'axis':'y','value':1,'direction':'down'}]
 
+    def set_message_button_behaviors(self):
+        gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
+        gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
+        gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
+        gui.button_behaviors['b'] = [self.dismiss_message,{}]
+        gui.button_behaviors['left'] = [self.test_method,{'text':'left'}]
+        gui.button_behaviors['right'] = [self.test_method,{'text':'right'}]
+        gui.button_behaviors['up'] = [self.test_method,{'text':'up'}]
+        gui.button_behaviors['down'] = [self.test_method,{'text':'down'}]
 
     def player_off_map(self):
         if self.player:
@@ -125,7 +142,9 @@ class World():
             for t in self.things:
                 if self.collision(player_rect,t.get_rect()):
                     if t.on_collision:
-                        getattr(self,'collision_'+t.on_collision[0],self.collision_default)(self.player,t,t.on_collision[1])
+                        for action in t.on_collision['actions']:
+                            self.actions.append(action)
+                        getattr(self,'collision_'+t.on_collision['name'],self.collision_default)(self.player,t,None)
 
     def collision(self,rect1,rect2):
         dx = min(rect1[2], rect2[2]) - max(rect1[0], rect2[0])
@@ -156,7 +175,7 @@ class World():
         for t in self.things:
             if self.collision(receiver_rect,t.get_rect()):
                 if t.on_collision:
-                    if t.on_collision[0] == 'block':
+                    if t.on_collision['name'] == 'block':
                         actor.dx = 0
                         actor.dy = 0
                         return
@@ -168,7 +187,7 @@ class World():
         actor.dy = 0
 
     def collision_default(self,actor,receiver,arg_list):
-        print("Invalid collision: " + receiver.on_collision[0])
+        print("Invalid collision: " + receiver.on_collision['name'])
 
     #### Actions
 
@@ -180,6 +199,9 @@ class World():
         if 'player_pos' in action:
             player_pos = action['player_pos']
         self.initialize_scene(action['scene_id'],player_pos)
+
+    def action_message(self,action):
+        self.display_message(action['text_lines'])
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])

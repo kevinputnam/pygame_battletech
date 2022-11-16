@@ -229,7 +229,7 @@
                     "locks": false,
                     "goesTo": null,
                     "actions": [],
-                    "on_collision":["push",[]]
+                    "on_collision":{"name":"push","actions":[]}
                 }
             ]
         }

@@ -28,6 +28,8 @@ player_sprite = None
 map_size_x = 0
 map_offset_x = 0
 map_offset_y = 0
+message = None
+message_height = 0
 
 def initialize_display(gameName):
     global screen
@@ -92,6 +94,8 @@ def update_gui():
     the_sprites.draw(win)
     if player_sprite:
         win.blit(player_sprite.image,player_sprite.rect.topleft)
+    if message:
+        win.blit(message,(4,WINHEIGHT - message_height - 4))
     scaled_win = pygame.transform.scale(win,screen.get_size())
     screen.blit(scaled_win, (0, 0))
     pygame.display.flip()
@@ -139,6 +143,7 @@ def load_new_scene(background_path,map_size):
     map_size_x = map_size[0]
     map_size_y = map_size[1]
     background = pygame.image.load(background_path)
+    the_sprites.empty()
 
 def show_modal():
     pass

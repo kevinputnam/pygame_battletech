@@ -1,4 +1,5 @@
 ###### DEPRECATED ########
+###### BROKEN ############
 
 import sys
 import pygame
@@ -144,11 +145,11 @@ class GameWorld(world.World):
                     actions = []
                     if eval(self.get_param(current_action['eval'])):
                         for action in current_action['actions']:
-                            actions.append(action)
+                            actions.append(action) # this should be placing these at the front of the list
                     else:
                         if 'else' in current_action:
                             for action in current_action['else']:
-                                actions.append(action)
+                                actions.append(action) # this should be placing thse at the front of the list
                     action_list = actions + action_list
 
                 elif current_action['name'] == 'case':
