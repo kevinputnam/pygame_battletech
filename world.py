@@ -22,6 +22,7 @@ class World():
         self.initialize_scene(self.first_scene,self.start_player_pos)
 
         self.move_base = 1
+        self.current_scene_id = 0
 
     def load(self, path):
         world_data = {}
@@ -48,7 +49,7 @@ class World():
             gui.update_gui()
 
     def test_method(self,args):
-        print('oh, ho! ' + args['text  '] + ' pressed!')
+        print('oh, ho! ' + args['text'] + ' pressed!')
 
     def move_player(self,args):
         if args['axis'] == 'y':
@@ -59,14 +60,16 @@ class World():
 
 
     def initialize_scene(self,scene_id,player_pos):
-        gui.load_new_scene(self.scenes[scene_id].background)
+        self.current_scene_id = scene_id
+        gui.load_new_scene(self.scenes[scene_id].background,self.scenes[scene_id].map_size)
         # reset action and thing lists
         self.player = self.scenes[scene_id].player
         if self.player:
             grid_size = self.scenes[scene_id].grid_size
             self.player.location = [player_pos[0]*grid_size,player_pos[1]*grid_size]
             if self.player.sprite:
-                gui.add_thing(self.player)
+                #gui.add_thing(self.player)
+                gui.add_player(self.player)
         self.things = []
         self.actions = []
         for action in self.scenes[scene_id].actions:
@@ -84,6 +87,14 @@ class World():
         gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
         gui.button_behaviors['down'] = [self.move_player,{'axis':'y','value':1,'direction':'down'}]
 
+
+    def player_off_map(self):
+        if self.player:
+            if self.player.location[0] + self.player.dx > self.scenes[self.current_scene_id].map_size[0] - self.player.dimensions[0] or self.player.location[0] + self.player.dx  < 0:
+                self.player.dx = 0
+            elif self.player.location[1] + self.player.dy > self.scenes[self.current_scene_id].map_size[1] - self.player.dimensions[1] or self.player.location[1] + self.player.dy < 0:
+                self.player.dy = 0
+
     def process_movement(self):
         if self.player:
             self.player.location = [self.player.location[0] + self.player.dx,self.player.location[1]+self.player.dy]
@@ -92,6 +103,8 @@ class World():
             if self.player.sprite:
                 self.player.sprite.update(self.player.direction,self.player.location[0],self.player.location[1])
             self.player.direction = 'none'
+
+            gui.update_camera_pos(self.player.location[0],self.player.location[1])
 
         for t in self.things:
             t.location = [t.location[0]+t.dx,t.location[1]+t.dy]
@@ -149,8 +162,6 @@ class World():
                         return
         receiver.dx = actor.dx
         receiver.dy = actor.dy
-
-
 
     def collision_block(self,actor,reciever,arg_list):
         actor.dx = 0

@@ -24,6 +24,10 @@ timer_active = False
 timer_end_time = 0
 button_behaviors = {}
 the_sprites = pygame.sprite.Group()
+player_sprite = None
+map_size_x = 0
+map_offset_x = 0
+map_offset_y = 0
 
 def initialize_display(gameName):
     global screen
@@ -36,6 +40,46 @@ def initialize_display(gameName):
     win = pygame.Surface((WINWIDTH,WINHEIGHT))
     clock = pygame.time.Clock()
 
+def update_camera_pos(player_x,player_y):
+    global map_offset_x
+    global map_offset_y
+    global player_sprite
+
+    p_x = player_x
+    p_y = player_y
+
+    #maximum offsets for the map
+    max_map_x = WINWIDTH - map_size_x
+    max_map_y = WINHEIGHT - map_size_y
+
+    # shift map under player at center screen
+    map_offset_x = int(WINWIDTH/2 - p_x)
+    map_offset_y = int(WINHEIGHT/2 - p_y)
+
+    player_offset_x = 0
+    player_offset_y = 0
+
+    # if the map needs to move to the right - move player left (-)
+    if map_offset_x > 0:
+        player_offset_x = -1 * map_offset_x
+        map_offset_x = 0
+    # if the map has gone as far as it can - move the player right (+)
+    elif map_offset_x < max_map_x:
+        player_offset_x = -1*(map_offset_x - max_map_x)
+        map_offset_x = max_map_x
+
+    # if the map needs to move down - move player up (-)
+    if map_offset_y > 0:
+        player_offset_y = -1 * map_offset_y
+        map_offset_y = 0
+    # if the map has gone as far up as it can - move the player down (+)
+    elif map_offset_y < max_map_y:
+        player_offset_y = -1*(map_offset_y - max_map_y)
+        map_offset_y = max_map_y
+    if player_sprite:
+        player_sprite.rect.topleft = (win.get_rect().centerx+player_offset_x, win.get_rect().centery+player_offset_y)
+
+
 def update_gui():
     global timer_active
     global timer_end_time
@@ -44,8 +88,10 @@ def update_gui():
         if pygame.time.get_ticks() >= timer_end_time:
             timer_active = False
             timer_end_time = 0
-    win.blit(background,(0,0))
+    win.blit(background,(map_offset_x,map_offset_y))
     the_sprites.draw(win)
+    if player_sprite:
+        win.blit(player_sprite.image,player_sprite.rect.topleft)
     scaled_win = pygame.transform.scale(win,screen.get_size())
     screen.blit(scaled_win, (0, 0))
     pygame.display.flip()
@@ -54,9 +100,14 @@ def update_gui():
 def add_thing(thing):
     the_sprites.add(thing.sprite)
 
+def add_player(thing):
+    global player_sprite
+
+    player_sprite = thing.sprite
+    player_sprite.camera_focus = True
+
 
 def process_user_input():
-
     for event in pygame.event.get():
         if event.type == QUIT:
             sys.exit()
@@ -80,9 +131,13 @@ def process_user_input():
     if keys[B_DOWN]:
         button_behaviors['down'][0](button_behaviors['down'][1])
 
-def load_new_scene(background_path):
+def load_new_scene(background_path,map_size):
     global background
+    global map_size_x
+    global map_size_y
 
+    map_size_x = map_size[0]
+    map_size_y = map_size[1]
     background = pygame.image.load(background_path)
 
 def show_modal():
