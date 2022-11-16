@@ -20,6 +20,9 @@ class World():
 
         self.move_base = 1
         self.current_scene_id = 0
+        self.message_topline = 0
+        self.message_textlist = []
+        self.waiting = False
 
     def load(self, path):
         world_data = {}
@@ -75,21 +78,43 @@ class World():
                 gui.add_thing(t)
         self.set_map_nav_button_behaviors()
 
-    def display_message(self, text_list):
+    def message_display(self, text_list):
+        self.message_topline = 0
+        self.message_textlist = text_list
         (height,message) = messages.build_message(text_list)
         gui.message = message
         gui.message_height = height
+        self.waiting = True
         self.set_message_button_behaviors()
 
-    def dismiss_message(self,nada):
+    def message_dismiss(self,args):
         gui.message = None
+        self.message_topline = 0
+        self.message_textlist = []
+        self.waiting = False
         self.set_map_nav_button_behaviors()
+
+    def message_scroll(self,args):
+        if 'direction' in args:
+            if args['direction'] == 'up':
+                self.message_topline -= messages.max_lines
+                if self.message_topline < 0:
+                    self.message_topline = 0
+            elif args['direction'] == 'down':
+                self.message_topline += messages.max_lines
+                if self.message_topline > len(self.message_textlist):
+                    self.message_topline = len(self.message_textlist) - 1
+        (height,message) = messages.build_message(self.message_textlist,self.message_topline)
+        gui.message = message
+        gui.message_height = height
 
     def set_map_nav_button_behaviors(self):
         gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
         gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
         gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
         gui.button_behaviors['b'] = [self.test_method,{'text':'b'}]
+        gui.button_behaviors['e_up'] = [self.test_method,{'text':'up'}]
+        gui.button_behaviors['e_down'] = [self.test_method,{'text':'down'}]
         gui.button_behaviors['left'] = [self.move_player,{'axis':'x','value':-1,'direction':'left'}]
         gui.button_behaviors['right'] = [self.move_player,{'axis':'x','value':1,'direction':'right'}]
         gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
@@ -99,7 +124,9 @@ class World():
         gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
         gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
         gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
-        gui.button_behaviors['b'] = [self.dismiss_message,{}]
+        gui.button_behaviors['b'] = [self.message_dismiss,{}]
+        gui.button_behaviors['e_up'] = [self.message_scroll,{'direction':'up'}]
+        gui.button_behaviors['e_down'] = [self.message_scroll,{'direction':'down'}]
         gui.button_behaviors['left'] = [self.test_method,{'text':'left'}]
         gui.button_behaviors['right'] = [self.test_method,{'text':'right'}]
         gui.button_behaviors['up'] = [self.test_method,{'text':'up'}]
@@ -157,7 +184,7 @@ class World():
     #### Action Handler
 
     def run_actions(self):
-        if not gui.timer_active:
+        if not gui.timer_active and not self.waiting:
             if self.actions:
                 action = self.actions.pop(0)
                 getattr(self,'action_'+action['name'],self.action_default)(action)
@@ -201,7 +228,7 @@ class World():
         self.initialize_scene(action['scene_id'],player_pos)
 
     def action_message(self,action):
-        self.display_message(action['text_lines'])
+        self.message_display(action['text_lines'])
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])

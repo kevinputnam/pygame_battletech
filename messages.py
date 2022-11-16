@@ -1,4 +1,5 @@
 import pygame
+import gui
 
 
 line_height = 14
@@ -8,17 +9,29 @@ line_height = 14
 background_color = (0,0,0) # black
 border_color = (0,0,0) # black
 text_color = (255,255,255)# white
+max_lines = 6
 
 
 # line lengths should be approximately 40 characters
 # it will display no more than 6 lines of text
-def build_message(lines_of_text,dismiss_str='press B', scroll=False,scroll_percent=None):
-    max_lines = 6
+def build_message(lines_of_text, top_line=0, dismiss_str='press B'):
+    scroll = False
+    if len(lines_of_text) > max_lines:
+        scroll = True
     font = pygame.font.Font(None, 16)
 
     line_rects = []
     line_counter = 0
-    for line in lines_of_text:
+
+    if scroll:
+        ls = lines_of_text[top_line:top_line+max_lines]
+        while len(ls) < max_lines:
+            ls.append('')
+        line_counter = max_lines
+    else:
+        ls = lines_of_text
+
+    for line in ls:
         line_rect = font.render(line,1,text_color)
         line_counter += 1
         line_rects.append(line_rect)
@@ -48,6 +61,7 @@ def build_message(lines_of_text,dismiss_str='press B', scroll=False,scroll_perce
         line_counter += 1
 
     if scroll:
+        scroll_percent = top_line / (len(lines_of_text))
         arrow_rect = font.render("^",1,text_color)
         up_rect = arrow_rect
         up_pos = up_rect.get_rect()

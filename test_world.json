@@ -204,7 +204,16 @@
                         "The year is 3013. After a thousand years",
                         "of brutal warfare, humanity is struggling",
                         "to drag itself up from the ashes. You are",
-                        "Jamie Grear. This is your time."
+                        "Jamie Grear. This is your time.",
+                        "Your name will live in infamy!",
+                        "Slayer of Pirates!",
+                        "There will be blood."
+                    ]
+                },
+                {
+                    "name":"message",
+                    "text_lines": [
+                        "This is a single line message text."
                     ]
                 }
             ],

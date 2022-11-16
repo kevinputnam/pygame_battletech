@@ -124,6 +124,10 @@ def process_user_input():
                 button_behaviors['a'][0](button_behaviors['a'][1])
             if event.key == B_B:
                 button_behaviors['b'][0](button_behaviors['b'][1])
+            if event.key == B_UP:
+                button_behaviors['e_up'][0](button_behaviors['e_up'][1])
+            if event.key == B_DOWN:
+                button_behaviors['e_down'][0](button_behaviors['e_down'][1])
 
     keys = pygame.key.get_pressed()
     if keys[B_LEFT]:
