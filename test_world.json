@@ -239,7 +239,62 @@
                     "goesTo": null,
                     "actions": [],
                     "on_collision":{"name":"push","actions":[]}
-                }
+                },
+                {
+                    "location":[31,10],
+                    "dimensions":[8,8],
+                    "triggered":false,
+                    "trigger":true,
+                    "actions":[],
+                    "on_collision":{"name":"once","actions":[
+                     {
+                        "name":"message",
+                        "text_lines":[
+                            "How are you feeling today?"
+                        ]
+                     },
+                     {
+                        "name":"menu",
+                        "options":["Good.","Bad.","Had worse.","Better."],
+                        "variable":"menu_selection"
+                     },
+                     {
+                        "name":"case",
+                        "variable":"menu_selection",
+                        "cases":{
+                            "0": [
+                            {"name":"message",
+                             "text_lines": [
+                                "Glad to hear it!"
+                             ]
+                            }
+                            ],
+                            "1": [
+                            {"name":"message",
+                             "text_lines": [
+                                "Sorry to hear that. Try again later."
+                             ]
+                            }
+                            ],
+                            "2": [
+                            {"name":"message",
+                             "text_lines": [
+                                "You get what you put into life."
+                             ]
+                            }
+                            ],
+                            "3": [
+                            {"name":"message",
+                             "text_lines": [
+                                "I knew you could do it. I expect big",
+                                "things!"
+                             ]
+                            }
+                            ]
+                        }
+                     }
+                 ]}
+             }
             ]
         }
     ]

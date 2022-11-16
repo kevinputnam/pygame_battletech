@@ -10,6 +10,7 @@ class World():
 
     def __init__(self,world_path):
         data = self.load(world_path)
+        self.variables = {}
         for key in data:
             setattr(self,key,data[key])
         self.scenes = []
@@ -22,6 +23,9 @@ class World():
         self.current_scene_id = 0
         self.message_topline = 0
         self.message_textlist = []
+        self.menu_options = []
+        self.menu_cursor_index = 0
+        self.menu_option_num = 0
         self.waiting = False
 
     def load(self, path):
@@ -78,12 +82,22 @@ class World():
                 gui.add_thing(t)
         self.set_map_nav_button_behaviors()
 
+    def set_map_nav_button_behaviors(self):
+        gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
+        gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
+        gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
+        gui.button_behaviors['b'] = [self.test_method,{'text':'b'}]
+        gui.button_behaviors['e_up'] = [self.test_method,{'text':'up'}]
+        gui.button_behaviors['e_down'] = [self.test_method,{'text':'down'}]
+        gui.button_behaviors['left'] = [self.move_player,{'axis':'x','value':-1,'direction':'left'}]
+        gui.button_behaviors['right'] = [self.move_player,{'axis':'x','value':1,'direction':'right'}]
+        gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
+        gui.button_behaviors['down'] = [self.move_player,{'axis':'y','value':1,'direction':'down'}]
+
     def message_display(self, text_list):
         self.message_topline = 0
         self.message_textlist = text_list
-        (height,message) = messages.build_message(text_list)
-        gui.message = message
-        gui.message_height = height
+        messages.build_message(text_list)
         self.waiting = True
         self.set_message_button_behaviors()
 
@@ -104,21 +118,7 @@ class World():
                 self.message_topline += messages.max_lines
                 if self.message_topline > len(self.message_textlist):
                     self.message_topline = len(self.message_textlist) - 1
-        (height,message) = messages.build_message(self.message_textlist,self.message_topline)
-        gui.message = message
-        gui.message_height = height
-
-    def set_map_nav_button_behaviors(self):
-        gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
-        gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
-        gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
-        gui.button_behaviors['b'] = [self.test_method,{'text':'b'}]
-        gui.button_behaviors['e_up'] = [self.test_method,{'text':'up'}]
-        gui.button_behaviors['e_down'] = [self.test_method,{'text':'down'}]
-        gui.button_behaviors['left'] = [self.move_player,{'axis':'x','value':-1,'direction':'left'}]
-        gui.button_behaviors['right'] = [self.move_player,{'axis':'x','value':1,'direction':'right'}]
-        gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
-        gui.button_behaviors['down'] = [self.move_player,{'axis':'y','value':1,'direction':'down'}]
+        messages.build_message(self.message_textlist,self.message_topline)
 
     def set_message_button_behaviors(self):
         gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
@@ -131,6 +131,36 @@ class World():
         gui.button_behaviors['right'] = [self.test_method,{'text':'right'}]
         gui.button_behaviors['up'] = [self.test_method,{'text':'up'}]
         gui.button_behaviors['down'] = [self.test_method,{'text':'down'}]
+
+    def menu_display(self,options,variable):
+        self.waiting = True
+        self.menu_option_num = len(options)
+        self.menu_options = options
+        messages.build_menu(options,0)
+        self.set_menu_button_behaviors(variable)
+
+    def menu_select(self,args):
+        self.variables[args['variable']] = self.menu_cursor_index
+        print(self.menu_cursor_index)
+        self.message_dismiss(args)
+
+    def menu_nav(self,args):
+        if 'direction' in args:
+            if args['direction'] == 'up':
+                self.menu_cursor_index -= 1
+                if self.menu_cursor_index < 0:
+                    self.menu_cursor_index = self.menu_option_num - 1
+            elif args['direction'] == 'down':
+                self.menu_cursor_index += 1
+                if self.menu_cursor_index >= self.menu_option_num:
+                    self.menu_cursor_index = 0
+        messages.build_menu(self.menu_options,self.menu_cursor_index)
+
+    def set_menu_button_behaviors(self,variable):
+        self.set_message_button_behaviors()
+        gui.button_behaviors['e_up'] = [self.menu_nav,{'direction':'up'}]
+        gui.button_behaviors['e_down'] = [self.menu_nav,{'direction':'down'}]
+        gui.button_behaviors['a'] = [self.menu_select,{'variable':variable}]
 
     def player_off_map(self):
         if self.player:
@@ -168,10 +198,15 @@ class World():
             player_rect[3] += self.player.dy
             for t in self.things:
                 if self.collision(player_rect,t.get_rect()):
+                    if t.trigger and t.triggered:
+                        return
                     if t.on_collision:
                         for action in t.on_collision['actions']:
                             self.actions.append(action)
                         getattr(self,'collision_'+t.on_collision['name'],self.collision_default)(self.player,t,None)
+                else:
+                    if t.trigger:
+                        t.triggered = False
 
     def collision(self,rect1,rect2):
         dx = min(rect1[2], rect2[2]) - max(rect1[0], rect2[0])
@@ -213,6 +248,9 @@ class World():
         actor.dx = 0
         actor.dy = 0
 
+    def collision_once(self,actor,receiver,arg_list):
+        receiver.triggered = True
+
     def collision_default(self,actor,receiver,arg_list):
         print("Invalid collision: " + receiver.on_collision['name'])
 
@@ -229,6 +267,9 @@ class World():
 
     def action_message(self,action):
         self.message_display(action['text_lines'])
+
+    def action_menu(self,action):
+        self.menu_display(action['options'],action['variable'])
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])

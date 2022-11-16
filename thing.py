@@ -12,6 +12,8 @@ class Thing():
         self.goesTo = None
         self.actions = []
         self.on_collision = None
+        self.trigger = False
+        self.triggered = False
         self.location = [0,0]
         self.dimensions = [0,0]
         self.dx = 0
