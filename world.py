@@ -10,6 +10,10 @@ class World():
 
     def __init__(self,world_path):
         data = self.load(world_path)
+
+        self.player = thing.Thing({},1)
+        self.player_in_scene = False
+
         self.variables = {}
         for key in data:
             setattr(self,key,data[key])
@@ -18,8 +22,6 @@ class World():
             self.scenes.append(scene.Scene(s))
         gui.initialize_display(self.gamename)
         self.initialize_scene(self.first_scene,self.start_player_pos)
-
-        self.player = None
 
         self.move_base = 1
         self.current_scene_id = 0
@@ -112,7 +114,7 @@ class World():
         print('oh, ho! ' + args['text'] + ' pressed!')
 
     def move_player(self,args):
-        if self.player:
+        if self.player_in_scene:
             if 'y' in args:
                 self.player.dy = args['y']
             elif 'x' in args:
@@ -123,13 +125,19 @@ class World():
         self.actions = []
         self.current_scene_id = scene_id
         gui.load_new_scene(self.scenes[scene_id].background,self.scenes[scene_id].map_size)
-        # reset action and thing lists
-        self.player = self.scenes[scene_id].player
-        if self.player:
-            grid_size = self.scenes[scene_id].grid_size
-            self.player.location = [player_pos[0]*grid_size,player_pos[1]*grid_size]
+        # reset player
+        self.player_in_scene = False
+        player_info = self.scenes[scene_id].player_info
+        if player_info:
+            self.player_in_scene = True
+            self.player.grid_size = self.scenes[scene_id].grid_size
+            self.player.description = player_info['description']
+            self.player.dimensions = player_info['dimensions']
+            self.player.move([player_pos[0],player_pos[1]],'none')
+            self.player.update_sprite(player_info['sprite_sheet_path'],player_info['sprite_size'],player_info['directions'])
             if self.player.sprite:
                 gui.add_player(self.player)
+        # reset action and thing lists
         for action in self.scenes[scene_id].actions:
             self.actions.append(action)
         for t in self.scenes[scene_id].things:
@@ -220,14 +228,14 @@ class World():
         gui.button_behaviors['a'] = [self.menu_select,{'variable':variable}]
 
     def player_off_map(self):
-        if self.player:
+        if self.player_in_scene:
             if self.player.location[0] + self.player.dx > self.scenes[self.current_scene_id].map_size[0] - self.player.dimensions[0] or self.player.location[0] + self.player.dx  < 0:
                 self.player.dx = 0
             elif self.player.location[1] + self.player.dy > self.scenes[self.current_scene_id].map_size[1] - self.player.dimensions[1] or self.player.location[1] + self.player.dy < 0:
                 self.player.dy = 0
 
     def process_movement(self):
-        if self.player:
+        if self.player_in_scene:
             self.player.location = [self.player.location[0] + self.player.dx,self.player.location[1]+self.player.dy]
             self.player.dx = 0
             self.player.dy = 0
@@ -247,7 +255,7 @@ class World():
     #### Collision Handler
     def process_player_collisions(self):
         # is it going to collide?
-        if self.player:
+        if self.player_in_scene:
             player_rect = self.player.get_rect()
             player_rect[0] += self.player.dx
             player_rect[1] += self.player.dy

@@ -27,14 +27,11 @@ class Thing():
         for key in attr_dict:
             setattr(self,key,attr_dict[key])
 
-
         self.location[0] = self.location[0]*grid_size
         self.location[1] = self.location[1]*grid_size
-        pos_x = self.location[0]
-        pos_y = self.location[1]
 
         if 'sprite_sheet_path' in attr_dict:
-            self.sprite = actor.Actor(pos_x,pos_y,self.sprite_sheet_path,self.sprite_size,self.directions)
+                self.update_sprite(self.sprite_sheet_path,self.sprite_size,self.directions)
 
     def get_rect(self):
         return self.location + [self.location[0]+self.dimensions[0],self.location[1]+self.dimensions[1]]
@@ -43,3 +40,9 @@ class Thing():
         self.location[0] = location[0]*self.grid_size
         self.location[1] = location[1]*self.grid_size
         self.direction = direction
+
+    def update_sprite(self,path,size,directions):
+        self.sprite_sheet_path = path
+        self.sprite_size = size
+        self.directions = directions
+        self.sprite = actor.Actor(self.location[0],self.location[1],self.sprite_sheet_path,self.sprite_size,self.directions)

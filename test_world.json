@@ -5,7 +5,7 @@
     "win_width":360,
     "win_height":240,
     "variables" : {
-        "splash_wait_time":3000,
+        "splash_wait_time":500,
         "counter":0,
         "scene_3_visited":false
     },
@@ -97,7 +97,7 @@
                     ]
                 }
             ],
-            "player":{
+            "player_info":{
                 "description":"Jamie Grear",
                 "sprite_sheet_path":"assets/sprites/jamie_grear_sprite.png",
                 "sprite_size": 16,

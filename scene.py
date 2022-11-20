@@ -10,16 +10,13 @@ class Scene:
         self.npcs = [] # list of npc sprites
         self.scene_type = None # tells the main loop how to handle movement of the player and other stuff
         self.actions = [] # sequential list of actions to perform when scene started
-        self.player = None
+        self.player_info = None
         self.things = []
         self.map_size = [0,0]
 
         for key in scene_data:
             if key != 'things':
                 setattr(self,key,scene_data[key])
-
-        if self.player:
-            self.player = thing.Thing(self.player,self.grid_size)
 
         if 'map_size' in scene_data:
             num_cols = int(scene_data['map_size'][0]/self.grid_size)
