@@ -19,6 +19,8 @@ class World():
         gui.initialize_display(self.gamename)
         self.initialize_scene(self.first_scene,self.start_player_pos)
 
+        self.player = None
+
         self.move_base = 1
         self.current_scene_id = 0
         self.message_topline = 0
@@ -44,7 +46,7 @@ class World():
         return new_val
 
     def get_thing(id):
-        for t in self.things:
+        for t in self.scenes[self.current_scene_id].things:
             if t['id'] == id:
                 return t
         return None
@@ -90,7 +92,7 @@ class World():
             item.location = self.player.location
             item.trigger = True
             item.triggered = True
-            self.things.append(item)
+            self.scenes[self.current_scene_id].things.append(item)
             self.player.inventory.remove(item)
             if item.sprite:
                 gui.add_thing(item)
@@ -110,15 +112,15 @@ class World():
         print('oh, ho! ' + args['text'] + ' pressed!')
 
     def move_player(self,args):
-        if 'y' in args:
-            self.player.dy = args['y']
-        elif 'x' in args:
-            self.player.dx = args['x']
-        self.player.direction = args['direction']
+        if self.player:
+            if 'y' in args:
+                self.player.dy = args['y']
+            elif 'x' in args:
+                self.player.dx = args['x']
+            self.player.direction = args['direction']
 
     def initialize_scene(self,scene_id,player_pos):
         self.actions = []
-        self.things = []
         self.current_scene_id = scene_id
         gui.load_new_scene(self.scenes[scene_id].background,self.scenes[scene_id].map_size)
         # reset action and thing lists
@@ -128,12 +130,9 @@ class World():
             self.player.location = [player_pos[0]*grid_size,player_pos[1]*grid_size]
             if self.player.sprite:
                 gui.add_player(self.player)
-        self.things = []
-        self.actions = []
         for action in self.scenes[scene_id].actions:
             self.actions.append(action)
         for t in self.scenes[scene_id].things:
-            self.things.append(t)
             if t.sprite:
                 gui.add_thing(t)
         self.set_map_nav_button_behaviors()
@@ -238,7 +237,7 @@ class World():
 
             gui.update_camera_pos(self.player.location[0],self.player.location[1])
 
-        for t in self.things:
+        for t in self.scenes[self.current_scene_id].things:
             t.location = [t.location[0]+t.dx,t.location[1]+t.dy]
             t.dx = 0
             t.dy = 0
@@ -254,7 +253,7 @@ class World():
             player_rect[1] += self.player.dy
             player_rect[2] += self.player.dx
             player_rect[3] += self.player.dy
-            for t in self.things:
+            for t in self.scenes[self.current_scene_id].things:
                 if self.collision(player_rect,t.get_rect()):
                     if t.trigger and t.triggered:
                         return
@@ -292,7 +291,7 @@ class World():
         receiver_rect[2] += actor.dx
         receiver_rect[3] += actor.dy
 
-        for t in self.things:
+        for t in self.scenes[self.current_scene_id].things:
             if self.collision(receiver_rect,t.get_rect()):
                 if t.on_collision:
                     if t.on_collision['type'] == 'block':
@@ -311,7 +310,7 @@ class World():
 
     def collision_pick_up(self,actor,receiver,arg_list):
         actor.inventory.append(receiver)
-        self.things.remove(receiver)
+        self.scenes[self.current_scene_id].things.remove(receiver)
         gui.remove_thing(receiver)
         lines = ["You pick up:"]
         lines.append(receiver.name)

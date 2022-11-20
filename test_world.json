@@ -22,7 +22,7 @@
                 },
                 {
                     "name":"change_scene",
-                    "scene_id":1
+                    "scene_id":2
                 }
             ]
         },
@@ -37,7 +37,8 @@
                 },
                 {
                     "name":"change_scene",
-                    "scene_id":2
+                    "scene_id":3,
+                    "player_pos": [53,28]
                 }
             ]
         },
@@ -188,6 +189,19 @@
                         "id":0,
                         "location":[1,7],
                         "direction":"down"
+                     }
+                 ]}
+             },
+             {"name":"splash screen",
+                "id":8,
+                "location":[55,28],
+                "dimensions":[8,8],
+              "triggered":false,
+              "trigger":true,
+                 "on_collision":{"type":"once","actions":[
+                     {
+                    "name":"change_scene",
+                    "scene_id":1
                      }
                  ]}
              },

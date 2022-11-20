@@ -145,11 +145,17 @@ def load_new_scene(background_path,map_size):
     global background
     global map_size_x
     global map_size_y
+    global map_offset_x
+    global map_offset_y
+    global player_sprite
 
+    map_offset_x = 0
+    map_offset_y = 0
     map_size_x = map_size[0]
     map_size_y = map_size[1]
     background = pygame.image.load(background_path)
     the_sprites.empty()
+    player_sprite = None
 
 def show_modal():
     pass
