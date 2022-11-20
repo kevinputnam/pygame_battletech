@@ -20,6 +20,7 @@ class Thing():
         self.dy = 0
         self.direction = 'none'
         self.sprite = None
+        self.grid_size = grid_size
 
         for key in attr_dict:
             setattr(self,key,attr_dict[key])
@@ -35,3 +36,8 @@ class Thing():
 
     def get_rect(self):
         return self.location + [self.location[0]+self.dimensions[0],self.location[1]+self.dimensions[1]]
+
+    def move(self,location,direction):
+        self.location[0] = location[0]*self.grid_size
+        self.location[1] = location[1]*self.grid_size
+        self.direction = direction

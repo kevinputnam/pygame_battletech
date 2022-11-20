@@ -36,8 +36,9 @@ class Actor(pygame.sprite.Sprite):
 
             self.image = self.sprites[self.current_dir_index]
 
-            # move with the map
-            if not self.camera_focus:
-                pos_x = self.rect.topleft[0]
-                pos_y = self.rect.topleft[1]
-                self.rect.topleft = (pos_x+gui.map_offset_x,pos_y+gui.map_offset_y)
+        # move with the map
+        if not self.camera_focus:
+            pos_x = self.rect.topleft[0]
+            pos_y = self.rect.topleft[1]
+            self.rect.topleft = (pos_x+gui.map_offset_x,pos_y+gui.map_offset_y)
+

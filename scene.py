@@ -28,7 +28,7 @@ class Scene:
             if 'collisions' in scene_data:
                 for c in scene_data['collisions']:
                     if c == 1:
-                        self.things.append(thing.Thing({'location':[cur_col,cur_row],'dimensions':[8,8],"on_collision":{"name":"block","actions":[]}},self.grid_size))
+                        self.things.append(thing.Thing({'location':[cur_col,cur_row],'dimensions':[8,8],"on_collision":{"type":"block","actions":[]}},self.grid_size))
                     cur_col += 1
                     if cur_col >= num_cols:
                         cur_col = 0
@@ -38,11 +38,11 @@ class Scene:
             top_n_bottom = (-1,num_rows)
             for i in top_n_bottom:
                 for j in range(-1,num_cols+1):
-                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"name":"block","actions":[]}},self.grid_size))
+                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
             sides = (-1,num_cols)
             for i in range(0,num_rows):
                 for j in sides:
-                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"name":"block","actions":[]}},self.grid_size))
+                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
 
         if 'things' in scene_data:
             for t in scene_data['things']:

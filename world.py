@@ -41,6 +41,12 @@ class World():
             new_val = new_val.replace('`$'+var+'`',str(self.variables[var]))
         return new_val
 
+    def get_thing(id):
+        for t in self.things:
+            if t['id'] == id:
+                return t
+        return None
+
     # main game loop
     def start(self):
         while 1:
@@ -137,6 +143,8 @@ class World():
         self.menu_option_num = len(options)
         self.menu_options = options
         messages.build_menu(options,0)
+        #preset to avoid the saved value from pervious interaction being used if menu is dismissed.
+        self.variables[variable] = None
         self.set_menu_button_behaviors(variable)
 
     def menu_select(self,args):
@@ -203,7 +211,7 @@ class World():
                     if t.on_collision:
                         for action in t.on_collision['actions']:
                             self.actions.append(action)
-                        getattr(self,'collision_'+t.on_collision['name'],self.collision_default)(self.player,t,None)
+                        getattr(self,'collision_'+t.on_collision['type'],self.collision_default)(self.player,t,None)
                 else:
                     if t.trigger:
                         t.triggered = False
@@ -237,7 +245,7 @@ class World():
         for t in self.things:
             if self.collision(receiver_rect,t.get_rect()):
                 if t.on_collision:
-                    if t.on_collision['name'] == 'block':
+                    if t.on_collision['type'] == 'block':
                         actor.dx = 0
                         actor.dy = 0
                         return
@@ -252,7 +260,7 @@ class World():
         receiver.triggered = True
 
     def collision_default(self,actor,receiver,arg_list):
-        print("Invalid collision: " + receiver.on_collision['name'])
+        print("Invalid collision: " + receiver.on_collision['type'])
 
     #### Actions
 
@@ -270,6 +278,43 @@ class World():
 
     def action_menu(self,action):
         self.menu_display(action['options'],action['variable'])
+
+    def action_case(self,action):
+        actions = []
+        if action['variable'] in self.variables:
+            case = str(self.variables[action['variable']])
+            if case in action['cases']:
+                for action in action['cases'][case]:
+                    actions.append(action)
+            self.actions = actions + self.actions
+
+    def action_set_var(self,action):
+        self.variables[action['variable']] = action['value']
+
+    def action_eval(self,action):
+        self.variables[action['variable']] = eval(self.get_param(action['statement']))
+
+    def action_move(self,action):
+        if 'id' in action:
+            if action['id'] == 0:
+                self.dx=0
+                self.dy=0
+                self.player.move(action['location'],action['direction'])
+            else:
+                t = get_thing(action['id'])
+                if t:
+                    t.move(action['location'],action['direction'])
+
+    def action_if(self,action):
+        actions = []
+        if eval(self.get_param(action['eval'])):
+            for a in action['actions']:
+                actions.append(a) # this should be placing these at the front of the list
+        else:
+            if 'else' in action:
+                for a in action['else']:
+                    actions.append(a) # this should be placing thse at the front of the list
+        self.actions = actions + self.actions
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])
