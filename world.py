@@ -28,6 +28,8 @@ class World():
         self.menu_option_num = 0
         self.waiting = False
 
+        self.command_menu_options = ['show inventory']
+
     def load(self, path):
         world_data = {}
         if isfile(path):
@@ -47,6 +49,54 @@ class World():
                 return t
         return None
 
+    def action_command_menu_display(self,args):
+        self.waiting = True
+        self.menu_option_num = len(self.command_menu_options)
+        self.menu_options = self.command_menu_options
+        messages.build_menu(self.command_menu_options,0)
+        self.variables['command_menu_selection'] = None
+        self.set_menu_button_behaviors('command_menu_selection')
+        next_action = [{"name":"handle_command_menu_selection"}]
+        self.actions = next_action + self.actions
+
+    def action_handle_command_menu_selection(self,args):
+        selection = self.variables['command_menu_selection']
+        if selection == 0:
+            self.player_inventory_display()
+            print("yahoo!")
+
+    def player_inventory_display(self):
+        self.waiting = True
+        self.menu_option_num = len(self.player.inventory)
+        self.menu_options = []
+        for item in self.player.inventory:
+            option = item.name + " : " + item.description
+            self.menu_options.append(option)
+        if self.menu_option_num > 0:
+            messages.build_menu(self.menu_options,0)
+            self.variables['inventory_selection'] = None
+            self.set_menu_button_behaviors('inventory_selection')
+            next_action = [{"name":"handle_player_inventory_selection"}]
+        else:
+            messages.build_message(["Inventory Empty"])
+            self.set_message_button_behaviors()
+            next_action = [{"name":"command_menu_display"}]
+        self.actions = next_action + self.actions
+
+    def action_handle_player_inventory_selection(self,args):
+        selection = self.variables["inventory_selection"]
+        if selection is not None:
+            item = self.player.inventory[selection]
+            item.location = self.player.location
+            item.trigger = True
+            item.triggered = True
+            self.things.append(item)
+            self.player.inventory.remove(item)
+            if item.sprite:
+                gui.add_thing(item)
+        next_action = [{"name":"command_menu_display"}]
+        self.actions = next_action + self.actions
+
     # main game loop
     def start(self):
         while 1:
@@ -60,10 +110,10 @@ class World():
         print('oh, ho! ' + args['text'] + ' pressed!')
 
     def move_player(self,args):
-        if args['axis'] == 'y':
-            self.player.dy = args['value']
-        elif args['axis'] == 'x':
-            self.player.dx = args['value']
+        if 'y' in args:
+            self.player.dy = args['y']
+        elif 'x' in args:
+            self.player.dx = args['x']
         self.player.direction = args['direction']
 
     def initialize_scene(self,scene_id,player_pos):
@@ -91,14 +141,14 @@ class World():
     def set_map_nav_button_behaviors(self):
         gui.button_behaviors['start'] = [self.test_method,{'text':'start'}]
         gui.button_behaviors['select'] = [self.test_method,{'text':'select'}]
-        gui.button_behaviors['a'] = [self.test_method,{'text':'a'}]
+        gui.button_behaviors['a'] = [self.action_command_menu_display,{'text':'a'}]
         gui.button_behaviors['b'] = [self.test_method,{'text':'b'}]
         gui.button_behaviors['e_up'] = [self.test_method,{'text':'up'}]
         gui.button_behaviors['e_down'] = [self.test_method,{'text':'down'}]
-        gui.button_behaviors['left'] = [self.move_player,{'axis':'x','value':-1,'direction':'left'}]
-        gui.button_behaviors['right'] = [self.move_player,{'axis':'x','value':1,'direction':'right'}]
-        gui.button_behaviors['up'] = [self.move_player,{'axis':'y','value':-1,'direction':'up'}]
-        gui.button_behaviors['down'] = [self.move_player,{'axis':'y','value':1,'direction':'down'}]
+        gui.button_behaviors['left'] = [self.move_player,{'x':-1,'direction':'left'}]
+        gui.button_behaviors['right'] = [self.move_player,{'x':1,'direction':'right'}]
+        gui.button_behaviors['up'] = [self.move_player,{'y':-1,'direction':'up'}]
+        gui.button_behaviors['down'] = [self.move_player,{'y':1,'direction':'down'}]
 
     def message_display(self, text_list):
         self.message_topline = 0
@@ -258,6 +308,14 @@ class World():
 
     def collision_once(self,actor,receiver,arg_list):
         receiver.triggered = True
+
+    def collision_pick_up(self,actor,receiver,arg_list):
+        actor.inventory.append(receiver)
+        self.things.remove(receiver)
+        gui.remove_thing(receiver)
+        lines = ["You pick up:"]
+        lines.append(receiver.name)
+        self.message_display(lines)
 
     def collision_default(self,actor,receiver,arg_list):
         print("Invalid collision: " + receiver.on_collision['type'])

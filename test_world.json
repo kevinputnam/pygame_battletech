@@ -93,18 +93,15 @@
             },
             "things":[
                 {
-                    "name":"key card",
+                    "name":"rock",
                     "id":1,
-                    "sprite_sheet_path":"assets/sprites/access_card.png",
+                    "sprite_sheet_path":"assets/sprites/rock.png",
                     "sprite_size":16,
                     "directions":{"none":[0,0]},
                     "location":[30,10],
                     "dimensions":[16,16],
                     "hidden": false,
-                    "description": "It appears to be a keycard of some kind.",
-                    "canTake": true,
-                    "locks": false,
-                    "goesTo": null,
+                    "description": "It's a rock. Try pushing it.",
                     "actions": [],
                     "on_collision":{"type":"push","actions":[]}
                 },
@@ -258,6 +255,18 @@
                         ]
                      }
                  ]}
+             },{
+                    "name":"key card",
+                    "id":7,
+                    "sprite_sheet_path":"assets/sprites/access_card.png",
+                    "sprite_size":16,
+                    "directions":{"none":[0,0]},
+                    "location":[53,47],
+                    "dimensions":[16,16],
+                    "hidden": false,
+                    "description": "It looks like a key card.",
+                    "actions": [],
+                    "on_collision":{"type":"pick_up","actions":[]}
              }
             ]
         }

@@ -19,7 +19,7 @@ def build_menu(options,cursor_index):
     font = pygame.font.Font(None, 16)
     cursor_rect = font.render('>',1,text_color)
 
-    build_message(option_lines,'A - select / B - cancel')
+    build_message(option_lines,dismiss_str='A - select / B - cancel')
 
     cursor_pos = cursor_rect.get_rect()
     cursor_pos.topleft = (8,8+line_height*cursor_index)

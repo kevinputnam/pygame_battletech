@@ -104,12 +104,14 @@ def update_gui():
 def add_thing(thing):
     the_sprites.add(thing.sprite)
 
+def remove_thing(thing):
+    the_sprites.remove(thing.sprite)
+
 def add_player(thing):
     global player_sprite
 
     player_sprite = thing.sprite
     player_sprite.camera_focus = True
-
 
 def process_user_input():
     for event in pygame.event.get():

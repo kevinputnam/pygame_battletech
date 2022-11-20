@@ -5,6 +5,7 @@ class Thing():
 
     def __init__(self, attr_dict,grid_size):
 
+        self.name = 'name'
         self.hidden = False
         self.description = "It's something all right."
         self.canTake = False
@@ -21,6 +22,7 @@ class Thing():
         self.direction = 'none'
         self.sprite = None
         self.grid_size = grid_size
+        self.inventory = []
 
         for key in attr_dict:
             setattr(self,key,attr_dict[key])
