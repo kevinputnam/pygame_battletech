@@ -9,6 +9,7 @@
         "counter":0,
         "scene_3_visited":false
     },
+    "player":{"mech_data":[{"type":"WSP-1A","name":"My WASP"}]},
     "first_scene":0,
     "start_player_pos":[0,0],
     "scenes" : [
@@ -293,8 +294,83 @@
                     "description": "It looks like a key card.",
                     "actions": [],
                     "on_collision":{"type":"pick_up","actions":[]}
+             },{
+                    "name":"test combat",
+                    "id":9,
+                    "sprite_sheet_path":"assets/sprites/atlas_logo.png",
+                    "sprite_size":16,
+                    "directions":{"none":[0,0]},
+                    "location":[1,2],
+                    "dimensions":[16,16],
+                    "hidden": false,
+                    "trigger": true,
+                    "triggered":false,
+                    "description": "Is that an enemy mech?",
+                    "actions": [],
+                    "on_collision":{"type":"once","actions":[
+                        {
+                            "name":"change_scene",
+                            "scene_id":4
+                        }
+                    ]}
              }
             ]
+        },
+        {
+            "id":4,
+            "name":"Combat Scene",
+            "background" : "assets/backgrounds/combat.png",
+            "actions":[
+                {
+                    "name":"start_timer",
+                    "milliseconds": "`$splash_wait_time`"
+                },
+                {
+                    "name":"change_scene",
+                    "scene_id":3,
+                    "player_pos": [1,3]
+                }
+            ]
         }
-    ]
+    ],
+    "mech_data":{"WSP-1A":{
+         "type":"WSP-1A",
+         "name":"WASP",
+         "movement":3,
+         "jump_jets":true,
+         "heat_sinks":2,
+         "armor":{
+            "head":[1,1],
+            "torso":[2,2],
+            "r_arm":[1,1],
+            "l_arm":[1,1],
+            "r_leg":[2,1],
+            "l_leg":[2,1]
+         },
+         "equipment":[
+            {"name":"melee",
+             "damage":2,
+             "type":"",
+             "heat":0,
+             "loc":"none",
+             "range":[0,null,null,null]},
+            {"name":"medium laser",
+             "damage":2,
+             "type":"E",
+             "heat":1,
+             "loc":"r_arm",
+             "range":[0,0,-2,null]},
+             {"name":"SRM 2",
+             "damage":2,
+             "extra_dmg":2,
+             "type":"M",
+             "heat":0,
+             "loc":"l_leg",
+             "range":[0,0,-2,null]}
+         ],
+         "sprite_sheet_path":"assets/sprites/mech_wasp.png",
+         "sprite_size":128,
+         "directions":"none"
+     }
+    }
 }

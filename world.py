@@ -4,19 +4,24 @@ import thing
 import re
 import gui
 import messages
+import mechs
+import combat
+from copy import deepcopy
 from os.path import isfile
 
 class World():
 
     def __init__(self,world_path):
         data = self.load(world_path)
-
-        self.player = thing.Thing({},1)
-        self.player_in_scene = False
-
+        self.mech_data = {}
         self.variables = {}
         for key in data:
             setattr(self,key,data[key])
+
+        self.player = thing.Thing({},1)
+        self.player_in_scene = False
+        self.player.mechs = self.get_mechs(data['player']['mech_data'])
+
         self.scenes = []
         for s in data['scenes']:
             self.scenes.append(scene.Scene(s))
@@ -47,16 +52,26 @@ class World():
             new_val = new_val.replace('`$'+var+'`',str(self.variables[var]))
         return new_val
 
-    def get_thing(id):
+    def get_thing(self,id):
         for t in self.scenes[self.current_scene_id].things:
             if t['id'] == id:
                 return t
         return None
 
+    def get_mechs(self,mech_data):
+        ms = []
+        for mech_attrs in mech_data:
+            m = mechs.Mech(self.mech_data[mech_attrs['type']])
+            m.update(mech_attrs)
+            ms.append(m)
+        return ms
+
+
     def action_command_menu_display(self,args):
         self.waiting = True
         self.menu_option_num = len(self.command_menu_options)
         self.menu_options = self.command_menu_options
+        self.menu_cursor_index = 0
         messages.build_menu(self.command_menu_options,0)
         self.variables['command_menu_selection'] = None
         self.set_menu_button_behaviors('command_menu_selection')
@@ -67,7 +82,6 @@ class World():
         selection = self.variables['command_menu_selection']
         if selection == 0:
             self.player_inventory_display()
-            print("yahoo!")
 
     def player_inventory_display(self):
         self.waiting = True
@@ -77,6 +91,7 @@ class World():
             option = item.name + " : " + item.description
             self.menu_options.append(option)
         if self.menu_option_num > 0:
+            self.menu_cursor_index = 0
             messages.build_menu(self.menu_options,0)
             self.variables['inventory_selection'] = None
             self.set_menu_button_behaviors('inventory_selection')
@@ -199,6 +214,7 @@ class World():
         self.waiting = True
         self.menu_option_num = len(options)
         self.menu_options = options
+        self.menu_cursor_index = 0
         messages.build_menu(options,0)
         #preset to avoid the saved value from pervious interaction being used if menu is dismissed.
         self.variables[variable] = None
@@ -206,7 +222,6 @@ class World():
 
     def menu_select(self,args):
         self.variables[args['variable']] = self.menu_cursor_index
-        print(self.menu_cursor_index)
         self.message_dismiss(args)
 
     def menu_nav(self,args):
@@ -366,7 +381,7 @@ class World():
                 self.dy=0
                 self.player.move(action['location'],action['direction'])
             else:
-                t = get_thing(action['id'])
+                t = self.get_thing(action['id'])
                 if t:
                     t.move(action['location'],action['direction'])
 
@@ -374,11 +389,11 @@ class World():
         actions = []
         if eval(self.get_param(action['eval'])):
             for a in action['actions']:
-                actions.append(a) # this should be placing these at the front of the list
+                actions.append(a)
         else:
             if 'else' in action:
                 for a in action['else']:
-                    actions.append(a) # this should be placing thse at the front of the list
+                    actions.append(a)
         self.actions = actions + self.actions
 
     def action_default(self,action):

@@ -54,15 +54,15 @@ def build_message(lines_of_text, top_line=0, dismiss_str='press B'):
 
     # add an extra line for dismiss value
     message_box_height = (line_counter+1) * line_height + 6
-    message_box = pygame.Surface((224,message_box_height))
+    message_box = pygame.Surface((gui.WINWIDTH-16,message_box_height))
     message_box.fill(background_color)
 
-    message_container = pygame.Surface((232,message_box_height + 8))
+    message_container = pygame.Surface((gui.WINWIDTH-8,message_box_height +8))
     message_container.fill(border_color)
 
     dismiss_text = font.render(dismiss_str,1,text_color)
     dismiss_pos = dismiss_text.get_rect()
-    dismiss_pos.bottomright = (220,message_box_height - 4)
+    dismiss_pos.bottomright = (gui.WINWIDTH-20,message_box_height - 4)
 
     line_counter = 0
     for line_rect in line_rects:

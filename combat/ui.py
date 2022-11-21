@@ -1,6 +1,5 @@
 import sys
 import pygame
-import mechs
 from pygame.locals import *
 
 SCALING = 2
@@ -32,7 +31,7 @@ map_offset_y = 0
 message = None
 message_height = 0
 
-def initialize_display(gameName):
+def initialize_screen(gameName):
     global screen
     global win
     global clock
@@ -83,7 +82,7 @@ def update_camera_pos(player_x,player_y):
         player_sprite.rect.topleft = (win.get_rect().centerx+player_offset_x, win.get_rect().centery+player_offset_y)
 
 
-def update_gui():
+def update_screen():
     global timer_active
     global timer_end_time
 
@@ -102,10 +101,10 @@ def update_gui():
     pygame.display.flip()
     clock.tick(60)
 
-def add_thing(thing):
+def add_sprite(thing):
     the_sprites.add(thing.sprite)
 
-def remove_thing(thing):
+def remove_sprite(thing):
     the_sprites.remove(thing.sprite)
 
 def add_player(thing):
@@ -115,34 +114,42 @@ def add_player(thing):
     player_sprite.camera_focus = True
 
 def process_user_input():
+    button_pushes = []
     for event in pygame.event.get():
         if event.type == QUIT:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == B_START:
-                button_behaviors['start'][0](button_behaviors['start'][1])
+                button_pushes.append("start")
             if event.key == B_SELECT:
-                button_behaviors['select'][0](button_behaviors['select'][1])
+                button_pushes.append("select")
             if event.key == B_A:
-                button_behaviors['a'][0](button_behaviors['a'][1])
+                button_pushes.append("a")
             if event.key == B_B:
-                button_behaviors['b'][0](button_behaviors['b'][1])
+                button_pushes.append("b")
             if event.key == B_UP:
-                button_behaviors['e_up'][0](button_behaviors['e_up'][1])
+                button_pushes.append("event_up")
             if event.key == B_DOWN:
-                button_behaviors['e_down'][0](button_behaviors['e_down'][1])
+                button_pushes.append("event_down")
+            if event.key == B_RIGHT:
+                button_pushes.append("event_right")
+            if event.key == B_LEFT:
+                button_pushes.append("event_left")
+
 
     keys = pygame.key.get_pressed()
     if keys[B_LEFT]:
-        button_behaviors['left'][0](button_behaviors['left'][1])
+        button_pushes.append("left")
     if keys[B_RIGHT]:
-        button_behaviors['right'][0](button_behaviors['right'][1])
+        button_pushes.append("right")
     if keys[B_UP]:
-        button_behaviors['up'][0](button_behaviors['up'][1])
+        button_pushes.append("up")
     if keys[B_DOWN]:
-        button_behaviors['down'][0](button_behaviors['down'][1])
+        button_pushes.append("down")
 
-def load_new_scene(background_path,map_size):
+    return button_pushes
+
+def load_scene(background_path,map_size):
     global background
     global map_size_x
     global map_size_y
@@ -150,16 +157,14 @@ def load_new_scene(background_path,map_size):
     global map_offset_y
     global player_sprite
 
-    map_offset_x = 0
-    map_offset_y = 0
-    map_size_x = map_size[0]
-    map_size_y = map_size[1]
-    background = pygame.image.load(background_path)
+    if background_path:
+        map_offset_x = 0
+        map_offset_y = 0
+        map_size_x = map_size[0]
+        map_size_y = map_size[1]
+        background = pygame.image.load(background_path)
     the_sprites.empty()
     player_sprite = None
-
-def show_modal():
-    pass
 
 def start_timer(milliseconds):
     global timer_active
