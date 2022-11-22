@@ -22,7 +22,9 @@ class Actor(pygame.sprite.Sprite):
 
     def update(self,direction,pos_x,pos_y):
 
-        self.rect.topleft = [pos_x, pos_y]
+        if pos_x and pos_y:
+
+            self.rect.topleft = [pos_x, pos_y]
 
         if direction in self.directions:
 

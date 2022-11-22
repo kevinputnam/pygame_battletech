@@ -38,9 +38,9 @@ mech_data = {"WSP-1A":{
              "loc":"l_leg",
              "range":[0,0,-2,None]}
          ],
-         "sprite_sheet_path":"../assets/sprites/mech_wasp_2.png",
+         "sprite_sheet_path":"../assets/sprites/mech_wasp.png",
          "sprite_size":[128,192],
-         "directions":{"left":[0],"right":[1]}
+         "directions":{"right":[0],"left":[1]}
      }
 }
 

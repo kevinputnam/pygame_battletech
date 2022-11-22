@@ -58,16 +58,87 @@ class CombatScene(Scene):
     def __init__(self,args):
         self.player_mechs = args['player_mechs']
         self.opposing_mechs = args['opposing_mechs']
+        self.head_counter = 0
+        self.torso_counter = 0
+        self.l_arm_counter = 0
+        self.r_arm_counter = 0
+        self.l_leg_counter = 0
+        self.r_leg_counter = 0
+        self.heat_level = 0
+        self.heat_bar = None
 
         data = {"background_image_path":"../assets/backgrounds/combat.png"}
         super().__init__(data)
 
-        self.player_mechs[0].sprite.update('right',17,33)
-        self.opposing_mechs[0].sprite.update('left',217,33)
+        self.player_mechs[0].sprite.update('right',17,10)
+        self.opposing_mechs[0].sprite.update('left',217,10)
 
+        mech_shadow_1 = actor.Actor(17,166,"../assets/sprites/mech_shadow.png", [128,32],{"none":[0]})
+        mech_shadow_2 = actor.Actor(217,166,"../assets/sprites/mech_shadow.png", [128,32],{"none":[0]})
+
+        status_bkg = actor.Actor(17,200,"../assets/sprites/status_mech_bkg.png", [16,25], {"none":[0]})
+        self.status_head = actor.Actor(22,201,"../assets/sprites/status_mech_head.png", [6,6], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        self.status_l_arm = actor.Actor(17,206,"../assets/sprites/status_mech_l_arm.png", [4,10], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        self.status_torso = actor.Actor(21,206,"../assets/sprites/status_mech_torso.png", [8,8], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        self.status_r_arm = actor.Actor(29,206,"../assets/sprites/status_mech_r_arm.png", [4,10], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        self.status_l_leg = actor.Actor(21,213,"../assets/sprites/status_mech_l_leg.png", [4,11], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        self.status_r_leg = actor.Actor(25,213,"../assets/sprites/status_mech_r_leg.png", [4,11], {"green":[0],"yellow":[1],"red":[2],"black":[3]})
+        ui.add_sprite(status_bkg)
+        ui.add_sprite(self.status_head)
+        ui.add_sprite(self.status_l_arm)
+        ui.add_sprite(self.status_torso)
+        ui.add_sprite(self.status_r_arm)
+        ui.add_sprite(self.status_l_leg)
+        ui.add_sprite(self.status_r_leg)
+        ui.add_sprite(mech_shadow_1)
+        ui.add_sprite(mech_shadow_2)
         ui.add_sprite(self.player_mechs[0].sprite)
         ui.add_sprite(self.opposing_mechs[0].sprite)
 
+        ui.draw_rectangle([10,195],[340,40],(0,0,0))
+        ui.draw_rectangle([39,200],[7,32],(89,86,82))
+
+
     def run(self,user_input):
-        if len(user_input) > 0:
-            print(user_input)
+        statuses = ["green","yellow","red","black"]
+
+        if "a" in user_input:
+            self.head_counter += 1
+            if self.head_counter >= 4:
+                self.head_counter =0
+            status = statuses[self.head_counter]
+            self.status_head.update(status,None,None)
+
+        if "b" in user_input:
+            self.l_arm_counter += 1
+            if self.l_arm_counter >= 4:
+                self.l_arm_counter = 0
+            status = statuses[self.l_arm_counter]
+            self.status_l_arm.update(status,None,None)
+
+        if "event_left" in user_input:
+            self.heat_level -= 1
+            if self.heat_level < 0:
+                self.heat_level = 0
+
+        if "event_right" in user_input:
+            self.heat_level += 1
+            if self.heat_level >= 11:
+                self.heat_level = 10
+
+        heat_bar_height = 3*self.heat_level
+        heat_bar_y_offset = 30 - heat_bar_height
+        heat_bar_width = 5
+        heat_bar_color = (0,255,0) #green
+        if self.heat_level > 3 and self.heat_level <= 6:
+            heat_bar_color = (255,255,0) #yellow
+        elif self.heat_level > 6:
+            heat_bar_color = (255,0,0)
+        location = [40,201+heat_bar_y_offset]
+        dimensions = [heat_bar_width,heat_bar_height]
+
+        if self.heat_bar:
+            ui.remove_rectangle(self.heat_bar)
+        self.heat_bar = ui.draw_rectangle(location,dimensions,heat_bar_color)
+
+

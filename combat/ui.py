@@ -30,6 +30,7 @@ map_offset_x = 0
 map_offset_y = 0
 message = None
 message_height = 0
+surfaces = []
 
 def initialize_screen(gameName):
     global screen
@@ -91,6 +92,8 @@ def update_screen():
             timer_active = False
             timer_end_time = 0
     win.blit(background,(map_offset_x,map_offset_y))
+    for surf in surfaces:
+        win.blit(surf["surface"],surf["location"])
     the_sprites.draw(win)
     if player_sprite:
         win.blit(player_sprite.image,player_sprite.rect.topleft)
@@ -112,6 +115,20 @@ def add_player(sprite):
 
     player_sprite = sprite
     player_sprite.camera_focus = True
+
+def draw_text(location,text,color):
+    pass
+
+def draw_rectangle(location,dimensions,color):
+    surf = pygame.Surface((dimensions[0],
+        dimensions[1]))
+    surf.fill(color)
+    surf_dict = {"surface":surf,"location":location}
+    surfaces.append(surf_dict)
+    return surf_dict
+
+def remove_rectangle(surf):
+    surfaces.remove(surf)
 
 def process_user_input():
     button_pushes = []
