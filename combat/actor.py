@@ -7,12 +7,13 @@ class Actor(pygame.sprite.Sprite):
         super().__init__()
         self.directions = {}
         self.sprite_sheet = pygame.image.load(sprite_sheet_path)
-        self.sprite_size = sprite_size
+        self.sprite_width = sprite_size[0]
+        self.sprite_height = sprite_size[1]
         self.sprites = []
         self.camera_focus = False
-        for x in range(int(self.sprite_sheet.get_height()/self.sprite_size)):
-            for y in range(int(self.sprite_sheet.get_width()/self.sprite_size)):
-                self.sprites.append(pygame.Surface.subsurface(self.sprite_sheet,self.sprite_size*y,self.sprite_size*x,self.sprite_size,self.sprite_size))
+        for y in range(int(self.sprite_sheet.get_height()/self.sprite_height)):
+            for x in range(int(self.sprite_sheet.get_width()/self.sprite_width)):
+                self.sprites.append(pygame.Surface.subsurface(self.sprite_sheet,self.sprite_width*x,self.sprite_height*y,self.sprite_width,self.sprite_height))
         self.directions = directions
         self.current_dir_index = 0
         self.image = self.sprites[self.current_dir_index]
@@ -40,5 +41,5 @@ class Actor(pygame.sprite.Sprite):
         if not self.camera_focus:
             pos_x = self.rect.topleft[0]
             pos_y = self.rect.topleft[1]
-            self.rect.topleft = (pos_x+gui.map_offset_x,pos_y+gui.map_offset_y)
+            self.rect.topleft = (pos_x+ui.map_offset_x,pos_y+ui.map_offset_y)
 

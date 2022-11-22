@@ -101,16 +101,16 @@ def update_screen():
     pygame.display.flip()
     clock.tick(60)
 
-def add_sprite(thing):
-    the_sprites.add(thing.sprite)
+def add_sprite(sprite):
+    the_sprites.add(sprite)
 
-def remove_sprite(thing):
-    the_sprites.remove(thing.sprite)
+def remove_sprite(sprite):
+    the_sprites.remove(sprite)
 
-def add_player(thing):
+def add_player(sprite):
     global player_sprite
 
-    player_sprite = thing.sprite
+    player_sprite = sprite
     player_sprite.camera_focus = True
 
 def process_user_input():

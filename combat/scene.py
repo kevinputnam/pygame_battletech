@@ -13,6 +13,7 @@ class Scene:
         self.map_size = [0,0]
         self.background_image_path = None
         self.grid_size = 8
+        self.map_based = False
 
         for key in scene_data:
             if key != 'things':
@@ -22,12 +23,12 @@ class Scene:
             for t in scene_data['things']:
                 self.things.append(thing.Thing(t,self.grid_size))
 
-        self.add_collisions()
+        if self.map_based:
+            self.add_collisions()
         ui.load_scene(self.background_image_path,self.map_size)
 
     def run(self,user_input):
-        if len(user_input) > 0:
-            print(user_input)
+        pass
 
     def add_collisions(self):
         num_cols = int(self.map_size[0]/self.grid_size)
@@ -52,11 +53,21 @@ class Scene:
             for j in sides:
                 self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
 
-
 class CombatScene(Scene):
 
-    def __init__(self):
+    def __init__(self,args):
+        self.player_mechs = args['player_mechs']
+        self.opposing_mechs = args['opposing_mechs']
+
         data = {"background_image_path":"../assets/backgrounds/combat.png"}
         super().__init__(data)
 
+        self.player_mechs[0].sprite.update('right',17,33)
+        self.opposing_mechs[0].sprite.update('left',217,33)
 
+        ui.add_sprite(self.player_mechs[0].sprite)
+        ui.add_sprite(self.opposing_mechs[0].sprite)
+
+    def run(self,user_input):
+        if len(user_input) > 0:
+            print(user_input)
