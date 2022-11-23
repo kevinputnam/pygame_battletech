@@ -117,7 +117,11 @@ def add_player(sprite):
     player_sprite.camera_focus = True
 
 def draw_text(location,text,color):
-    pass
+    font = pygame.font.Font(None, 14)
+    surf = font.render(text,1,color)
+    surf_dict = {"surface":surf,"location":location}
+    surfaces.append(surf_dict)
+    return surf_dict
 
 def draw_rectangle(location,dimensions,color):
     surf = pygame.Surface((dimensions[0],

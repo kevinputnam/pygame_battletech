@@ -2,6 +2,7 @@ import pygame
 import actor
 import thing
 import ui
+import random
 
 class Scene:
 
@@ -66,6 +67,7 @@ class CombatScene(Scene):
         self.r_leg_counter = 0
         self.heat_level = 0
         self.heat_bar = None
+        self.message = None
 
         data = {"background_image_path":"../assets/backgrounds/combat.png"}
         super().__init__(data)
@@ -95,12 +97,16 @@ class CombatScene(Scene):
         ui.add_sprite(self.player_mechs[0].sprite)
         ui.add_sprite(self.opposing_mechs[0].sprite)
 
-        ui.draw_rectangle([10,195],[340,40],(0,0,0))
-        ui.draw_rectangle([39,200],[7,32],(89,86,82))
+        ui.draw_rectangle([10,195],[340,40],(0,0,0)) # message area
+        ui.draw_rectangle([39,200],[7,32],(89,86,82)) # heat bar background
 
 
     def run(self,user_input):
         statuses = ["green","yellow","red","black"]
+
+
+
+
 
         if "a" in user_input:
             self.head_counter += 1
@@ -126,6 +132,10 @@ class CombatScene(Scene):
             if self.heat_level >= 11:
                 self.heat_level = 10
 
+        if self.message:
+            ui.remove_rectangle(self.message)
+        self.message = ui.draw_text([55,200],"Hey there!",(255,255,255))
+
         heat_bar_height = 3*self.heat_level
         heat_bar_y_offset = 30 - heat_bar_height
         heat_bar_width = 5
@@ -133,7 +143,7 @@ class CombatScene(Scene):
         if self.heat_level > 3 and self.heat_level <= 6:
             heat_bar_color = (255,255,0) #yellow
         elif self.heat_level > 6:
-            heat_bar_color = (255,0,0)
+            heat_bar_color = (255,0,0) #red
         location = [40,201+heat_bar_y_offset]
         dimensions = [heat_bar_width,heat_bar_height]
 
