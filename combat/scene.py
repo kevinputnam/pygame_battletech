@@ -68,6 +68,9 @@ class CombatScene(Scene):
         self.heat_level = 0
         self.heat_bar = None
         self.message = None
+        self.first_round = True
+        self.go = True
+        self.range_indices= {"pb":0,"short":1,"med":2,"long":3}
 
         data = {"background_image_path":"../assets/backgrounds/combat.png"}
         super().__init__(data)
@@ -100,15 +103,90 @@ class CombatScene(Scene):
         ui.draw_rectangle([10,195],[340,40],(0,0,0)) # message area
         ui.draw_rectangle([39,200],[7,32],(89,86,82)) # heat bar background
 
+    def get_mech(self,mech_list):
+        mech_1 = None
+        for m in mech_list:
+            if not m.destroyed():
+                mech_1 = m
+                break
+        return mech_1
+
+    def roll_2d(self,modifiers=[]):
+        ms = 0
+        for m in modifiers:
+            ms += m
+        return random.randint(1,6)+random.randint(1,6) + ms
+
+    def roll_damage_location(self):
+        roll = self.roll_2d()
+        if roll == 2:
+            return "head"
+        elif roll >=3 and roll <= 4:
+            return "torso"
+        elif roll >=5 and roll <= 6:
+            return "l_arm"
+        elif roll >=7 and roll <=8:
+            return "r_arm"
+        elif roll >=9 and roll<=10:
+            return "l_leg"
+        elif roll >=11 and roll <=12:
+            return "r_leg"
+
+    def resolve_combat(self,mech_1,mech_2):
+        messages = []
+        to_hit = 8
+        separation = "med"
+        for e in mech_1.equipment:
+            if "damage" in e:
+                range_mod = e["range"][self.range_indices[separation]]
+                if range_mod:
+                    if self.roll_2d([range_mod,mech_1.gunnery]) >= to_hit:
+                        loc = self.roll_damage_location()
+                        mech_2.armor[loc][0] -= e['damage']
+                        messages.append(e['name'] + ' hit enemy ' + loc + ' for ' + str(e['damage']) + ' points of damage.')
+
+        for e in mech_2.equipment:
+            if "damage" in e:
+                range_mod = e["range"][self.range_indices[separation]]
+                if range_mod:
+                    if self.roll_2d([range_mod,mech_2.gunnery]) >= to_hit:
+                        loc = self.roll_damage_location()
+                        mech_1.armor[loc][0] -= e['damage']
+                        messages.append(e['name'] + ' hit you ' + loc + ' for ' + str(e['damage']) + ' points of damage.')
+
+        return messages
+
 
     def run(self,user_input):
         statuses = ["green","yellow","red","black"]
+        if self.go:
+            messages = []
+            self.go = False
+            if self.first_round:
+                self.first_round = False
+                if self.message:
+                    ui.remove_rectangle(self.message)
+                self.message = ui.draw_text([55,200],"You're in a fight!",(255,255,255))
+            else:
+                mech_1 = self.get_mech(self.player_mechs)
+                mech_2 = self.get_mech(self.opposing_mechs)
+                messages = []
+                if mech_1 and mech_2:
+                    messages = self.resolve_combat(mech_1,mech_2)
+                else:
+                    if not mech_1:
+                        if not mech_2:
+                            messages.append("All mechs destroyed.")
+                        else:
+                            messages.append("You were defeated.")
+                    else:
+                        if not mech_2:
+                            messages.append("You win!")
 
-
-
-
+            print(messages)
 
         if "a" in user_input:
+            self.go = True
             self.head_counter += 1
             if self.head_counter >= 4:
                 self.head_counter =0
@@ -132,9 +210,6 @@ class CombatScene(Scene):
             if self.heat_level >= 11:
                 self.heat_level = 10
 
-        if self.message:
-            ui.remove_rectangle(self.message)
-        self.message = ui.draw_text([55,200],"Hey there!",(255,255,255))
 
         heat_bar_height = 3*self.heat_level
         heat_bar_y_offset = 30 - heat_bar_height

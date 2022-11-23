@@ -44,3 +44,9 @@ class Mech():
 
         if 'sprite_sheet_path' in attr_dict:
             self.sprite = actor.Actor(self.location[0],self.location[1],self.sprite_sheet_path,self.sprite_size,self.directions)
+
+    def destroyed(self):
+        destroyed = False
+        if self.armor["head"][1] <= 0 or self.armor["torso"][1] <= 0:
+            destroyed = True
+        return destroyed

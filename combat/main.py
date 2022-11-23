@@ -45,6 +45,7 @@ mech_data = {"WSP-1A":{
 }
 
 player_mechs = [mechs.Mech(mech_data['WSP-1A'])]
+player_mechs[0].gunnery = 2
 opposing_mechs = [mechs.Mech(mech_data['WSP-1A'])]
 
 args = {"player_mechs":player_mechs,"opposing_mechs":opposing_mechs}
