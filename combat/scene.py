@@ -75,8 +75,8 @@ class CombatScene(Scene):
         data = {"background_image_path":"../assets/backgrounds/combat.png"}
         super().__init__(data)
 
-        self.player_mechs[0].sprite.update('right',17,10)
-        self.opposing_mechs[0].sprite.update('left',217,10)
+        self.player_mechs[0].sprite.update('right',17,3)
+        self.opposing_mechs[0].sprite.update('left',217,3)
 
         mech_shadow_1 = actor.Actor(17,166,"../assets/sprites/mech_shadow.png", [128,32],{"none":[0]})
         mech_shadow_2 = actor.Actor(217,166,"../assets/sprites/mech_shadow.png", [128,32],{"none":[0]})
@@ -132,6 +132,9 @@ class CombatScene(Scene):
         elif roll >=11 and roll <=12:
             return "r_leg"
 
+    def resolve_movement(self,mech_1,mech_2):
+        return []
+
     def resolve_combat(self,mech_1,mech_2):
         messages = []
         to_hit = 8
@@ -172,7 +175,8 @@ class CombatScene(Scene):
                 mech_2 = self.get_mech(self.opposing_mechs)
                 messages = []
                 if mech_1 and mech_2:
-                    messages = self.resolve_combat(mech_1,mech_2)
+                    messages = messages + self.resolve_movement(mech_1,mech_2)
+                    messages = messages + self.resolve_combat(mech_1,mech_2)
                 else:
                     if not mech_1:
                         if not mech_2:

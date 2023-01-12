@@ -1,0 +1,1439 @@
+Crusade[TM] Spoiler List
+Wizards of the Coast, Inc.
+(Released November 2nd, 1998)
+
+Key: {R} - Resource
+     {T} - Tap
+     n/a - "not applicable"
+
+Card Title:     Annihilator (ANH-1A)
+Card Type:      Unit - 'Mech - Inner Sphere
+Speed:          Slow
+Cost:           6+4M+4L
+Arm/Str/Att:    3/7/6
+Card Text:      Alpha Strike: +2 attack
+                Annihilator cannot block unless guarding.
+Mass:           100 tons
+Main Armament:  4 Med Lasers, 4 AC/10s
+Flavor Text:    No one, except perhaps ComStar, knows exactly where the 
+                Annihilator comes from, or how Wolf's Dragoons kept so many 
+                for so long.
+Rarity:         Uncommon
+
+Card Title:     Arc-Royal Defense Cordon
+Card Type:      Command - Alliance
+Cost:           0
+Arm/Str/Att:    n/a
+Card Text:      A deck may contain only one Alliance card. Begin the game with 
+                this card activated. 
+                Alliances are not sites and cannot be scrapped.
+                If Arc-Royal Defense Cordon is in your deck, every Wolf card 
+                or unaffiliated Clan card in your deck gains the Inner Sphere 
+                alignment and the Steiner affiliation.
+                Your non-Support cards cost 0+2P more to activate.
+Flavor Text:    n/a
+Rarity:         Rare
+
+Card Title:     Aris Sung
+Card Text:      Command - Pilot - Unique - Inner Sphere - Liao
+Cost:           4+3T
+Arm/Str/Att:    -/-/ +2
+Card Text:      +2 initiative, +2 attack
+                Count the number of Units in the group that includes 'Mech 
+                piloted by Aris Sung. 
+                  Prevent up to that much damage to one of those Units. 
+                Use this ability only during a mission.
+Flavor Text:    "Without the Warrior Houses, the Capellan State would collapse 
+                as the eagle falls without her wings."
+                --Commander Aris Sung, House Hiritsu, 3059
+Rarity:         Rare
+
+Card Title:     Avatar (AV1-OB)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Kurita
+Speed:          Slow
+Cost:           5+1A+1T
+Arm/Str/Att:    2/8/0
+Card Text:      Missile 4
+Mass:           70 tons
+Main Armament:  50 LRMs
+Flavor Text:    Because of the Avatar's twin fixed lasers, this configuration 
+                is the closest it can come to being a missile boat in the 
+                classic sense.
+Rarity:         Uncommon
+
+Card Title:     Backing of the Grand Council
+Card Type:      Command - Resource - Clan 
+Cost:           1
+Arm/Str/Att:    3/2/-
+Card Text:      {T}: {R}
+                Munitions (Your missile die rolls do 3 damage on a roll of 3.)
+                M P
+Flavor Text:    The Clans find it difficult to refuse anything to a warrior 
+                who has earned the backing of the Grand Council of Khans.
+Rarity:         Common
+
+Card Title:     Battle Attrition
+Card Type:      Command
+Cost:           0+2T
+Arm/Str/Att:    4/2/-
+Card Text:      Your opponents cannot repair their Units, cannot use their 
+                Units' Alpha Strike options, and must deplete their Units in 
+                order to use their Missile options.
+                During his or her Repair/Reload phase, an opponent may pay 
+                {R}{R}{R} to ignore this card's effects for that turn.
+Flavor Text:    "If we keep hitting them hard and fast they'll never get a 
+                chance to repair or regroup."
+                --Hauptmann Caradoc "Doc" Trevena, Coventry, 3058
+Rarity:         Rare
+
+Card Title:     Battle Cobra A
+Card Type:      Unit - 'Mech - Omni - Clan - Steel Viper
+Speed:          Moderate
+Cost:           5+5A+5T
+Arm/Str/Att:    1/5/5
+Card Text:      Overheat 2: +2 attack
+Mass:           40 tons
+Main Armament:  4 Med Lasers
+Flavor Text:    This Battle Cobra's weapons array sacrifices range for the 
+                close-in devastation of medium pulse lasers.
+Rarity:         Common
+
+Card Title:     Battle Cobra B
+Card Type:      Unit - 'Mech - Omni - Clan - Steel Viper
+Speed:          Moderate
+Cost:           3+3A+3T
+Arm/Str/Att:    1/5/3
+Card Text:      Overheat 3: +2 attack
+                Long-Range 2 (If Battle Cobra B is blocked, it may deal up to 
+                2 of its damage to the target.)
+Mass:           40 tons
+Main Armament:  2 PPCs
+Flavor Text:    Like its namesake, this Cobra can strike its prey from afar.
+Rarity:         Uncommon
+
+Card Title:     Battle Cobra Prime
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Moderate
+Cost:           4+3A+2T
+Arm/Str/Att:    1/5/4
+Card Text:      Overheat 1: +1 attack
+                Long-Range 1 (If Battle Cobra Prime is blocked, it may deal 1 
+                of its damage to the target.)
+Mass:           40 tons
+Main Armament:  2Lg Lasers
+Flavor Text:    The Battle Cobra's small size prompted the Steel Vipers to 
+                abandon ammunition-based weapons.
+Rarity:         Common
+
+Card Title:     Black Hawk-KU (BHKU-O)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere
+Speed:          Moderate
+Cost:           7+3A+3M+3T
+Arm/Str/Att:    2/8/4
+Card Text:      Overheat 3: +3 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           60 tons
+Main Armament:  10 Med Lasers
+Flavor Text:    Captured Clan Black Hawks gave Kurita designers the knowledge 
+                to reproduce Omni technology.
+Rarity:         Common
+
+Card Title:     Black Hawk-KU (BHKU-OC)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Kurita - Steiner
+Speed:          Moderate
+Cost:           4+2A+1M+1T
+Arm/Str/Att:    2/8/3
+Card Text:      Jump (-1 attack: +1 initiative)
+                Long-Range 1 (If Black Hawk-KU is blocked, it may deal 1 of 
+                its damage to the target.)
+Mass:           60 tons
+Main Armament:  Gauss Rifle, Med Laser
+Flavor Text:    The Gauss rifle mounted in this Black Hawk's left arm allows a 
+                greater firing arc.
+Rarity:         Uncommon
+
+Card Title:     Black Lanner D
+Card Type:      Unit - 'Mech - Omni - Clan - Jade Falcon
+Speed:           Fast
+Cost:           7+3A+3M+3T
+Arm/Str/Att:    1/7/6
+Card Text:      AP (Black Lanner D deals +1 damage to any target other than a 
+                Unit.)
+Mass:           55 tons
+Main Armament:  2 Med Lasers, 12 SRMs
+Flavor Text:    Bristling with short-range and anti-personnel weaponry, this 
+                configuration is used in battlefields expected to be crawling 
+                with infantry.
+Rarity:         Rare
+
+Card Title:     Black Watch (BKW-7R)
+Card Type:      Unit - 'Mech - Inner Sphere
+Cost:           7+3A+3M+3T
+Speed:          Slow
+Arm/Str/Att:    3/9/5
+Card Text:      Alpha Strike: +1 attack
+                Jump (-1 attack: +1 initiative)
+                C3 (Each Unit with C3 in a group that includes at least one 
+                other Unit with C3 gets +2 attack.)
+Mass:           85 tons
+Main Armament:  Lt Gauss Rifle, 40 MRMs, AC/10
+Flavor Text:    n/a
+Rarity:         Uncommon
+
+Card Title:     Blackjack (BJ2-OA)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere
+Speed:          Slow
+Cost:           2+2A+2M
+Arm/Str/Att:    1/7/1
+Card Text:      Missile 2
+                Jump (-1 attack: +1 initiative)
+Mass:           50 tons
+Main Armament:  40 LRMs
+Flavor Text:    This configuration of the Blackjack OmniMech is rolled out 
+                when fire support is needed.
+Rarity:         Common
+
+Card Title:     Blackjack (BJ-3)
+Card Type:      Unit - 'Mech - Inner Sphere - Davion - St. Ives
+Speed:          Slow
+Cost:           3+3A
+Arm/Str/Att:    1/6/3
+Card Text:      Overheat 3: +2 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           45 tons
+Main Armament:  2 PPCs, 4 Med Lasers
+Flavor Text:    Duchess Candace Liao ordered this recommission of the original 
+                Blackjack, then gave several to House Davion as a peace 
+                offering.
+Rarity:         Common
+
+Card Title:     Blaze of Glory
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only when a Unit you control is the target.
+                Double all damage dealt by that Unit.
+Flavor Text:    Seeing no escape, Judith Faber opened all her weapons ports. 
+                At least she'd take the SOBs with her.
+                --Excerpt from Warriors Collected, 3059
+Rarity:         Uncommon
+
+Card Title:     Breaking the Envelope
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only during battle.
+                Choose one of your Units. Whenever you use one of that Unit's 
+                Overheat options, double the option's damage and attack bonus.
+Flavor Text:    "Glory removes all pain. A glorious death is the stairway to 
+                the Remembrance."
+                --Khan Perigard Zalman, Clan Steel Viper, 3059
+Rarity:         Rare
+
+Card Title:     Cataphract (CTF-1X)
+Card Type:      Unit - 'Mech - Inner Sphere - Liao
+Speed:          Slow
+Cost:           3+1A+1T
+Arm/Str/Att:    2/6/3
+Card Text:      Overheat 1: +1 attack
+                Alpha Strike: +1 attack
+Mass:           70 tons
+Main Armament:  PPC, 4 Med Lasers, AC/10
+Flavor Text:    Intended to be the mainstay of elite Capellan regiments, the 
+                Cataphract was House Liao's first success at designing a heavy 
+                BattleMech.
+Rarity:         Common
+
+Card Title:     Cerberus (MR-5M)
+Card Type:      Unit - 'Mech - Inner Sphere - Marik
+Speed:          Slow
+Cost:           8+4M+4L
+Arm/Str/Att:    3/10/5
+Card Text:      Overheat 4: +3 attack
+                Anti-Missile (Prevent 1 damage from each missile fired at a 
+                Unit in a group that includes Cerberus.)
+                Long-Range 2 (If Cerberus is blocked, it may deal up to 2 of 
+                its damage to the target.)
+Mass:           95 tons
+Main Armament:  Gauss Rifle, PPC, 6 Med Lasers
+Rarity:         Rare
+
+Card Title:     Cestus (CTS-6Y)
+Card Type:      Unit - 'Mech - Inner Sphere - Davion - Steiner
+Speed:          Slow
+Cost:           7+3M
+Arm/Str/Att:    2/9/6
+Card Text:      Jump (-1 attack: +1 initiative)
+                Long-Range 1 (If Cestus is blocked, it may deal 1 of its 
+                damage to the target.)
+Mass:           65 tons
+Main Armament:  Gauss Rifle, 2 Lg Lasers, 2 Med Lasers
+Flavor Text:    Problems with overheating led the Cestus's designers to 
+                replace its PPCs with a Gauss rifle.
+Rarity:         Uncommon
+
+Card Title:     Champion (CHP-2N)
+Card Type:      Unit - 'Mech - Inner Sphere - ComStar
+Speed:          Moderate
+Cost:           3+2A+2T
+Arm/Str/Att:    2/4/2
+Card Text:      Overheat 1: +2 attack
+Mass:           60 tons
+Main Armament:  2 Med Lasers, 6 SRMs, AC/10
+Flavor Text:    With a third of its mass devoted to a Vlar 300 fusion engine, 
+                the Champion is under-armored and outgunned compared to other 
+                members of its weight class.
+Rarity:         Common
+
+Card Title:     Charger (CGR-1A5)
+Card Type:      Unit - 'Mech - Inner Sphere - Liao
+Speed:          Slow
+Cost:           5
+Arm/Str/Att:    3/9/3
+Card Text:      Alpha Strike: +2 attack
+Mass:           80 tons
+Main Armament:  12 SRMs, AC/20
+Flavor Text:    The Charger CGR-1A5 is a much more viable design than many 
+                that came before it. It retreats usually because it's out of 
+                ammunition, rather than in danger of being destroyed.
+Rarity:         Common
+
+Card Title:     Charger (CGR-1L)
+Card Type:      Unit - 'Mech - Inner Sphere - Liao
+Speed:          Moderate
+Cost:           0+3P
+Arm/Str/Att:    1/3/1
+Card Text:      Overheat 1: +1 attack
+                You may deploy Charger revealed to make an additional 
+                deployment this turn.
+Mass:           80 tons
+Main Armament:  Lg Laser, 2 Med Lasers
+Flavor Text:    After the disaster on Chara, House Liao tried to salvage its 
+                Chargers with this conversion.
+Rarity:         Uncommon
+
+Card Title:     Close Formation
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only if you lost initiative.
+                Each of your Units gets +1 attack and +1 armor.
+Flavor Text:    The sight of a pack of Atlases shatters enemy morale.
+Rarity:         Common
+
+Card Title:     Conquer
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only when attacking a Unit or Command card and only if 
+                you lost initiative.
+                If the target would be scrapped later this mission, instead 
+                tap it, remove all damage counters from it, and gain control 
+                of it.
+Flavor Text:    "The only thing better than scrapping an enemy 'Mech is 
+                capturing it."
+                --Star Commander Joanna, 3058
+Rarity:         Rare
+
+Card Title:     Coup de Grâce
+Card Type:      Mission - Clan - Steel Viper
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Choose an opposing Unit. Double the number of damage counters 
+                put on that Unit when resolving damage.
+Flavor Text:    The Clan approach is simple and ruthless: Do not waste time or 
+                resources repairing severe damage.
+Rarity:         Uncommon
+
+Card Title:     Crossbow A
+Card Type:      Unit - 'Mech - Omni - Clan - Steel Viper
+Speed:          Moderate
+Cost:           8+4T
+Arm/Str/Att:    2/8/7
+Card Text:      n/a
+Mass:           65 tons
+Main Armament:  2 Med Lasers, 10 LRMs, 12 SRMs
+Flavor Text:    While certain OmniMechs are traditionally equipped only with 
+                arm-mounted weapons, the Crossbow and Battle Cobra cannot 
+                mount weapons anywhere else.
+Rarity:         Common
+
+Card Title:     Crossbow B
+Card Type:      Unit - 'Mech - Omni - Clan - Steel Viper
+Speed:          Moderate
+Cost:           7+3T
+Arm/Str/Att:    2/8/6
+Mass:           65 tons
+Main Armament:  24 SRMs
+Flavor Text:    This configuration, used for shorter-range fighting, exchanges 
+                LRM racks for SRMs.
+Rarity:         Common
+
+Card Title:     Cyclops (CP-11-C)
+Card Type:      Unit - 'Mech - Inner Sphere
+Speed:          Slow
+Cost:           5+2A+2T
+Arm/Str/Att:    3/6/4
+Card Text:      C3 (Each Unit with C3 in a group that includes at least one 
+                other Unit with C3 gets +2 attack.)
+                Long-Range 1 (If Cyclops is blocked, it may deal 1 of its 
+                damage to the target.)
+Mass:           90 tons
+Main Armament:  Gauss Rifle, 2 Med Lasers, 4 SRMs
+Flavor Text:    n/a
+Rarity:         Uncommon
+
+Card Title:     DEST Commando Sabotage
+Card Type:      Command - Inner Sphere - Kurita
+Cost:           4+4P
+Arm/Str/Att:    n/a
+Card Text:      Scrap this card when it is revealed.
+                Do 2 structure damage to each opposing Unit.
+Flavor Text:    "The Draconis Elite Strike Team are perhaps the finest-trained 
+                units in the entire Combine. There is no form of close-range 
+                combat these warriors can't use to disable a foe in less than 
+                a second."
+                --Faith Chalmers, DEST Captain, 3059
+Rarity:         Uncommon
+
+Card Title:     Enfield (END-6Q)
+Card Type:      Unit - 'Mech - Inner Sphere - Davion
+Speed:          Moderate
+Cost:           4+2A+1M+1T
+Arm/Str/Att:    1/7/4
+Card Text:      Alpha Strike: +1 attack
+Mass:           50 tons
+Main Armament:  Lg Laser, 2 Med Lasers, AC/10
+Flavor Text:    Though House Davion possessed the Enfield's blueprints for 
+                centuries, they didn't have the systems available to build it 
+                until Star League technology was restored to the Inner Sphere.
+Rarity:         Common
+
+Card Title:     Entrenched Holdings
+Card Type:      Command - Enhancement - Terrain
+Cost:           1
+Arm/Str/Att:    n/a
+Card Text:      When you activate this card, put it in one of your regions and 
+                scrap all other Terrain cards in that region.
+                If this card is in your Command Post, Units guarding any site 
+                in your Command Post are also considered to be guarding each 
+                of your Support cards there.
+Flavor Text:    "You've dug us in deep enough that Kerensky himself couldn't 
+                get past our guard. Well done, Captain."
+                --Colonel Charles Safyr, 3058
+Rarity:         Uncommon
+
+Card Title:     Entropy-Based Warfare
+Card Type:      Command - Inner Sphere
+Cost:           3+4P+4T
+Arm/Str/Att:    0/3/2
+Card Text:      Each opposing Unit under construction costs 1 more to 
+                activate.
+Flavor Text:    "If you can't hit the 'Mechs, hit the factories. If you can't 
+                hit the factories, hit their supplies before they get to the 
+                factories!"
+                --Command Sergeant Anthony Sykes Perry, 3058
+Rarity:         Common
+
+Card Title:     Exterminator (EXT-4A)
+Card Type:      Unit - 'Mech - Inner Sphere - ComStar
+Speed:          Moderate
+Cost:           3+2M
+Arm/Str/Att:    1/7/2
+Card Text:      Overheat 1: +1 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           65 tons
+Main Armament:  4 Med Lasers, 10 LRMs
+Flavor Text:    Though the original Exterminator's technology is lost, the 
+                EXT-4A is still ideally suited for raids against high-profile 
+                targets.
+Rarity:         Common
+
+Card Title:     Falsified Maps
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only when being attacked.
+                Search your Stockpile for any Terrain card and put it into 
+                play, activated, in the region containing the target. Shuffle 
+                your Stockpile afterwards.
+Flavor Text:    "That river wasn't there last time...."
+                --Private Rocky Zeller, 3057
+Rarity:         Rare
+
+Card Title:     Fast Deployment
+Card Type:      Command
+Cost:           2+3L
+Arm/Str/Att:    4/1/2
+Card Text:      Scrap this card when it is revealed.
+                You may make up to three additional deployments this turn.
+Flavor Text:    "I don't care if you're bringing me Kai Allard-Liao, Morgan 
+                Kell, and Rhonda Snord in that deployment! If those troops 
+                ain't here, they're worse than the rawest recruits!"
+                --Colonel Raldin Lwai, 189th Light Horse Regiment, 3058
+Rarity:         Common
+
+Card Title:     Fire Falcon B
+Card Type:      Unit - 'Mech - Omni - Clan - Jade Falcon
+Speed:          Fast
+Cost:           3+2A
+Arm/Str/Att:    0/4/3
+Card Text:      Overheat 1: +1 attack
+Mass:           25 tons
+Main Armament:  2 Lg Lasers
+Flavor Text:    Twin extended-range lasers and a targeting computer make this 
+                fast 'Mech ideally suited to holding actions, a "dishonorable" 
+                duty usually left to MechWarriors who have fallen out of favor 
+                in their units.
+Rarity:         Common
+
+Card Title:     Fire Falcon D
+Card Type:      Unit - 'Mech - Omni - Clan - Jade Falcon
+Speed:          Fast
+Cost:           2+1T
+Arm/Str/Att:    0/4/2
+Card Text:      NARC (Units in groups including any with NARC may subtract 1 
+                from the die roll of each missile they fire.)
+Mass:           25 tons
+Main Armament:  Med Laser, 8 SRMs
+Flavor Text:    Because of the Jade Falcons' insistence on one-on-one combat, 
+                this fire-support configuration is unlikely to appear in         
+                front-line units.
+Rarity:         Uncommon
+
+Card Title:     Fire From Partial Cover
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only if you lost initiative.
+                Prevent up to 2 damage to each of your Units.
+Flavors Text:   "You can call it a foxhole. I prefer to think of it as a 
+                Wolf's den."
+                --MechWarrior Hans Killian, Clan Wolf, 3057
+Rarity:         Common
+
+Card Title:     Firestarter (FS9-OF)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Marik
+Speed:          Moderate
+Cost:           3+2A
+Arm/Str/Att:    1/6/3
+Card Text:      Overheat 3: +1 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           45 tons
+Main Armament:  2 Lg Lasers, 4 Med Lasers
+Flavor Text:    The Free Worlds League Military's configuration of the 
+                Firestarter showcases the League's new laser weapons.
+Rarity:         Common
+
+Card Title:     Force of Will
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      One of your piloted 'Mechs gets +4 attack, and you may prevent 
+                1 damage to that 'Mech.
+Flavor Text:    Laser-bright your eyes,
+
+                Heartbeat stronger than your foe's,
+                You will conquer all.
+                --Kurita battle haiku
+Rarity:         Rare
+
+Card Title:     Fury
+Card Type:      Command Vehicle - Unit - Vehicle - Inner Sphere
+Speed:          Slow
+Cost:           3+1M
+Arm/Str/Att:    3/9/2
+Card Text:      Vehicle (If Fury is damaged, roll a die. On a 5 or 6, scrap 
+                it.)
+                Long-Range 1 (If Fury is blocked, it may deal 1 of its damage 
+                to the target.)
+Mass:           80 tons
+Main Armament:  Gauss Rifle
+Flavor Text:    This tank's as implacable and unstoppable as the Furies of 
+                myth and legend, meting out madness and death to those who 
+                step in its path.
+Rarity:         Common
+
+Card Title:     Goshawk (Vapor Eagle)
+Card Type:      Unit - 'Mech - Clan - Steel Viper
+Speed:          Moderate
+Cost:           8+2A+2M+2T
+Arm/Str/Att:    1/8/7
+Card Text:      Overheat 1: +1 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           55 tons
+Main Armament:  Lg Laser, 3 Med Lasers, 4 SRMs
+Flavor Text:    Its unusual design and bizarre weapons configurations make the 
+                Goshawk's true purpose a mystery to Inner Sphere analysts
+Rarity:         Rare
+
+Card Title:     Grand Crusader (GRN-D-01)
+Card Type:      Unit - 'Mech - Inner Sphere - ComStar
+Speed:          Slow
+Cost:           7+3A+3M+3T
+Arm/Str/Att:    3/9/0
+Card Text:      Missile 3
+                Overheat 5: +4 attack
+                Anti-Missile (Prevent 1 damage from each missile fired at a 
+                Unit in a group that includes Grand Crusader.
+Mass:           80 tons
+Main Armament:  2 Lg Lasers, 2 Med Lasers, 40 LRMs
+Flavor Text:    n/a
+Rarity:         Rare
+
+Card Title:     Grendel B
+Card Type:      Unit - 'Mech - Omni - Clan - Smoke Jaguar
+Speed:          Fast
+Cost:           6+2M
+Arm/Str/Att:    1/6/5
+Card Text:      Jump (-1 attack: +1 initiative)
+Mass:           45 tons
+Main Armament:  3 Med Lasers, AC/5
+Flavor Text:    The Grendel was among the first units to engage ComStar on 
+                Tukayyid. Only lack of support prevented them from doing 
+                extensive damage to the Com Guards' lines.
+Rarity:         Uncommon
+
+Card Title:     Grendel C
+Card Type:      Unit - 'Mech - Omni - Clan - Smoke Jaguar
+Speed:          Fast
+Cost:           3+1A+1M+1T
+Arm/Str/Att:    1/6/2
+Card Text:      Alpha Strike: +1 attack
+                Jump (-1 attack: +1 initiative)
+                Anti-Missile (Prevent 1 damage from each missile fired at a 
+                Unit in a group that includes Grendel C.)
+Mass:           45 tons
+Main Armament:  Med Laser, AC/10
+Flavor Text:    n/a
+Rarity:         Common
+
+Card Title:     Hankyu C
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Fast
+Cost:           4+3A+2T
+Arm/Str/Att:    0/4/4
+Card Text:      Overheat 3: +2 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           30 tons
+Main Armament:  6 Med Lasers
+Flavor Text:    Alternate configuration C modifies the Hankyu for extended 
+                scouting missions.
+Rarity:         Uncommon
+
+Card Title:     Hankyu Prime
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Fast
+Cost:           3+3A+3T
+Arm/Str/Att:    0/4/3
+Card Text:      Jump (-1 attack: +1 initiative)
+                ECM (Units in groups including any with ECM each get +1 
+                armor.)
+Mass:           30 tons
+Main Armament:  2 Med Lasers, 10 LRMs
+Flavor Text:    Inner Sphere pilots quickly learned to recognize the Hankyu's 
+                boxy shoulder pods.
+Rarity:         Common
+
+Card Title:     Hasty Alliance
+Card Type:      Command - Inner Sphere
+Cost:           2+4P
+Arm/Str/Att:    n/a
+Card Text:      Scrap this card when it is revealed.
+                Activate this card only if you have any Unique Command cards       
+                in play.
+                Search your Stockpile for any Unique Command card and put it 
+                into your Command Post, activated, at no cost. Shuffle your 
+                Stockpile afterwards.
+Flavor Text:    "As my fiance, Morgan Kell is a head of state and need not 
+                leave this conference!"
+                --Duchess Candace Liao, Whitting Conference, 3058
+Rarity:         Rare
+
+Card Title:     Heat of Battle
+Card Type:      Command
+Cost:           2+4T
+Arm/Str/Att:    3/2/-
+Card Text:      Your attacking groups of two or more Units can be blocked only 
+                by groups of two or more Units.
+Flavor Text:    How can I breathe?
+                In the smoke
+                In the screams 
+                How can I breathe 
+                In the heat of battle?
+                --Anonymous, from Battlefield Poetry, 3059
+Rarity:         Common
+
+Card Title:     Heat Sink Destruction
+Card Type:      Command - Enhancement
+Cost:           0+2T
+Arm/Str/Att:    n/a
+Card Text:      When you activate this card, play it on any opposing Unit with 
+                at least one damage counter. Tap that Unit.
+                Unit enhanced by this card gets -X attack and gains "Overheat 
+                X: +X attack," where X is equal to the Unit's base attack.
+                You may deploy this card revealed to make an additional
+                deployment this turn.
+Flavor Text:    "I can turn up the heat on any 'Mech with a single shot. Just 
+                stand back and watch me work."
+                --Shu-jin Isis Polaris, 3058
+Rarity:         Uncommon
+
+Card Title:     Hollander (BZK-F3)
+Card Type:      Unit - 'Mech - Inner Sphere - Steiner
+Speed:          Moderate
+Cost:           1+1L
+Arm/Str/Att:    0/4/2
+Card Text:      Long-Range 1 (If Hollander is blocked, it may deal 1 of its 
+                damage to the target.)
+                You may deploy Hollander revealed to make an additional 
+                deployment this turn.
+Mass:           35 tons
+Main Armament:  Gauss Rifle
+Rarity:         Uncommon
+
+Card Title:     Huron Warrior (HUR-W0-R4M)
+Card Type:      Unit - 'Mech - Inner Sphere - Marik
+Speed:          Moderate
+Cost:           4+2A+2T
+Arm/Str/Att:    1/8/3
+Card Text:      Overheat 1: +1 attack
+                Long-Range 1 (If Huron Warrior is blocked, it may deal 1 of 
+                its damage to the target.)
+Mass:           50 tons
+Main Armament:  Lg Laser, Gauss Rifle
+Flavor Text:    House Marik's Huron Warrior variant adds armor to the legs to 
+                defend against Clan Elementals.
+Rarity:         Common
+
+Card Title:     Icy Terrain
+Card Type:      Command - Enhancement - Terrain
+Cost:           1
+Arm/Str/Att:    n/a
+Card Text:      When you activate this card, put it in one of your regions and 
+                scrap all other Terrain cards in that region.
+                Deal 2 damage to each Unit that uses or used Jump. Use this 
+                ability only during a mission whose target is in the region 
+                enhanced by this card.
+Flavor Text:    The battlefield was a jagged nightmare of 'Mech parts frozen 
+                in a sheet of ice.
+Rarity:         Common
+
+Card Title:     Improved Construction Facilities
+Card Type:      Command - Resource
+Cost:           4
+Arm/Str/Att:    3/3/-
+Card Text:      {T}: {R}{R}{R}
+                Logistics (At the end of your turn, you may restock one card 
+                from your hand.)
+                L
+Flavor Text:    "The Jade Falcons will have the best construction facilities 
+                in all the Clans. Or I shall have your head."
+                --Khan Marthe Pryde, Clan Jade Falcon, 3057
+Rarity:         Common
+
+Card Title:     Indiscriminate Terrorism
+Card Type:      Command - Inner Sphere
+Cost:           3+5P
+Arm/Str/Att:    3/1/-
+Card Text:      {T}: Do 5 damage to each Stockpile. Use this ability only 
+                during your Missions phase, but not during a mission.
+Flavor Text:    The true purpose of terrorism is to call attention, not to 
+                one's cause, but to itself.
+Rarity:         Rare
+
+Card Title:     Intimidation Tactics
+Card Type:      Mission - Inner Sphere
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only during battle and only if you lost initiative.
+                Each opposing Unit gets -1 attack.
+Flavor Text:    "The mercs had 'I May Die, But I'm Taking You With Me' painted 
+                on all their 'Mechs!"
+                --MechWarrior Locke Ferrar, 3058
+Rarity:         Uncommon
+
+Card Title:     Isolated Forces
+Card Type:      Command
+Cost:           5+7T
+Arm/Str/Att:    5/1/-
+Card Text:      When you activate this card, do 5 damage to your Stockpile.
+                Opposing Units do not untap during the Untap phases.
+                During each opponent's Repair/Reload phase, that opponent may 
+                spend any amount of {R} to untap that many of his or her 
+                Units.
+Flavor Text:    "What good are your enemies' best 'Mechs if they aren't in the 
+                battle?"
+                --Kommandant Luther Rohorson, Coventry Military Academy 
+                lecture on tactics, 3058
+Rarity:         Rare
+
+Card Title:     It's a Trap!
+Card Type:      Command - Subterfuge
+Cost:           3+5P
+Arm/Str/Att:    n/a
+Card Text:      Scrap this card when it is revealed.
+                Activate this card only during your Missions phase, but not 
+                during a mission.
+                Choose any opponent. For every 2 counters above the cost of 
+                this card, choose one of his or her Units. Those Units attack 
+                any legal target of your choice as a single mission.
+Flavor Text:    "Follow me! They're right in he--Uh oh."
+                --Last words of MechWarrior Gavin Darcy, 3058
+Rarity:         Uncommon
+
+Card Title:     Judith Faber
+Card Type:      Command - Unique - Inner Sphere - ComStar
+Cost:           1+3P
+Arm/Str/Att:    4/2
+Card Text:      Each player who controls any Clan cards plays with the top 
+                card of his or her Stockpile face up and shows each card he or 
+                she draws to all opponents.
+Flavor Text:    "Sometimes Judith goes so far undercover, even she doesn't 
+                realize she's one of our agents."
+                --Sharilar Mori, Primus of ComStar, 3058
+Rarity:         Rare
+
+Card Title:     Khan Vlad Ward
+Card Type:      Command - Unique - Clan - Wolf
+Cost:           2+3P
+Arm/Str/Att:    4/2/1
+Card Text:      Counts as Vlad of the Wards while in play.
+                {T}: Choose any opposing Unit. If that Unit does not attack 
+                during your opponent's next turn, scrap it. Use this ability 
+                only during your Deploy phase.
+Flavor Text:    "We Clans talk much of honor. Nothing is more precious to a 
+                Clan warrior than his honor. How do I define honor? Success."
+                --Khan Vlad Ward, Clan Wolf, 3058
+                - Khan, Clan Wolf
+Rarity:         Rare
+
+Card Title:     Knights of the Inner Sphere
+Card Type:      Command - Unique - Inner Sphere - Marik
+Cost:           2+3T+3P
+Arm/Str/Att:    5/2/-
+Card Text:      Whenever an opposing Unit is scrapped from play, if Knights of 
+                the Inner Sphere is untapped, you may allow that opponent to 
+                restock that Unit after scrapping it. If you do so, put a 
+                chivalry counter on Knights of the Inner Sphere.
+                {T}: One of your Units gets +X attack, where X is the number 
+                of chivalry counters on Knights of the Inner Sphere. Use this 
+                ability only during battle.
+Flavor Text:    n/a
+Rarity:         Rare
+
+Card Title:     Kraken 2 (Bane)
+Card Type:      Unit - 'Mech - Clan - Jade Falcon
+Speed:          Slow
+Cost:           10+4A+4M+4L
+Arm/Str/Att:    4/11/6
+Card Text:      Alpha Strike: +4 attack
+Mass:           100 tons
+Main Armament:  4 AC/10s
+Flavor Text:    Each of arm of this Kraken variant mounts two Ultra AC/10s and 
+                a staggering seven tons of AC ammunition, allowing it to fire 
+                eighteen salvos even at double rate.
+Rarity:         Rare
+
+Card Title:     Loose Cannon
+Card Type:      Command - Pilot
+Cost:           2+2T
+Card Text:      Scrap the top card of your Stockpile to give 'Mech piloted by 
+                Loose Cannon +X initiative and +X attack, where X is that 
+                card's base construction cost. Use this ability only during 
+                a mission.
+Flavor Text:    "Sometimes you've just gotta throw away the manual, fake a 
+                radio short, and believe in your 'Mech."
+                --Corporal Annie James, Syrian Lancers, 3058
+Rarity:         Rare
+
+Card Title:     Marthe Pryde
+Card Type:      Command - Pilot - Unique - Clan - Jade Falcon
+Cost:           2+5T
+Arm/Str/Att:    - / - / +*
+Card Text:      +2 initiative
+                'Mech piloted by Marthe Pryde gets +2 attack for each Jade 
+                Falcon Unit in the group that includes that 'Mech. Use this 
+                ability only during a mission.
+Flavor Text:    "Khan Pryde has the wisdom to make good use of an honorable 
+                warrior--even a mere freebirth like me."
+                --Star Captain Horse, Clan Jade Falcon, 3058
+                - Khan, Clan Jade Falcon
+Rarity:         Rare
+
+Card Title:     Maskirovka Sabotage
+Card Type:      Mission - Inner Sphere - Liao
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only during battle. 
+                Roll a die:
+                1: Draw a card after the mission.
+                2-6: Choose an opposing Unit. All damage dealt by that Unit in 
+                excess of its base attack is redirected to that Unit.
+Flavor Text:    "Why use our own resources to destroy our enemy when their 
+                resources do the job just as efficiently?"
+                --Anna Latigra, Maskirovka agent, 3058
+Rarity:         Rare
+
+Card Title:     'Mech Smuggling
+Card Type:      Command
+Cost:           2+4P
+Arm/Str/Att:    n/a
+Card Text:      Scrap this card when it is revealed.
+                Hide 1 to 5 counters; if opponent guesses the number of 
+                counters you hid, scrap that many cards from your Stockpile. 
+                Otherwise, search your Stockpile for up to 2 'Mech 
+                cards, show those cards to your opponent, put them into your 
+                hand, and shuffle your Stockpile afterwards.
+Flavor Text:    "Explain to me again, Sergeant, exactly how two thirty-foot 
+                tall 'Mechs managed to disappear on your watch!"
+                --Kommandant Jada Goldenrod, Davion Heavy Guards RCT, 3058
+Rarity:         Rare
+
+Card Title:     MechWarrior Trent
+Card Type:      Command - Unique - Inner Sphere
+Cost:           1+3P
+Arm/Str/Att:    3/3
+Card Text:      {T}: Your next mission this turn cannot be blocked if the 
+                target is not a Stockpile and the defending player controls 
+                any Clan cards. Use this ability only during your Missions 
+                phase, but not during a mission.
+Flavor Text:    "The Jaguar hunts me in the midnight of my dreams. But honor 
+                protects my soul from her vengeful claws."
+                --MechWarrior Trent, former Smoke Jaguar warrior, 3058
+Rarity:         Rare
+
+Card Title:     Michael Ryan
+Card Type:      Command - Unique - Inner Sphere - Kurita
+Cost:           3+5T
+Arm/Str/Att:    4/1/-
+Card Text:      {T}: Choose any Command card in your opponent's Scrapheap that
+                was scrapped from play this turn and put it into play,
+				activated, under your control.  Use this ability only during 
+				your Missions phase, but not during a mission.
+Flavor Text:    "One person's junk is another person's treasure."
+                --Sho-sa Michael Ryan, DEST
+Rarity:         Rare
+
+Card Title:     Move to Dubious Cover
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only when blocking.
+                Half the total damage dealt to one of your Units, rounded up, 
+                is dealt to the target instead.
+Flavor Text:    "Protect HQ. Protect your 'Mech. Protect yourself. In that 
+                order, soldier!"
+                --Captain Mike Cooper, First Marik Militia, 3059
+Rarity:         Uncommon
+
+Card Title:     Naga B
+Card Type:      Unit - 'Mech - Clan - Wolf
+Speed:          Moderate
+Cost:           9+2A+2M+2L
+Arm/Str/Att:    2/5/6
+Card Text:      Overheat 3: +3 attack
+                {T}: Choose any 'Mech or the target and deal 2 damage to it. 
+                Use this ability only during a mission.
+Mass:           80 tons
+Main Armament:  3 Med Lasers, 2 Arrow IVs
+Flavor Text:    The Naga-B skimps on ammo in order to upgrade its lasers.
+Rarity:         Rare
+
+Card Title:     Natural Talent
+Card Type:      Command - Pilot
+Cost:           2
+Arm/Str/Att:    -/ - / +2
+Card Text:      +2 attack
+                Roll a die. 1-6: You get +(1-6) initiative. Use this ability 
+                only during battle.
+Flavor Text:    "This is the kid's first battle? Let's clone this guy!"
+                --Commander McNeil Wynnwood, 3058
+Rarity:         Uncommon
+
+Card Title:     Nexus (NXS1-A)
+Card Type:      Unit - 'Mech - Inner Sphere
+Speed:          Fast
+Cost:           1+1A
+Arm/Str/Att:    0/2/2
+Card Text:      Jump (-1 attack: +1 initiative)
+                Anti-Missile (Prevent 1 damage from each missile fired at a 
+                Unit in a group that includes Nexus.)
+Mass:           25 tons
+Main Armament:  3 Med Lasers
+Flavor Text:    Based on the extinct Jackrabbit design, the Nexus is intended 
+                for use throughout the Inner Sphere.
+Rarity:         Common
+
+Card Title:     Night Gyr D
+Card Type:      Unit - 'Mech - Omni - Clan - Jade Falcon - Smoke Jaguar
+Speed:          Slow
+Cost:           15
+Arm/Str/Att:    2/9/3
+Card Text:      Missile 6
+                Overheat 3: +5 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           75 tons
+Main Armament:  80 LRMs
+Flavor Text:    The Night Gyr D boasts the second-highest missile capacity of 
+                any 'Mech yet seen in the field.
+Rarity:         Rare
+
+Card Title:     Night Gyr Prime
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Slow
+Cost:           12+4A+4T
+Arm/Str/Att:    2/9/10
+Card Text:      Overheat 1: +1 attack
+                Jump (-1 attack: +1 initiative)
+                Long-Range 2 (If Night Gyr Prime is blocked, it may deal up to 
+                2 of its damage to the target.)
+Mass:           75 tons
+Main Armament:  2 PPCs, 3 Med Lasers, AC/10
+Flavor Text:    n/a
+Rarity:         Common
+
+Card Title:     Paul Moon
+Card Type:      Unit - Battle Armor - Unique - Clan - Smoke Jaguar
+Cost:           1+3T
+Arm/Str/Att:    0/4/3
+Card Text:      Battle Armor (Cannot attack or block alone, but does so at the 
+                speed of the fastest Omni 'Mech, if any, in the group that 
+                includes it.)
+                Jump (-1 attack: +1 initiative)
+                AP (Paul Moon deals +1 damage to any target other than a 
+                Unit.)
+                Each other Battle Armor in a group that includes Paul Moon 
+                gets +1 attack. Use this ability only during a mission.
+Flavor Text:    - Star Colonel
+Rarity:         Rare
+
+Card Title:     Perigard Zalman
+Card Text:      Command - Unique - Clan - Steel Viper
+Cost:           2+3P
+Arm/Str/Att:    4/4/2
+Card Text:      {T}: Put any Mission card from your Scrapheap into your hand. 
+                Use this ability only during your Missions phase, but not 
+                during a mission.
+Flavor Text:    "Just because we are silent while others boast of their 
+                prowess does not make us less powerful. We long ago outgrew 
+                the need to prove ourselves with shouting."
+                --Khan Perigard Zalman, Clan Steel Viper
+                -Khan, Clan Steel Viper
+Rarity:         Rare
+
+Card Title:     Perseus (P1A)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Marik
+Speed:          Slow
+Cost:           7+3T
+Arm/Str/Att:    2/9/2
+Card Text:      Missile 3
+                ECM (Units in groups including any with ECM each get +1 
+                armor.)
+Mass:           75 tons
+Main Armament:  2 Med Lasers, 40 LRMs
+Flavor Text:    The Perseus borrows so heavily from the Orion that it is often 
+                called the "Omni-Orion."
+Rarity:         Uncommon
+
+Card Title:     Political Stranglehold
+Card Type:      Command - Inner Sphere - Liao
+Cost:           4+4P
+Arm/Str/Att:    n/a
+Card Text:      Scrap this card when it is revealed.
+                Choose any opponent. During that opponent's next turn, every 
+                card he or she draws is scrapped.
+Flavor Text:    "Without information your enemies are fish out of water, so 
+                obviously in trouble none of their fellows will come to their 
+                aid."
+                --Duchess Candace Liao, 3059
+Rarity:         Uncommon
+
+Card Title:     Raptor (RTX1-OA)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Davion - Kurita
+Speed:          Fast
+Cost:           1+1A
+Arm/Str/Att:    0/3/2
+Card Text:      n/a
+Mass:           25 tons
+Main Armament:  2 Lg Lasers
+Flavor Text:    As the DCMS's first homegrown OmniMech, the Raptor-A serves as 
+                a test platform for all-laser configurations.
+Rarity:         Common
+
+Card Title:     Raptor (RTX1-OE)
+Card Type:      Unit - 'Mech - Omni - Inner Sphere - Kurita
+Speed:          Fast
+Cost:           1+1M
+Arm/Str/Att:    0/3/2
+Card Text:      n/a
+Mass:           25 tons
+Main Armament:  30 MRMs
+Flavor Text:    The Raptor's Echo configuration uses the DCMS's new medium-
+                range missiles, designed to be cheap and easy to use. Its MRM 
+                launchers are arranged identically to the Raptor-B's SRMs.
+Rarity:         Uncommon
+
+Card Title:     Rhino
+Card Type:      Heavy Tank - Unit - Vehicle - Inner Sphere
+Speed:          Slow
+Cost:           5+1L
+Arm/Str/Att:    3/11/0
+Card Text:      Vehicle (If Rhino is damaged, roll a die. On a 5 or 6, scrap 
+                it.)
+                Missile 3
+Mass:           80 tons
+Main Armament:  50 LRMs
+Flavor Text:    "The Rhino's a rough ride, but if you keep her moving you can 
+                do as much damage to your enemy as a whole herd of Terran 
+                rhinos--while keeping your distance."
+                --Eddie Fantino, Rhino pilot, Hanson's Roughriders, 3057
+Rarity:         Uncommon
+
+Card Title:     Rommel
+Card Type:      Tank - Unit - Vehicle - Inner Sphere -Steiner
+Speed:          Slow
+Cost:           3+1M+1L
+Arm/Str/Att:    2/7/3
+Card Text:      Vehicle (If Rommel is damaged, roll a die. On a 5 or 6, scrap 
+                it.)
+                Alpha Strike: +2 attack
+Mass:           65 tons
+Main Armament:  5 LRMs, AC/20
+Flavor Text:    Named for a long-dead general, the Rommel's 'Mech Hunter 
+                autocannon is perfect for hunting its prey. 
+Rarity:         Common
+
+Card Title:     Shadow Cat Prime
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Moderate
+Cost:           4+3M
+Arm/Str/Att:    1/6/4
+Card Text:      Jump (-1 attack: +1 initiative)
+                Long-Range 1 (If Shadow Cat Prime is blocked, it may deal 1 of 
+                its damage to the target.)
+Mass:           45 tons
+Main Armament:  Gauss Rifle, 2 Med Lasers
+Flavor Text:    The Shadow Cat is one of few Clan designs equipped with MASC 
+                technology.
+Rarity:         Common
+
+Card Title:     Solahma MechWarrior
+Card Type:      Command - Pilot - Clan
+Cost:           1+2T
+Arm/Str/Att:    -/ - / +1
+Card Text:      +1 initiative, +1 attack
+                'Mech piloted by Solahma MechWarrior gets an additional +2 
+                initiative and +2 attack. 
+                Use this ability only during battle.
+Flavor Text:    "A Clan warrior has no more than a year or two of battle in 
+                which he has gained experience but not yet lost his youth. 
+                Once his youth is gone, he seldom gets a chance to win a 
+                glorious death in battle."
+                --MechWarrior Trent, 3058
+Rarity:         Uncommon
+
+Card Title:     SRM Carrier-3058
+Card Type:      Missile Carrier - Unit - Vehicle - Inner Sphere
+Speed:          Slow
+Cost:           7+2M+2T
+Arm/Str/Att:    2/1/10
+Card Text:      Vehicle (If SRM Carrier is damaged, roll a die. On a 5 or 6, 
+                scrap it.)
+                NARC (Units in groups including any with NARC may subtract 1 
+                from the die roll of each missile they fire.)
+Mass:           60 tons
+Main Armament:  54 SRMs
+Flavor Text:    This version of the SRM carrier helps out the 'Mechs escorting 
+                it by using NARC rather than Artemis IV for its fire-control 
+                system.
+Rarity:         Uncommon
+
+Card Title:     Star Commander
+Card Type:      Command - Pilot - Clan
+Cost:           1+4T
+Arm/Str/Att:    -/ - / +2
+Card Text:      +1 initiative, +2 attack
+                Reroll any die roll made by any player. Use this ability only 
+                during battle and immediately after that die roll.
+Flavor Text:    "A Star Commander in her prime is worth three Inner Sphere 
+                surats or wet-behind-the-ears, unblooded 'Mech-babies. Even 
+                past our prime we're worth two of 'em."
+                --Star Commander Joanna, Clan Jade Falcon, 3058
+Rarity:         Uncommon
+
+Card Title:     Star League Proving Grounds
+Card Type:      Command - Resource - Inner Sphere
+Cost:           2
+Arm/Str/Att:    4/2/-
+Card Text:      {T}: {R}
+                {T}: One of your unaffiliated Units gets +1 attack and +1 
+                armor. Use this ability only during a mission.
+Flavor Text:    "Within this arena, the bravest warriors have measured their       
+                worth. Honor them with your actions here."
+                --Words carved above the entrance to the Star League Proving 
+                Grounds
+Rarity:         Uncommon
+
+Card Title:     Starslayer (STY-3C)
+Card Type:      Unit - 'Mech - Inner Sphere - Steiner
+Speed:          Moderate
+Cost:           4+2A+1T
+Arm/Str/Att:    1/7/3
+Card Text:      Overheat 1: +1 attack
+                Jump (-1 attack: +1 initiative)
+Mass:           50 tons
+Main Armament:  2 Lg Lasers, 2 Med Lasers
+Flavor Text:    The Starslayer's primary function is to be the backbone of a 
+                'Mech force.
+Rarity:         Rare
+
+Card Title:     Steady...Steady...FIRE!
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only if you lost initiative.
+                Roll all the missile dice for each of your Units' Missile 
+                options now. Whenever you use a Unit's Missile option, use 
+                these die rolls instead of rolling when damage resolves.
+Flavor Text:    "Nice shooting, kid. But you don't need to take quite so long 
+                drawing a bead on an Urbanmech."
+                --Colonel Sandy Barclay, 71st Eridani Light Horse Regiment
+Rarity:         Uncommon
+
+Card Title:     Steel Viper R&D Team
+Card Type:      Command - Clan - Steel Viper
+Cost:           4
+Arm/Str/Att:    2/5/-
+Card Text:      {T}: Draw a card. You may make an additional deployment this 
+                turn. Use this ability only during your Draw phase.
+Flavor Text:    "I serve the Steel Viper as honorably as any warrior. I give 
+                our leaders information and technology so they may better 
+                perform their glorious deeds."
+                --Scientist Ilyana, Clan Steel Viper, 3058
+Rarity:         Uncommon
+
+Card Title:     Strategic Bombardment
+Card Type:      Command
+Cost:           3+4M
+Arm/Str/Att:    4/1/2
+Card Text:      {T}: Choose any Resource card in play and deal 2 structure 
+                damage to it.
+Flavor Text:    "It's not how many bombs hit--it's where they hit that 
+                counts."
+                --Pilot Seana Eiren, Avanti's Angels, 3057
+Rarity:         Uncommon
+
+Card Title:     Striker (STC-2C)
+Card Type:      Unit - 'Mech - Inner Sphere - Liao - Steiner
+Speed:          Slow
+Cost:           6
+Arm/Str/Att:    3/8/5
+Card Text:      n/a
+Mass:           80 tons
+Main Armament:  PPC, Lg Laser, 3 Med Lasers
+Flavor Text:    Though the Striker represented the pinnacle of BattleMech 
+                technology when it was introduced in the mid-26th century, 
+                technological advances soon overtook it. No new Strikers have 
+                been built in almost two centuries.
+Rarity:         Uncommon
+
+Card Title:     Surprise Maneuvers
+Card Type:      Mission
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Your opponent gets -2 initiative.
+                Draw a card.
+Flavor Text:    "What do you mean, the Masakari jumped?!"
+                --Last words of Leftenant Percy Jones, 3057
+Rarity:         Uncommon
+
+Card Title:     Task Force Serpent
+Card Type:      Command - Unique - Inner Sphere
+Cost:           5+6P
+Card Text:      Scrap this card when it is revealed.
+                Search your Stockpile for up to 3 Unit cards and up to 2 
+                Unique Command cards, show all those cards to your opponent, 
+                and put them into your hand. Shuffle your Stockpile 
+                afterwards.
+Flavor Text:    "I pulled every string I could to get you people on my task 
+                force. If even one of you fails to live up to your part of the 
+                job, I will collect every hair off your body--one at a time. 
+                This mission is too important to screw up."
+                --Marshal Morgan Hasek-Davion, Commander, Task Force Serpent, 
+                3058
+Rarity:         Rare
+
+Card Title:     Temptation
+Card Type:      Command
+Cost:           2+4T
+Arm/Str/Att:    3/3/-
+Card Text:      Each opponent must attack at least once each turn that he or 
+                she can.
+                You may deploy this card revealed to make an additional 
+                deployment this turn.
+Flavor Text:    "According to our scouts, that unit's guarding a whole mess of 
+                PPCs, ferrofibrous upgrades, long-wave chips, and one hell of 
+                a bar. Hit 'em hard, troops!"
+                --Captain William Shawn, Third Davion Militia, 3057
+Rarity:         Common
+
+Card Title:     The Federated Commonwealth
+Card Type:      Command - Alliance
+Cost:           0
+Arm/Str/Att:    n/a
+Card Text:      A deck may contain only one Alliance card. Begin the game with       
+                this card activated. 
+                Alliances are not sites and cannot be scrapped.
+                If The Federated Commonwealth is in your deck, every Davion 
+                card in your deck gains the Steiner affiliation, and vice 
+                versa.
+                Your non-Resource Command cards cost [R] more to activate.
+Flavor Text:    "I swear on my mother's soul: this alliance will succeed." 
+                -Prince Victor Steiner-Davion, 3058
+Rarity:         Rare
+
+Card Title:     The Invading Clans
+Card Type:      Command - Alliance
+Cost:           0
+Card Text:      A deck may contain only one Alliance card. Begin the game with 
+                this card activated. 
+                Alliances are not sites and cannot be scrapped.
+                If The Invading Clans is in your deck, every Clan card in your 
+                deck loses all affiliations.
+                When you assign damage during a mission, you cannot have more 
+                than two Units deal damage to any given opposing Unit.
+Flavor Text:    "We will crush the Inner Sphere until they are but smoke and 
+                dreams."
+                --IlKhan Lincoln Osis, 3058
+Rarity:         Rare
+
+Card Title:     The Star League
+Card Type:      Command - Alliance
+Cost:           0
+Arm/Str/Att:    n/a
+Card Text:      A deck may contain only one Alliance card. Begin the game with 
+                this card activated. 
+                Alliances are not sites and cannot be scrapped.
+                If The Star League is in your deck, every Inner Sphere card in 
+                your deck loses all affiliations.
+                You get -1 initiative.
+Flavor Text:    "The old ways were dead. But I have resurrected them, and like 
+                the phoenix, they burn 
+                brighter and fiercer than ever."
+                --Sun-Tzu Liao, First Lord of the Star League
+Rarity:         Rare
+
+Card Title:     Thunder Hawk (TDK-7X)
+Card Type:      Unit - 'Mech - Inner Sphere - Steiner
+Speed:          Slow
+Cost:           12+2A+2L
+Arm/Str/Att:    4/11/8
+Card Text:      Overheat 1: +1 attack
+                Long-Range 3 (If Thunder Hawk is blocked, it may deal up to 3 
+                damage to the target.)
+Mass:           100 tons
+Main Armament:  3 Gauss Rifles, 4 Med Lasers
+Flavor Text:    One salvo from the Thunder Hawk's three Gauss rifles can 
+                pulverize most light and medium 'Mechs.
+Rarity:         Rare
+
+Card Title:     Trojan Horse
+Card Type:      Mission - Inner Sphere - Liao
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only if unblocked.
+                Scrap one of your Units. The target receives 7 damage.
+Flavor Text:    "In the future, Private, do not accept packages from the 'Liao 
+                Parcel Service' without checking with me first."
+                --Sho-sa Byran Ikida, DCMS, 3057
+Rarity:         Uncommon
+
+Card Title:     Turkina Prime
+Card Type:      Unit - 'Mech - Omni - Clan
+Speed:          Slow
+Cost:           11+4A+4M+4L
+Arm/Str/Att:    3/11/6
+Card Text:      Missile 2
+                Overheat 1: +1 attack
+                Jump (-1 attack: +1 initiative)
+                Long-Range 2 (If Turkina Prime is blocked, it may deal up to 2 
+                of its damage to the target.)
+Mass:           95 tons
+Main Armament:  2 PPCs, 30 LRMs, 2 AC/5s
+Flavor Text:    n/a
+Rarity:         Common
+
+Card Title:     Viper (Black Python)
+Card Type:      Unit - 'Mech - Clan - Steel Viper
+Cost:           11+4A+4M+4T
+Arm/Str/Att:    2/9/7
+Speed:          Moderate
+Card Text:      Overheat 2: +3 attack
+                Jump (-1 attack: +1 initiative)
+                Long-Range 1 (If Viper is blocked, it may deal 1 of its damage 
+                to the target.)
+Mass:           75 tons
+Main Armament:  2 Lg Lasers, 2 Med Lasers
+Rarity:         Rare
+
+Card Title:     Viper's Maw
+Card Type:      Mission - Clan - Steel Viper
+Cost:           n/a
+Arm/Str/Att:    n/a
+Card Text:      Play only when attacking and only during battle.
+                Choose up to 2 opposing, untapped Units that are not in the 
+                battle. Tap those Units, which then join the battle.
+Flavor Text:    A trap is ineffective unless it is lethal.
+                --Orin Mopsorden, from The Viper in Battle, 3055
+Rarity:         Rare
+
+Card Title:     War Dog (WR-DG-02FC)
+Card Type:      Unit - 'Mech - Inner Sphere
+Speed:          Slow
+Cost:           7+3T
+Arm/Str/Att:    2/9/5
+Card Text:      ECM (Units in groups including any with ECM each get +1 
+                armor.)
+                Anti-Missile (Prevent 1 damage from each missile fired at a 
+                Unit in a group that includes War Dog.)
+                Long-Range 1 (If War Dog is blocked, it may deal 1 of its 
+                damage to the target.)
+Mass:           75 tons
+Main Armament:  Gauss Rifle, Lg Laser, 2 Med Lasers
+Flavor Text:    n/a
+Rarity:         Uncommon
+
+Card Title:     Wolfhound (WLF-1)
+Card Type:      Unit - 'Mech - Inner Sphere - Davion - Steiner
+Speed:          Moderate
+Cost:           1+1A+2T
+Arm/Str/Att:    1/5/2
+Card Text:      Overheat 2: +1 attack
+Mass:           35 tons
+Main Armament:  Lg Laser, 4 Med Lasers
+Flavor Text:    Originally designed for mercenaries, the Wolfhound has become 
+                common throughout the Federated Commonwealth after repeatedly 
+                proving itself in battle.
+Rarity:         Common
+
+Card Title:     Zhukov
+Card Type:      Heavy Tank - Unit - Vehicle - Inner Sphere - Marik - Liao
+Speed:          Slow
+Cost:           2+2M
+Arm/Str/Att:    2/7/2
+Card Text:      Vehicle (If Zhukov is damaged, roll a die. On a 5 or 6, scrap 
+                it.)
+                Alpha Strike: +2 attack
+Mass:           75 tons
+Main Armament:  6 SRMs, 2 AC/10s
+Flavor Text:    While many consider the Zhukov inferior to the Demolisher, its 
+                superior range and maneuverability make it the better tank.
+Rarity:         Common
+
+Copyright 1998 Wizards of the Coast, Inc.
+Battletech, MechWarrior, 'Mech, and Battlemech are registered trademarks and
+MechCommander is a trademark of FASA Corporation.
+The Battletech universe is protected by copyrights owned by FASA Corporation 
+and used under license. Wizards of the Coast is a registered trademark
+and Commander's Edition is a trademark of of Wizards of the Coast, Inc.

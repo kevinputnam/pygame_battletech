@@ -1,0 +1,1419 @@
+Mechwarrior(TM) Card List
+An expansion for BattleTech(TM)
+
+Wizards of the Coast, Inc.
+(Released November 10th, 1997)
+
+Card Lists also available:  BattleTech Unlimited Edition
+                            BattleTech Limited Edition
+                            Counterstrike(TM)
+                            Mercenaries(TM)
+
+108 Cards Total (36 Common, 36 Uncommon, 36 Rares)
+
+Key: {R} - Resource
+     {T} - Tap
+
+Note: n/a means "not applicable"
+
+** 'Mech Cards - 41 cards **
+
+Card Title:      Avatar (AV1-OC)
+Card Type:       'Mech-Omni-Inner Sphere-Kurita
+Speed:           Slow
+Cost:            5+1T
+Att./Arm./Str.:  2/2/8
+Card Text:       Missile 1
+                 Overheat 1: +1 attack
+                 C3 (Each 'Mech with C3 in a group that includes at least one other 
+                 'Mech with C3 gets +2 attack.)
+Mass:            70 tons
+Armaments:       PPC, 20 LRMs, AC/5 
+Artist:          Franz Vohwinkle
+Rarity:          Uncommon
+
+Card Title:      Black Lanner Prime
+Card Type:       'Mech-Omni-Clan
+Speed:           Fast
+Cost:            7+3A+3M+3T
+Att./Arm./Str.:  4/1/7
+Card Text:       Overheat 2: +2 attack
+                 ECM (Each 'Mech in a group that includes at least one 'Mech with 
+                 ECM gets +1 armor.)
+Mass:            55 tons
+Armaments:       Lg Laser, 2 Med Lasers, 10 LRMs
+Artist:          Sam Wood
+Rarity:          Rare
+
+Card Title:      Blackjack (BJ2-OB)
+Card Type:       'Mech-Omni-Inner Sphere
+Speed:           Slow
+Cost:            4
+Att./Arm./Str.:  3/1/7
+Card Text:       Jump (-1 attack: +1 initiative)
+                 C3 (Each 'Mech with C3 in a group that includes at least one other 
+                 'Mech with C3 gets +2 attack.)
+                 If Blackjack attacks and is blocked, it may deal up to 2 of its damage 
+                 to the target.
+Mass:            50 tons
+Armaments:       Gauss Rifle, 10 LRMs
+Artist:          Jock
+Rarity:          Common
+
+Card Title:      Cauldron-Born A
+Card Type:       'Mech-Omni-Clan-Smoke Jaguar
+Speed:           Moderate
+Cost:            10+3M
+Att./Arm./Str.:  4/2/7
+Card Text:       Overheat 6: +6 attack
+                 Alpha Strike: +2 attack
+                 If Cauldron-Born A attacks and is blocked, it may deal 1 of its damage 
+                 to the target.
+Mass:            65 tons
+Armaments:       2 Lg Lasers, 4 Med Lasers, AC/20
+Artist:          Patrick Beel
+Rarity:          Rare
+
+Card Title:      Cerberus (MR-V2)
+Card Type:       'Mech-Inner Sphere
+Speed:           Slow
+Cost:            9+3L
+Att./Arm./Str.:  8/3/7
+Card Text:       Anti-missile (Each missile assigned to a 'Mech in a group that includes 
+                 Cerberus deals -1 damage.)
+                 If Cerberus attacks and is blocked, it may deal up to 2 of its damage to 
+                 the target.
+Mass:            95 tons
+Armaments:       2 Gauss Rifles, 4 Med Lasers
+Artist:          Christina Wald
+Rarity:          Uncommon
+
+Card Title:      Daikyu (DAI-01)
+Card Type:       'Mech-Inner Sphere-Kurita
+Speed:           Moderate
+Cost:            6+2M
+Att./Arm./Str.:  4/2/8
+Card Text:       Alpha Strike: +1 attack
+                 If Daikyu attacks and is blocked, it may deal up to 2 of its damage 
+                 to the target.
+Mass:            70 tons
+Armaments:       PPC, 2 AC/5s
+Artist:          Mike Jackson
+Rarity:          Uncommon
+
+Card Title:      Daimyo (DMO-1K)
+Card Type:       'Mech-Inner Sphere-Kurita
+Speed:           Moderate
+Cost:            4+1M
+Att./Arm./Str.:  4/1/6
+Card Text:       If Daimyo attacks and is blocked, it may deal 1 of its damage to the
+                 target.
+Mass:            40 tons
+Armaments:       PPC, 2 Med Lasers, 6 SRMs
+Artist:          Dom!
+Rarity:          Common
+
+Card Title:      Falcon Hawk (FNKH-9K1A)
+Card Type:       'Mech-Inner Sphere
+Speed:           Moderate
+Cost:            2+2M
+Att./Arm./Str.:  3/0/6
+Card Text:       n/a
+Mass:            35 tons
+Armaments:       2 Lg Lasers, 2 Med Lasers
+Artist:          Simon Gurr
+Rarity:          Common
+
+Card Title:      Falconer (FLC-8R)
+Card Type:       'Mech-Inner Sphere-Davion
+Speed:           Moderate
+Cost:            7+3M+3T
+Att./Arm./Str.:  4/2/8
+Card Text:       Overheat 2: +2 attack
+                 Jump (-1 attack: +1 initiative)
+                 If Falconer attacks and is blocked, it may deal up to 2 of its damage
+                 to the target.
+Mass:            75 tons
+Armaments:       Gauss Rifle, PPC, 4 Med Lasers
+Artist:          Chippy
+Rarity:          Rare
+
+Card Title:      Fireball (ALM-7D)
+Card Type:       'Mech-Inner Sphere-Davion-Steiner
+Speed:           Fast
+Cost:            0+1A+1M
+Att./Arm./Str.:  1/0/3
+Card Text:       When you activate Fireball, you may immediately place it in your Patrol 
+                 region.
+Mass:            20 tons
+Armaments:       2 SRMs
+Artist:          Mark Tedin
+Rarity:          Common
+
+Card Title:      Firestarter (FS9-OD)
+Card Type:       'Mech-Omni-Inner Sphere
+Speed:           Moderate
+Cost:            4+2A+1T
+Att./Arm./Str.:  2/1/6
+Card Text:       Jump (-1 attack: +1 initiative)
+                 C3 (Each 'Mech with C3 in a group that includes at least one other
+                 'Mech with C3 gets +2 attack.)
+                 ECM (Each 'Mech in a group that includes at least one 'Mech with
+                 ECM gets +1 armor.)
+                 If Firestarter attacks and is blocked, it may deal 1 of its damage to
+                 the target.
+Mass:            45 tons
+Armaments:       PPC, Med Laser, 5 LRMs
+Artist:          Richard Kane Ferguson
+Rarity:          Uncommon
+
+Card Title:      Galahad (Glass Spider)
+Card Type:       'Mech-Clan
+Speed:           Slow
+Cost:            4+1A+2M+1T
+Att./Arm./Str.:  4/2/8
+Card Text:       If Galahad attacks and is blocked, it may deal up to 2 of its damage to 
+the 
+                 target.
+Mass:            60 tons
+Armaments:       2 Gauss Rifles
+Artist:          Ted Naifeh
+Rarity:          Common
+
+Card Title:      Gallowglas (GAL-1GLS)
+Card Type:       'Mech-Inner Sphere
+Speed:           Slow
+Cost:            5+2M+2T
+Att./Arm./Str.:  4/2/8
+Card Text:       Overheat 1: +1 attack
+                 Jump (-1 attack: +1 initiative)
+                 If Gallowglas attacks and is blocked, it may deal 1 of its damage to the 
+                 target.
+Mass:            70 tons
+Armaments:       PPC, 2 Lg Lasers, 2 Med Lasers
+Artist:          Simon Harrison
+Rarity:          Rare
+
+Card Title:      Grendel Prime
+Card Type:       'Mech-Omni-Clan
+Speed:           Fast
+Cost:            7+1A+2M+2T
+Att./Arm./Str.:  5/1/6
+Card Text:       Overheat 2: +2 attack
+                 Jump (-1 attack: +1 initiative)
+Mass:            45 tons
+Armaments:       Lg Laser, 3 Med Lasers, 6 SRMs
+Artist:          Andrew J. Hepworth
+Rarity:          Common
+
+Card Title:      Hitman (HM-1)
+Card Type:       'Mech-Inner Sphere-Kurita
+Speed:           Fast
+Cost:            2+2A+1T
+Att./Arm./Str.:  2/0/4
+Card Text:       ECM (Each 'Mech in a group that includes at least one 'Mech with ECM 
+                 gets +1 armor.)
+Mass:            30 tons
+Armaments:       3 Med Lasers, 5 LRMs
+Artist:          Dermot Power
+Rarity:          Rare
+
+Card Title:      Hunchback IIC
+Card Type:       'Mech-Clan
+Speed:           Slow
+Cost:            6+1M
+Att./Arm./Str.:  5/1/4
+Card Text:       Alpha Strike: +5 attack
+                 Jump (-1 attack: +1 initiative)
+Mass:            50 tons
+Armaments:       2 Med Lasers, 2 AC/20s
+Artist:          Clint Langley
+Rarity:          Common
+
+Card Title:      Jenner IIC
+Card Type:       'Mech-Clan
+Speed:           Fast
+Cost:            3+2M
+Att./Arm./Str.:  3/0/3
+Card Text:       Jump (-1 attack: +1 initiative)
+                 When you activate Jenner IIC, you may immediately place it in your 
+                 Patrol region.
+Mass:            35 tons
+Armaments:       16 SRMs
+Artist:          Jock
+Rarity:          Common
+
+Card Title:      Komodo (KIM-2)
+Card Type:       'Mech-Inner Sphere-Kurita
+Speed:           Moderate
+Cost:            6+3A+3M+3T
+Att./Arm./Str.:  6/1/5
+Card Text:       Jump (-1 attack: +1 initiative)
+                 Anti-missile (Each missile assigned to a 'Mech in a group that includes 
+                 Komodo deals -1 damage)
+                 ECM (Each 'Mech in a group that includes at least one 'Mech with ECM 
+                 gets +1 armor.)
+Mass:            45 tons
+Armaments:       10 Med Lasers
+Artist:          Franz Vohwinkel
+Rarity:          Rare
+
+Card Title:      Linebacker A
+Card Type:       'Mech-Omni-Clan-Wolf
+Speed:           Moderate
+Cost:            7+1A+1M+1T
+Att./Arm./Str.:  4/2/8
+Card Text:       Missile 1
+                 Overheat 3: +2 attack
+Mass:            65 tons
+Armaments:       2 Lg Lasers, 2 Med Lasers, 20 LRMs
+Artist:          Kevin McCann
+Rarity:          Uncommon
+
+Card Title:      Naga A
+Card Type:       'Mech-Artillery-Omni-Clan-Wolf
+Speed:           Moderate
+Cost:            9
+Att./Arm./Str.:  6/2/5
+Card Text:       Overheat 2: +2 attack
+                 {T}: Deal 2 damage to a 'Mech or the target. Use this ability only 
+during a 
+                 mission.
+Mass:            80 tons
+Armaments:       2 Arrow IVs
+Artist:          Randy Asplund-Faith
+Rarity:          Uncommon
+
+Card Title:      Naga D
+Card Type:       'Mech-Artillery-Omni-Clan-Wolf
+Speed:           Moderate
+Cost:            8+3A+3L
+Att./Arm./Str.:  7/2/5
+Card Text:       {T}: Deal 2 damage to a 'Mech or the target. Use this ability only 
+during a 
+                 mission.
+Mass:            80 tons
+Armaments:       Med Laser, 4 SRMs, 2 Arrow IVs
+Artist:          Randy Asplund-Faith
+Rarity:          Uncommon
+
+Card Title:      Naginata (NG-C3A)
+Card Type:       'Mech-Inner Sphere-Kurita
+Speed:           Slow
+Cost:            7+1A+1T
+Att./Arm./Str.:  0/3/9
+Card Text:       Missile 4
+                 C3 (Each 'Mech with C3 in a group that includes at least one other 'Mech 
+                 with C3 gets +2 attack.)
+Mass:            95 tons
+Armaments:       PPC, 45 LRMs
+Artist:          Clint Langley
+Rarity:          Uncommon
+
+Card Title:      Night Gyr A
+Card Type:       'Mech-Omni-Clan-Jade Falcon-Smoke Jaguar
+Speed:           Slow
+Cost:            12+4A+4M+4L
+Att./Arm./Str.:  10/2/9
+Card Text:       Alpha Strike: +3 attack
+                 Jump (-1 attack: +1 initiative)
+Mass:            75 tons
+Armaments:       Lg Laser, 3 Med Lasers, 12 SRMs, AC/20
+Artist:          Colin MacNeil
+Rarity:          Rare
+
+Card Title:      Night Gyr B
+Card Type:       'Mech-Omni-Clan-Jade Falcon-Smoke Jaguar
+Speed:           Slow
+Cost:            6+3A+2M
+Att./Arm./Str.:  5/2/9
+Card Text:       Jump (-1 attack: +1 initiative)
+                 If Night Gyr B attacks and is blocked, it may deal up to 2 of its damage 
+                 to the target.
+Mass:            75 tons
+Armaments:       2 Gauss Rifles, 2 AC/2s
+Artist:          Colin MacNeil
+Rarity:          Common
+
+Card Title:      Nobori-nin A (Huntsman)
+Card Type:       'Mech-Omni-Clan
+Speed:           Moderate
+Cost:            6+4A+4T
+Att./Arm./Str.:  6/1/7
+Card Text:       Jump (-1 attack: +1 initiative)
+Mass:            50 tons
+Armaments:       2 Lg Lasers, 10 LRMs, AC/2
+Artist:          Lee M. Fields
+Rarity:          Uncommon
+
+Card Title:      Owens (OW-1)
+Card Type:       'Mech-Omni-Inner Sphere
+Speed:           Fast
+Cost:            2+2A+1T
+Att./Arm./Str.:  1/0/6
+Card Text:       Jump (-1 attack: +1 initiative)
+                 C3 (Each 'Mech with C3 in a group that includes at least one other 
+                 'Mech with C3 gets +2 attack.)
+Mass:            35 tons
+Armaments:       1 Med Laser, 10 LRMs 
+Artist:          Charles Gillespie
+Rarity:          Common
+
+Card Title:      Owen (OW-1D)
+Card Type:       'Mech-Omni-Inner Sphere-Kurita
+Speed:           Fast
+Cost:            3+2A+2T
+Att./Arm./Str.:  1/0/6
+Card Text:       Jump (-1 attack: +1 initiative)
+                 C3 (Each 'Mech with C3 in a group that includes at least one other
+                 'Mech with C3 gets +2 attack.)
+                 NARC (You may subtract 1 from each of your missile rolls if the
+                 missiles are assigned by a 'Mech in a group that includes at least one
+                 'Mech with NARC.)
+Mass:            35 tons
+Armaments:       4 SRMs
+Artist:          Charles Gillespie
+Rarity:          Rare
+
+Card Title:      Peregrine (Horned Owl)
+Card Type:       'Mech-Clan
+Speed:           Moderate
+Cost:            4+1M
+Att./Arm./Str.:  5/0/5
+Card Text:       Jump (-1 attack: +1 initiative)
+Mass:            35 tons
+Armaments:       Lg Laser, 2 Med Lasers
+Artist:          Dermot Power
+Rarity:          Common
+
+Card Title:      Phantom A
+Card Type:       'Mech-Omni-Clan-Wolf
+Speed:           Fast
+Cost:            5+2A+3M+3T
+Att./Arm./Str.:  4/1/5
+Card Text:       When you activate Phantom A, you may immediately place it in your 
+                 Patrol region.
+Mass:            40 tons
+Armaments:       Med Laser, 5 Sm Lasers, 10 LRMs
+Artist:          Zak Plucinski
+Rarity:          Uncommon
+
+Card Title:      Phantom B
+Card Type:       'Mech-Omni-Clan-Wolf
+Speed:           Fast
+Cost:            4+1A+1M+1T
+Att./Arm./Str.:  3/1/5
+Card Text:       When you activate Phantom B, you may immediately place it in your 
+                 Patrol region.
+Mass:            40 tons
+Armaments:       Med Laser, 8 SRMs
+Artist:          Zak Plucinski
+Rarity:          Uncommon
+
+Card Title:      Piranha
+Card Type:       'Mech-Clan
+Speed:           Fast
+Cost:            2+2A+2M
+Att./Arm./Str.:  2/0/3
+Card Text:       Alpha Strike: +1 attack
+                 When you activate Piranha, you may immediately place it in your Patrol 
+                 region.
+                 AP (Piranha deals +1 damage to any target other than a 'Mech.)
+Mass:            20 tons
+Armaments:       2 Med Lasers, 12 MGs
+Artist:          Tom Kyffin
+Rarity:          Rare
+
+Card Title:      Pouncer A
+Card Type:       'Mech-Omni-Clan-Wolf
+Speed:           Moderate
+Cost:            6+3A+2M
+Att./Arm./Str.:  3/1/5
+Card Text:       Missile 2
+                 Overheat 2: +2 attack
+                 Jump (-1 attack: +1 initiative)
+Mass:            40 tons
+Armaments:       4 Med Lasers, 30 LRMs, 
+Artist:          Doug Chaffee
+Rarity:          Uncommon
+
+Card Title:      Pouncer B
+Card Type:       'Mech-Omni-Clan-Wolf
+Speed:           Moderate
+Cost:            5+1A+2M
+Att./Arm./Str.:  4/1/5
+Card Text:       Overheat 2: +2 attack
+                 Jump (-1 attack: +1 initiative)
+                 If Pouncer B attacks and is blocked, it may deal 1 of its damage to the 
+                 target.
+Mass:            40 tons
+Armaments:       2 Lg Lasers, 10 LRMs, 8 SRMs
+Artist:          Doug Chaffee
+Rarity:          Common
+
+Card Title:      Prometheus (Dire Wolf)
+Card Type:       'Mech-Unique-Omni-Inner Sphere-Davion
+Speed:           Slow
+Cost:            20
+Att./Arm./Str.:  10/4/11
+Card Text:       Overheat 4: +6 attack
+                 Alpha Strike: +2 attack
+                 'Mechs engaged in battle with Prometheus get -1 attack.
+Mass:            100 tons
+Armaments:       5 Lg Lasers, AC/20
+Artist:          Tom Kyffin
+Rarity:          Rare
+
+Card Title:      Rakshasa (MDG-1A)
+Card Type:       'Mech-Inner Sphere
+Speed:           Moderate
+Cost:            7+3M
+Att./Arm./Str.:  2/2/9
+Card Text:       Missile 2
+                 Overheat 3: +2 attack
+Mass:            75 tons
+Armaments:       20 LRMs, 2 Lg Lasers
+Artist:          Mark Poole
+Rarity:          Uncommon
+
+Card Title:      Sunder (SD1-OB)
+Card Type:       'Mech-Omni-Inner Sphere-Kurita
+Speed:           Slow
+Cost:            6+3A+3M+3T
+Att./Arm./Str.:  3/3/10
+Card Text:       Missile 1
+                 C3 (Each 'Mech with C3 in a group that includes at least one other 
+                 'Mech with C3 gets +2 attack.)
+Mass:            90 tons
+Armaments:       4 Med Lasers, 30 LRMs
+Artist:          Tony Roberts
+Rarity:          Common
+
+Card Title:      Supernova
+Card Type:       'Mech-Clan
+Speed:           Slow
+Cost:            10+4A+4M+4T
+Att./Arm./Str.:  7/3/9
+Card Text:       Overheat 5: +3 attack
+                 Jump (-1 attack: +1 initiative)
+                 If Supernova attacks and is blocked, it may deal up to 2 of its damage 
+                 to the target.
+Mass:            90 tons
+Armaments:       6 Lg Lasers
+Artist:          Colin MacNeil
+Rarity:          Common
+
+Card Title:      Turkina A
+Card Type:       'Mech-Omni-Clan-Jade Falcon
+Speed:           Slow
+Cost:            11+5A+5M
+Att./Arm./Str.:  5/3/11
+Card Text:       Missile 3
+                 Jump (-1 attack: +1 initiative)
+                 If Turkina A attacks and is blocked, it may deal up to 2 of its damage
+                 to the target.
+Mass:            95 tons
+Armaments:       2 Gauss Rifles, 40 LRMs
+Artist:          Franz Vohwinkel
+Rarity:          Uncommon
+
+Card Title:      Turkina C
+Card Type:       'Mech-Omni-Clan-Jade Falcon
+Speed:           Slow
+Cost:            12
+Att./Arm./Str.:  8/3/11
+Card Text:       Alpha Strike: +2 attack
+                 Jump (-1 attack: +1 initiative)
+                 AP (Turkina C deals +1 damage to any target other than a 'Mech.)
+                 If Turkina C attacks and is blocked, it may deal up to 1 of its damage 
+                 to the target.
+Mass:            95 tons
+Armaments:       2 Lg Lasers, 2 Med Lasers, AC/20
+Artist:          Franz Vohwinkel
+Rarity:          Rare
+
+Card Title:      Watchman (WTC-4M)
+Card Type:       'Mech-Inner Sphere-Davion
+Speed:           Moderate
+Cost:            2+1A
+Att./Arm./Str.:  2/1/6
+Card Text:       Jump (-1 attack: +1 initiative)
+Mass:            40 tons
+Armaments:       Lg Laser, 2 Med Lasers
+Artist:          Franz Vohwinkel
+Rarity:          Common
+
+Card Title:      Wraith (TR1)
+Card Type:       'Mech-Inner Sphere-Liao-Marik
+Speed:           Fast
+Cost:            4+3A+2T
+Att./Arm./Str.:  3/1/7
+Card Text:       Jump (-1 attack: +1 initiative)
+Mass:            55 tons
+Armaments:       Lg Laser, 2 Med Lasers
+Artist:          Doug Chaffee
+Rarity:          Common
+
+** Command Cards - 58 Cards **
+
+Card Title:      Airstrikes Close to Home
+Keywords:        Command-Inner Sphere-Rasalhague
+Cost:            2+6P
+Asset:           n/a
+Card Text:       Scrap Airstrikes Close to Home when it is revealed.
+                 Look at an opponent's hand. Choose one card for each construction
+                 counter above the cost of Airstrikes Close to Home. Opponent scraps
+                 those cards.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Thomas Milliorn
+Rarity:          Uncommon
+
+Card Title:      C3 Retrofit
+Keywords:        Command-Enhancement-Inner Sphere
+Cost:            1+2T
+Asset:           n/a
+Card Text:       Play C3 Retrofit only on one of your  'Mechs. That 'Mech gets -1
+                 structure and gains C3 (Each 'Mech with C3 in a group that includes
+                 at least one other 'Mech with C3 gets +2 attack.).
+                 You may deploy C3 Retrofit revealed to make an additional
+                 deployment this turn.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Chris Trevas
+Rarity:          Common
+
+Card Title:      Civilian Settlement
+Keywords:        Command-Enhancement-Terrain-Inner Sphere
+Cost:            3+2P
+Asset:           n/a
+Card Text:       Play Civilian Settlement only in one of your regions. Activating 
+Civilian 
+                 Settlement scraps all other Terrain cards in that region. 
+                 For every 3 damage dealt by attacking 'Mechs to 'Mechs or sites you 
+                 control, the attacking player scraps a card from his or her Stockpile.
+                 Use this ability only during a mission whose target is in the region
+                 enhanced by Civilian Settlement.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Doug Chaffee
+Rarity:          Common
+
+Card Title:      Contract with Hansen's Roughriders
+Keywords:        Command-Unique-Mercenary-Inner Sphere
+Cost:            5+6P
+Asset:           n/a
+Card Text:       {T}: Choose a 'Mech card from your hand and put it into play in
+                 your Patrol region. That 'Mech joins the battle. Use this ability only
+                 during battle. If that 'Mech receives 5 or more damage, scrap
+                 Contract with Hansen's Roughriders and that 'Mech. Otherwise,
+                 return that 'Mech to your hand at the end of the mission.
+                 During your Repair/Reload phase, pay (1+2P); otherwise, you tap
+                 this card and your opponent gains control of it.
+Armor/Struct.:   2/4
+Attack:          2
+Artist:          Thomas Milliorn
+Rarity:          Rare
+
+Card Title:      Corridor of Fire
+Keywords:        Command-Inner Sphere
+Cost:            4+3M+5P
+Asset:           n/a
+Card Text:       Scrap Corridor of Fire when it is revealed.
+                 Deal to one site 1 damage for each construction counter above the cost
+                 of Corridor of Fire.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Cliff Upp
+Rarity:          Uncommon
+
+Card Title:      Creative Terraforming
+Keywords:        Command
+Cost:            1+4P
+Asset:           n/a
+Card Text:       Scrap Creative Terraforming when it is revealed.
+                 Scrap any Terrain card or scrap any Enhancement on a site.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Simon Harrison
+Rarity:          Uncommon
+
+Card Title:      Crusader Faction
+Keywords:        Command-Faction-Clan
+Cost:            3+4P
+Asset:           n/a
+Card Text:       Each of your attacking 'Mechs gets +1 attack. Use this ability
+                 only during a mission.
+                 At the end of your Missions phase, scrap Crusader Faction if any of
+                 your patrolling 'Mechs could have attacked this turn but did not.
+                 Activating Crusader Faction scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          David Seeley
+Rarity:          Uncommon
+
+Card Title:      Deep Lake
+Keywords:        Command-Enhancement-Terrain
+Cost:            3
+Asset:           n/a
+Card Text:       Play Deep Lake only in one of your regions. Activating Deep Lake
+                 scraps all other Terrain cards in that region. 
+                 'Mechs do not receive Overheat damage during a mission. At the end
+                 of the mission, scrap each 'Mech that received 3 or more structure
+                 damage. Use this ability only during a mission whose target is in the
+                 region enhanced by Deep Lake.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Janine Johnston
+Rarity:          Common
+
+Card Title:      Defection
+Keywords:        Command-Subterfuge
+Cost:            0+5P
+Asset:           n/a
+Card Text:       Scrap Defection when it is revealed.
+                 Draw a card when you activate Defection.
+                 Choose any Pilot that is not Unique that an opponent controls and
+                 move it to any unpiloted 'Mech you control.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Pat Morrissey
+Rarity:          Uncommon
+
+Card Title:      ECM Retrofit
+Keywords:        Command-Enhancement
+Cost:            1+2T
+Asset:           n/a
+Card Text:       Play ECM Retrofit only on one of your 'Mechs. That 'Mech gets -1 
+                 structure and gains ECM (Each 'Mech in a group that includes at least
+                 one 'Mech with ECM gets +1 armor.).
+                 You may deploy ECM Retrofit revealed to make an additional
+                 deployment this turn. Draw a card when you activate ECM Retrofit.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Audrey Corman
+Rarity:          Common
+
+Card Title:      Financial Collapse
+Keywords:        Command
+Cost:            1+5P
+Asset:           n/a
+Card Text:       Scrap Financial Collapse when it is revealed.
+                 Remove all construction counters from all cards in all opponents'
+                 Under Construction regions. Distribute those construction counters
+                 in any way you choose among the cards in your Under Construction
+                 region.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Christina Wald
+Rarity:          Rare
+
+Card Title:      Fog-Shrouded Moors
+Keywords:        Command-Enhancement-Terrain
+Cost:            2
+Asset:           n/a
+Card Text:       Play Fog-Shrouded Moors only in one of your regions. Activating Fog-
+                 Shrouded Moors scraps all other Terrain cards in that region. 
+                 All 'Mechs get -1 attack and +1 armor. Use this ability only during a 
+                 mission whose target is in the region enhanced by Fog-Shrouded Moors.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Dom!
+Rarity:          Common
+
+Card Title:      Gearhead
+Keywords:        Command-Inner Sphere
+Cost:            0+2A+2T
+Asset:           n/a
+Card Text:       Pilot: +1 attack
+                 'Mech piloted by Gearhead gets +1 armor.
+                 Repair 1 damage to 'Mech piloted by Gearhead. Use this ability only
+                 during your Repair/Reload phase and only once each turn.
+Armor/Struct.:   n/a
+Attack:          1
+Artist:          Douglas Shuler
+Rarity:          Common
+
+Card Title:      Headhunter
+Keywords:        Command
+Cost:            1+3T
+Asset:           n/a
+Card Text:       Pilot: +1 attack
+                 For each 1 damage dealt by 'Mech piloted by Headhunter during battle,
+                 you may roll a die:
+                 1-2: Prevent that damage.
+                 3-5: No effect. 
+                 6: Scrap the 'Mech receiving the damage.
+Armor/Struct.:   n/a
+Attack:          +1
+Artist:          Kevin McCann
+Rarity:          Rare
+
+Card Title:      Heavy Woods
+Keywords:        Command-Enhancement-Terrain
+Cost:            3
+Asset:           n/a
+Card Text:       Play Heavy Woods only in one of your regions. Activating Heavy
+                 Woods scraps all other Terrain cards in that region. 
+                 Prevent up to 2 damage to the target. Use this ability only during a
+                 mission whose target is in the region enhanced by Heavy Woods.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Kelly D. Krantz
+Rarity:          Common
+
+Card Title:      Hidden Location
+Keywords:        Command-Enhancement
+Cost:            1+2T
+Asset:           n/a
+Card Text:       Play Hidden Location only on a Command card. That card cannot
+                 be attacked.
+                 When you activate Hidden Location, put three camouflage counters
+                 on it. Remove a camouflage counter from Hidden Location at the
+                 beginning of your turn. When the last counter has been removed,
+                 scrap Hidden Location.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Zak Plucinski
+Rarity:          Rare
+
+Card Title:      Inferno Missile Retrofit
+Keywords:        Command-Enhancement
+Cost:            1+3M
+Asset:           n/a
+Card Text:       Play Inferno Missile Retrofit only on a 'Mech. That 'Mech gains AP 
+                 (Enhanced 'Mech deals +1 damage to any target other than a 'Mech.).
+                 Choose a 'Mech opponent controls. If that 'Mech receives any damage
+                 from 'Mech enhanced with Inferno Missile Retrofit, that 'Mech
+                 receives additional damage equal to double the damage of its Overheat
+                 option. Use this ability only during battle.
+                 You may deploy Inferno Missile Retrofit revealed to make an
+                 additional deployment this turn.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Mike Raabe
+Rarity:          Uncommon
+
+Card Title:      Jump Jet Retrofit
+Keywords:        Command-Enhancement
+Cost:            0+1T
+Asset:           n/a
+Card Text:       Play Jump Jet Retrofit only on a 'Mech without Jump. That 'Mech
+                 gains Jump (-1 attack: +1 initiative).
+                 You may deploy Jump Jet Retrofit revealed to make an additional 
+                 deployment this turn. Draw a card when you activate Jump Jet Retrofit.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          David Deitrick
+Rarity:          Common
+
+Card Title:      Kai, Champion of Solaris
+Keywords:        Command-Unique-Inner Sphere-Davion-St. Ives
+Cost:            6+4T
+Asset:           n/a
+Card Text:       Pilot: +1 initiative, +4 attack
+                 Counts as Kai Allard-Liao while in play.
+                 You win initiative. Use this ability only during a mission.
+                 Deal 2 damage to each 'Mech engaged in battle with 'Mech piloted
+                 by Kai, Champion of Solaris. Use this ability only during battle.
+Armor/Struct.:   n/a
+Attack:          +4
+Artist:          Paolo Parente
+Rarity:          Rare
+
+Card Title:      Katherine Steiner-Davion
+Keywords:        Command-Unique-Inner Sphere-Steiner
+Cost:            3+5P
+Asset:           P
+Card Text:       {T}: Scrap any Command card in play that provides{P}. Use this
+                 ability only during your Deploy phase.
+Armor/Struct.:   4/3
+Attack:          n/a
+Artist:          David A. Roach
+Rarity:          Rare
+
+Card Title:      Khan Natasha Kerensky
+Keywords:        Command-Unique-Clan-Wolf
+Cost:            3+4P
+Asset:           n/a
+Card Text:       Counts as Natasha Kerensky while in play.
+                 You get +1 initiative.
+                 {T}: Choose a 'Mech. That 'Mech gets +3 attack. If that 'Mech is
+                 scrapped, scrap Khan Natasha Kerensky. Use this ability only
+                 during a mission.
+Armor/Struct.:   3/3
+Attack:          n/a
+Artist:          William Simpson
+Rarity:          Rare
+
+Card Title:      Loremaster
+Keywords:        Command-Clan
+Cost:            0+5P
+Asset:           n/a
+Card Text:       {T}: Prevent the activation of one Faction from scrapping other Factions
+                 in play. Use this ability only when you activate a Faction.
+                 {T}: Choose a Faction card in your hand and show it to all players.
+                 Restock that card, then draw a card. Use this ability only during your 
+                 Deploy phase.
+Armor/Struct.:   2/5
+Attack:          n/a
+Artist:          Janine Johnston
+Rarity:          Uncommon
+
+Card Title:      MedEvac Team
+Keywords:        Command-Inner Sphere
+Cost:            1+2L
+Asset:           n/a
+Card Text:       {T}: Put one Pilot card from your Scrapheap into your hand. Use
+                 this ability only during your Deploy phase.
+Armor/Struct.:   3/1
+Attack:          n/a
+Artist:          Pat Morrissey
+Rarity:          Rare
+
+Card Title:      Merchant Caste
+Keywords:        Command-Faction-Clan
+Cost:            1+4L
+Asset:           n/a
+Card Text:       {T}: Choose any Resource card in your hand and put it into play.
+                 This does not count as a deployment. Use this ability only during your 
+                 Deploy phase.
+                 Activating Merchant Caste scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          Liz Danforth
+Rarity:          Uncommon
+
+Card Title:      NARC Retrofit
+Keywords:        Command-Enhancement
+Cost:            0+3T
+Asset:           n/a
+Card Text:       Play NARC Retrofit only on a 'Mech with a base attack of at least 1.
+                 That 'Mech gets -1 attack and gains NARC (You may subtract 1 from
+                 each of your missile rolls if the missiles are assigned by a 'Mech in
+                 a group that includes at least one 'Mech with NARC.).
+                 You may deploy NARC Retrofit revealed to make an additional
+                 deployment this turn.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Mark Poole
+Rarity:          Common
+
+Card Title:      Narrow Valley
+Keywords:        Command-Enhancement-Terrain
+Cost:            3
+Asset:           n/a
+Card Text:       Play Narrow Valley only in one of your regions. Activating Narrow
+                 Valley scraps all other Terrain cards in that region. 
+                 Any site in the region enhanced by Narrow Valley cannot be the target
+                 of a mission in which more than two 'Mechs attack. You cannot block
+                 any attack targeting a site in that region with more than two 'Mechs.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Randy Gallegos
+Rarity:          Common
+
+Card Title:      OmniMech-Pod Cache
+Keywords:        Command
+Cost:            3+3A+3L
+Asset:           n/a
+Card Text:       {T}: Choose and scrap an Omni 'Mech you control. Search your
+                 Stockpile for any configuration of that 'Mech and put it into play in
+                 your Patrol region. For each point by which the base construction cost
+                 of the new configuration exceeds that of the old, pay {R} or scrap one
+                 card from your Stockpile. Use this ability only during your Deploy
+                 phase. (For example, you may scrap a Puma A to put a Puma Prime
+                 into play.)
+Armor/Struct.:   3/3
+Attack:          1
+Artist:          Thomas Milliorn
+Rarity:          Uncommon
+
+Card Title:      Phelan Ward
+Keywords:        Command-Unique-Clan-Wolf
+Cost:            3+4P+4T
+Asset:           n/a
+Card Text:       Counts as Phelan while in play.
+                 Pilot: +1 initiative, +2 attack
+                 All 'Mechs deal no damage. Put Phelan Ward into your hand. Use this 
+                 ability only during battle.
+Armor/Struct.:   n/a
+Attack:          +2
+Artist:          Zina Saunders
+Rarity:          Rare
+
+Card Title:      Prince Victor Steiner-Davion
+Keywords:        Command-Unique-Inner Sphere-Davion
+Cost:            6+4T
+Asset:           n/a
+Card Text:       Counts as Victor Steiner-Davion while in play.
+                 Pilot: +3 attack, +3 initiative
+                 Each other 'Mech in a group that includes 'Mech piloted by Prince Victor 
+                 Steiner-Davion gets +1 attack and +1 initiative.
+Armor/Struct.:   n/a
+Attack:          +3
+Artist:          Zina Saunders
+Rarity:          Rare
+
+Card Title:      Redline Pilot
+Keywords:        Command
+Cost:            3+2T
+Asset:           n/a
+Card Text:       Pilot
+                 'Mech piloted by Redline Pilot does not receive Overheat damage.
+                 Whenever that 'Mech uses Overheat, it gets +2 attack.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Clint Langley
+Rarity:          Common
+
+Card Title:      The Remembrance
+Keywords:        Command-Clan
+Cost:            1+3P+3T
+Asset:           n/a
+Card Text:       When you activate The Remembrance, scrap all other copies of The 
+                 Remembrance that you control.
+                 The Remembrance cannot be attacked.
+                 Whenever a 'Mech any opponent controls is scrapped, put a verse counter 
+                 on The Remembrance. 
+                 Remove any number of verse counters from The Remembrance and
+                 deal to an opposing 'Mech 1 damage for each counter removed. Use
+                 this ability only during a mission.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Sam Wood
+Rarity:          Rare
+
+Card Title:      Ristar MechWarrior
+Keywords:        Command-Clan
+Cost:            1+4T
+Asset:           n/a
+Card Text:       Pilot: +1 initiative, +1 attack
+                 For each Mission card you play during a mission involving 'Mech
+                 piloted by Ristar MechWarrior, you may roll a die at end of mission:
+                 1-3: no effect.
+                 4-6: Put that Mission card into your hand.
+Armor/Struct.:   n/a
+Attack:          +1
+Artist:          Colin McNeil
+Rarity:          Rare
+
+Card Title:      Rocky Gorge
+Keywords:        Command-Enhancement-Terrain
+Cost:            3
+Asset:           n/a
+Card Text:       Play Rocky Gorge only in one of your regions. Activating Rocky
+                 Gorge scraps all other Terrain cards in that region. 
+                 Deal 2 damage to each attacking 'Mech. Use this ability only during
+                 a mission whose target is in the region enhanced by Rocky Gorge.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Clint Langley
+Rarity:          Common
+
+Card Title:      Rolling Hills
+Keywords:        Command-Enhancement-Terrain
+Cost:            3
+Asset:           n/a
+Card Text:       Play Rolling Hills only in one of your regions. Activating Rolling
+                 Hills scraps all other Terrain cards in that region. 
+                 Prevent up to 2 damage to each blocking 'Mech. Use this ability only
+                 during a mission whose target is in the region enhanced by Rolling
+                 Hills.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Kelly D. Krantz
+Rarity:          Common
+
+Card Title:      Salvage Yard
+Keywords:        Command-Resource
+Cost:            1+2L
+Asset:           n/a
+Card Text:       {T}: {R}
+                 Whenever a 'Mech you control is scrapped, put a salvage counter on 
+                 Salvage Yard.
+                 {T}: Remove any number of salvage counters from Salvage Yard
+                 and gain {R} for each counter removed. Use this ability only during
+                 your Deploy phase.
+Armor/Struct.:   4/3
+Attack:          n/a
+Artist:          Patrick Beel
+Rarity:          Common
+
+Card Title:      Scientist Caste
+Keywords:        Command-Faction-Clan
+Cost:            1+2M
+Asset:           n/a
+Card Text:       {T}: Scrap a card from your hand to put one Enhancement card from
+                 your Scrapheap into your hand. Use this ability only during your
+                 Deploy phase.
+                 Activating Scientist Caste scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          Chippy
+Rarity:          Uncommon
+
+Card Title:      Severed Supply Lines 
+Keywords:        Command
+Cost:            1+5P
+Asset:           n/a
+Card Text:       Scrap Severed Supply Lines when it is revealed.
+                 Choose an opponent and any asset. That opponent loses that asset until
+                 he or she deploys a Resource card that provides that asset.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Sam Wood
+Rarity:          Rare
+
+Card Title:      Sharpshooter
+Keywords:        Command
+Cost:            1+2T
+Asset:           n/a
+Card Text:       Pilot
+                 Using Alpha Strike does not deplete 'Mech piloted by Sharpshooter.
+                 Whenever that 'Mech uses Alpha Strike, it gets +2 attack.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Tony Roberts
+Rarity:          Common
+
+Card Title:      Shin Yodama
+Keywords:        Command-Unique-Inner Sphere-Kurita
+Cost:            2+3L+3T
+Asset:           n/a
+Card Text:       Pilot: +2 initiative, +1 attack
+                 If 'Mech piloted by Shin Yodama is scrapped during a mission, put
+                 that 'Mech and Shin Yodama on top of your Stockpile.
+Armor/Struct.:   n/a
+Attack:          +1
+Artist:          Jock
+Rarity:          Rare
+
+Card Title:      Simone Devon
+Keywords:        Command-Unique-Inner Sphere-St. Ives
+Cost:            2+3P+2T
+Asset:           n/a
+Card Text:       {T}: For each engaged 'Mech that opponent controls that is fewer than
+                 the number of your engaged 'Mechs, you gain +1 initiative and each
+                 of your 'Mechs gets +1 attack. Use this ability only during battle.
+Armor/Struct.:   4/2
+Attack:          3
+Artist:          David A. Roach
+Rarity:          Rare
+
+Card Title:      Single Combat
+Keywords:        Command
+Cost:            3+5T
+Asset:           n/a
+Card Text:       {T}: Choose one 'Mech you control and one 'Mech an opponent
+                 controls. Tap those 'Mechs. Those 'Mechs engage in battle. If the
+                 opponent has no Kurita or Clan cards in play, he or she may avoid
+                 this battle by untapping your 'Mech. Use this ability only during
+                 your Missions phase but not during a mission.
+Armor/Struct.:   1/5
+Attack:          n/a
+Artist:          Paolo Parente
+Rarity:          Uncommon
+
+Card Title:      Solaris Contacts
+Keywords:        Command-Resource-Inner Sphere
+Cost:            1+4T
+Asset:           n/a
+Card Text:       {T}: {R}
+                 {T}: Choose any Pilot card in your hand and put it into play on any 
+                 unpiloted 'Mech you control. This does not count as a deployment.
+                 Use this ability only during your Deploy phase.
+Armor/Struct.:   5/3
+Attack:          1
+Artist:          Christina Wald
+Rarity:          Common
+
+Card Title:      Solaris Games Veteran
+Keywords:        Command-Unique-Inner Sphere
+Cost:            3+4T
+Asset:           n/a
+Card Text:       Pilot: +2 attack, +2 initiative
+                 Choose and scrap any card from your hand to untap 'Mech piloted by 
+                 Solaris Games Veteran. Use this ability only at the end of a mission and 
+                 only if that 'Mech blocked that mission.
+Armor/Struct.:   n/a
+Attack:          +2
+Artist:          Audrey Corman
+Rarity:          Rare
+
+Card Title:      St. Ives Operations Officer
+Keywords:        Command-Inner Sphere-St. Ives
+Cost:            0+4P
+Asset:           n/a
+Card Text:       {T}: Choose any number of cards in your Scrapheap. Shuffle those
+                 cards into your Stockpile, then scrap that many cards from your
+                 Stockpile. Use this ability only during your Draw phase.
+Armor/Struct.:   4/2
+Attack:          1
+Artist:          Jock
+Rarity:          Uncommon
+
+Card Title:      St. Ives Salvage Crew
+Keywords:        Command-Inner Sphere-St. Ives
+Cost:            3+3L+3P
+Asset:           n/a
+Card Text:       Whenever one or more cards are scrapped from your Stockpile, put
+                 them into your hand instead, then scrap an equal number of cards
+                 from your hand.
+Armor/Struct.:   4/2
+Attack:          n/a
+Artist:          Tom Kyffin
+Rarity:          Rare
+
+Card Title:      Staging Ground
+Keywords:        Command-Resource-Inner Sphere-Rasalhague
+Cost:            1+2L
+Asset:           n/a
+Card Text:       {T}: {R}
+                 {T}: Put three construction counters on one of your Command cards
+                 under construction. Show that card to all players. Use this ability
+                 only during your Deploy phase.
+Armor/Struct.:   2/3
+Attack:          n/a
+Artist:          Doug Chaffee
+Rarity:          Uncommon
+
+Card Title:      Support from Home
+Keywords:        Command
+Cost:            4+5P
+Asset:           n/a
+Card Text:       At the end of each battle, put one support counter on Support from
+                 Home for each of your engaged 'Mechs that was not scrapped during
+                 battle.
+                 {T}: Remove any number of support counters from Support from Home
+                 and gain {R} for each counter removed. Use this ability only during
+                 your Deploy phase.
+Armor/Struct.:   2/4
+Attack:          n/a
+Artist:          William Simpson
+Rarity:          Rare
+
+Card Title:      Targeting Computer Retrofit
+Keywords:        Command-Enhancement-Clan
+Cost:            1+3T
+Asset:           n/a
+Card Text:       Play Targeting Computer Retrofit only on a 'Mech. That 'Mech gets -1 
+                 structure and +1 attack.
+                 You may deploy Targeting Computer Retrofit revealed to make an
+                 additional deployment this turn. Draw a card when you activate
+                 Targeting Computer Retrofit.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Mike Raabe
+Rarity:          Common
+
+Card Title:      Technician Caste
+Keywords:        Command-Faction-Clan
+Cost:            0+4A
+Asset:           n/a
+Card Text:       {R}: Repair 1 damage to one 'Mech. Use this ability only during
+                 your Repair/Reload phase.
+                 Activating Technician Caste scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          Mark Poole
+Rarity:          Uncommon
+
+Card Title:      Thunder LRMs
+Keywords:        Command-Enhancement
+Cost:            1+2M+2T
+Asset:           n/a
+Card Text:       Play Thunder LRMs only on a 'Mech having the Missile option.
+                 Each 'Mech that receives damage from missiles fired from 'Mech
+                 enhanced by Thunder LRMs does not untap during its controller's
+                 next Untap phase. Use this ability only during a mission.
+                 You may deploy Thunder LRMs revealed to make an additional
+                 deployment this turn.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Ted Naifeh
+Rarity:          Rare
+
+Card Title:      Time Bomb
+Keywords:        Command
+Cost:            1+5M
+Asset:           n/a
+Card Text:       At the beginning of your turn, put one time counter on Time Bomb.
+                 {T}: Scrap Time Bomb. Deal to one 'Mech or site damage equal to the 
+                 number of time counters on Time Bomb. Use this ability only during
+                 your Deploy phase.
+Armor/Struct.:   5/3
+Attack:          n/a
+Artist:          John Matson
+Rarity:          Uncommon
+
+Card Title:      Training Facility
+Keywords:        Command
+Cost:            0+3T
+Asset:           n/a
+Card Text:       Each of your Pilots gets +1 initiative and +1 attack.
+Armor/Struct.:   5/3
+Attack:          n/a
+Artist:          Kevin McCann
+Rarity:          Common
+
+Card Title:      Tyra Miraborg
+Keywords:        Command-Unique-Inner Sphere-Rasalhague
+Cost:            3+4M+3P
+Asset:           n/a
+Card Text:       {T}: Deal 1 structure damage to a 'Mech or Command card. Use this
+                 ability only during your Missions phase but not during a mission.
+                 {T}: Remove Tyra Miraborg from the game to take an extra turn after
+                 this one. Skip the Missions phase of that turn. Use this ability only
+                 during your Deploy phase.
+Armor/Struct.:   4/1
+Attack:          1
+Artist:          D. Alexander Gregory
+Rarity:          Rare
+
+Card Title:      Unnamed Sources
+Keywords:        Command-Subterfuge
+Cost:            2+6P
+Asset:           n/a
+Card Text:       Scrap Unnamed Sources when it is revealed.
+                 Draw as many cards as are in your hand, then choose and restock
+                 that many cards from your hand.
+                 You may make an additional deployment this turn when you activate 
+                 Unnamed Sources.
+Armor/Struct.:   n/a
+Attack:          n/a
+Artist:          Chippy
+Rarity:          Uncommon
+
+Card Title:      Warden Faction
+Keywords:        Command-Faction-Clan
+Cost:            4+4P
+Asset:           n/a
+Card Text:       Each of your blocking 'Mechs gets +2 attack.
+                 Scrap Warden Faction if you attack.
+                 Activating Warden Faction scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          Liz Danforth
+Rarity:          Uncommon
+
+Card Title:      Warrior Caste
+Keywords:        Command-Faction-Clan
+Cost:            1+4T
+Asset:           n/a
+Card Text:       Each Pilot that you activate also gives its attack and initiative 
+bonuses
+                 to each other 'Mech you control, until end of turn.
+                 Activating Warrior Caste scraps all other Factions you control.
+Armor/Struct.:   3/6
+Attack:          n/a
+Artist:          Janine Johnston
+Rarity:          Uncommon
+
+Card Title:      Wolfgang Hansen
+Keywords:        Command-Unique-Mercenary-Inner Sphere
+Cost:            2+4T
+Asset:           n/a
+Card Text:       {T}: Untap a piloted 'Mech at end of mission. Use this ability only
+                 during battle.
+Armor/Struct.:   4/3
+Attack:          2
+Artist:          D. Alexander Gregory
+Rarity:          Rare
+
+Card Title:      Work Stoppage
+Keywords:        Command-Inner Sphere-St. Ives
+Cost:            3+6P
+Asset:           n/a
+Card Text:       When you activate Work Stoppage, choose an asset. Having that
+                 asset in play does not pay the asset cost of cards under construction.
+Armor/Struct.:   3/2
+Attack:          n/a
+Artist:          Janet Hamlin
+Rarity:          Uncommon
+
+** Mission Cards - 9 cards **
+
+Card Title:      Accidental Collision
+Card Type:       Mission
+Card Text:       Play only during battle.
+                 Choose a 'Mech you control and a 'Mech an opponent controls. 
+                 Roll a die:
+                 1-2: Your 'Mech receives damage equal to its tonnage divided by 
+                 ten (rounded down).
+                 3-6: Opponent's 'Mech receives damage equal to its tonnage divided
+                 by ten (rounded down).
+Artist:          Ted Naifeh
+Rarity:          Uncommon
+
+Card Title:      Brutal Punch
+Card Type:       Mission-Inner Sphere
+Card Text:       Play only during battle.
+                 One of your 'Mechs gets +X attack, where X is its base armor.
+Artist:          Franz Vohwinkel
+Rarity:          Common
+
+Card Title:      Charge!
+Card Type:       Mission-Inner Sphere
+Card Text:       Play only during battle.
+                 Choose one of your 'Mechs and an opposing 'Mech of the same speed
+                 or slower. Roll a die:
+                 1-2: Your 'Mech receives 1 damage; return Charge! to your hand after
+                 the mission.
+                 3-4: Your 'Mech receives 1 damage and opposing 'Mech receives X 
+                 damage, where X is the base armor of your 'Mech.
+                 5-6: Your 'Mech receives 1 damage and opposing 'Mech receives X 
+                 damage, where X is equal to its tonnage divided by ten (rounded down).
+Artist:          Hannibal King
+Rarity:          Rare
+
+Card Title:      DropShip Intercept
+Card Type:       Mission-Inner Sphere-St. Ives
+Card Text:       Play DropShip Intercept only if you are the defending player and do 
+                 not control any blocking 'Mechs. Deplete all attacking 'Mechs at the
+                 end of the mission.
+Artist:          Zak Plucinski
+Rarity:          Uncommon
+
+Card Title:      Evasive Maneuvers
+Card Type:       Mission
+Card Text:       For each point by which your initiative exceeds your opponent's,
+                 prevent 1 damage to one of your 'Mechs.
+Artist:          Hannibal King
+Rarity:          Rare
+
+Card Title:      Expert Timing
+Card Type:       Mission
+Card Text:       Choose a 'Mech you control. For each point by which your initiative 
+                 exceeds your opponent's, that 'Mech gets +1 attack.
+Artist:          Mike Jackson
+Rarity:          Uncommon
+
+Card Title:      Fortunes of War
+Card Type:       Mission
+Card Text:       Roll a die for each of your 'Mechs:
+                 1-3: That 'Mech gets +1 attack.
+                 4-6: +1 initiative.
+Artist:          Dermot Power
+Rarity:          Rare
+
+Card Title:      Sibko Allegiance
+Card Type:       Mission-Clan
+Card Text:       Search your Stockpile for any copy of any Pilot card you control and put
+                 it into play on any engaged, unpiloted 'Mech you control. Shuffle your 
+                 Stockpile afterwards.
+Artist:          Ted Naifeh
+Rarity:          Rare
+
+Card Title:      Tactical Superiority
+Card Type:       Mission
+Card Text:       You win initiative.
+Artist:          Sam Wood
+Rarity:          Common
+
+Copyright 1997 Wizards of the Coast, Inc.
+Battletech and Battlemech are registered trademarks of FASA
+Corporation.
+The Battletech universe is owned by FASA Corporation and is
+used under license. Wizards of the Coast is a registered trademark
+of Wizards of the Coast, Inc.
