@@ -63,6 +63,7 @@ def update_camera_pos(player_x,player_y):
     player_offset_y = 0
 
     if map_size_x <= WINWIDTH:
+        # center map and move player
         map_offset_x = (WINWIDTH - map_size_x)/2
         player_offset_x = player_x - map_size_x/2
     else:
@@ -76,6 +77,7 @@ def update_camera_pos(player_x,player_y):
             map_offset_x = max_map_x
 
     if map_size_y <= WINHEIGHT:
+        # center map and move player
         map_offset_y = (WINHEIGHT - map_size_y)/2
         player_offset_y = player_y - map_size_y/2
     else:
