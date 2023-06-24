@@ -185,7 +185,7 @@
                      {
                         "name":"change_scene",
                         "scene_id":5,
-                        "player_pos": [5,5]
+                        "player_pos": [9,13]
                       }
                       ]}
                      },
@@ -347,7 +347,7 @@
             "things":[
              {"name":"go back",
                 "id":1,
-                "location":[10,10],
+                "location":[10,16],
                 "dimensions":[8,8],
               "triggered":false,
               "trigger":true,
