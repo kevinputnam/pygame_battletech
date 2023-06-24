@@ -39,6 +39,9 @@ class World():
 
         self.command_menu_options = ['show inventory']
 
+        #debug
+        self.last_player_location = (0,0)
+
     def load(self, path):
         world_data = {}
         if isfile(path):
@@ -126,7 +129,8 @@ class World():
             gui.update_gui()
 
     def test_method(self,args):
-        print('oh, ho! ' + args['text'] + ' pressed!')
+        pass
+        #print('oh, ho! ' + args['text'] + ' pressed!')
 
     def move_player(self,args):
         if self.player_in_scene:
@@ -258,7 +262,14 @@ class World():
                 self.player.sprite.update(self.player.direction,self.player.location[0],self.player.location[1])
             self.player.direction = 'none'
 
+            #debug
+            if self.last_player_location[0] != self.player.location[0] or self.last_player_location[1] != self.player.location[1]:
+                print("loc: " + str(int(self.player.location[0]/self.player.grid_size)) + "," + str(int(self.player.location[1]/self.player.grid_size)) )
+
             gui.update_camera_pos(self.player.location[0],self.player.location[1])
+
+            #debug
+            self.last_player_location = (self.player.location[0],self.player.location[1])
 
         for t in self.scenes[self.current_scene_id].things:
             t.location = [t.location[0]+t.dx,t.location[1]+t.dy]

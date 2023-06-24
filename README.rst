@@ -1,7 +1,7 @@
 Pygame Battletech - Documentation
 #################################
 
-Designed and build to provide a framework for building low-res games inspired
+Designed and built to provide a framework for building low-res games inspired
 by GB Studio but without the virtual hardware restrictions. 
 
 The real goal was to make it easy for me to create the kinds of games I'd like
