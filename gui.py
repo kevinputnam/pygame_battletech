@@ -62,23 +62,32 @@ def update_camera_pos(player_x,player_y):
     player_offset_x = 0
     player_offset_y = 0
 
-    # if the map needs to move to the right - move player left (-)
-    if map_offset_x > 0:
-        player_offset_x = -1 * map_offset_x
-        map_offset_x = 0
-    # if the map has gone as far as it can - move the player right (+)
-    elif map_offset_x < max_map_x:
-        player_offset_x = -1*(map_offset_x - max_map_x)
-        map_offset_x = max_map_x
+    if map_size_x < WINWIDTH:
+        map_offset_x = (WINWIDTH - map_size_x)/2
+        player_offset_x = player_x - map_size_x/2
+    else:
+        # if the map needs to move to the right - move player left (-)
+        if map_offset_x > 0:
+            player_offset_x = -1 * map_offset_x
+            map_offset_x = 0
+        # if the map has gone as far as it can - move the player right (+)
+        elif map_offset_x < max_map_x:
+            player_offset_x = -1*(map_offset_x - max_map_x)
+            map_offset_x = max_map_x
 
-    # if the map needs to move down - move player up (-)
-    if map_offset_y > 0:
-        player_offset_y = -1 * map_offset_y
-        map_offset_y = 0
-    # if the map has gone as far up as it can - move the player down (+)
-    elif map_offset_y < max_map_y:
-        player_offset_y = -1*(map_offset_y - max_map_y)
-        map_offset_y = max_map_y
+    if map_size_y < WINHEIGHT:
+        map_offset_y = (WINHEIGHT - map_size_y)/2
+        player_offset_y = player_y - map_size_y/2
+    else:
+        # if the map needs to move down - move player up (-)
+        if map_offset_y > 0:
+            player_offset_y = -1 * map_offset_y
+            map_offset_y = 0
+        # if the map has gone as far up as it can - move the player down (+)
+        elif map_offset_y < max_map_y:
+            player_offset_y = -1*(map_offset_y - max_map_y)
+            map_offset_y = max_map_y
+
     if player_sprite:
         player_sprite.rect.topleft = (win.get_rect().centerx+player_offset_x, win.get_rect().centery+player_offset_y)
 
@@ -91,6 +100,7 @@ def update_gui():
         if pygame.time.get_ticks() >= timer_end_time:
             timer_active = False
             timer_end_time = 0
+    win.fill((0,0,0)) #make sure nothing gets left behind by previous render
     win.blit(background,(map_offset_x,map_offset_y))
     the_sprites.draw(win)
     if player_sprite:
@@ -143,6 +153,7 @@ def process_user_input():
         button_behaviors['down'][0](button_behaviors['down'][1])
 
 def load_new_scene(background_path,map_size):
+    global win
     global background
     global map_size_x
     global map_size_y

@@ -250,11 +250,13 @@ class World():
         if self.player_in_scene:
             if self.player.location[0] + self.player.dx > self.scenes[self.current_scene_id].map_size[0] - self.player.dimensions[0] or self.player.location[0] + self.player.dx  < 0:
                 self.player.dx = 0
-            elif self.player.location[1] + self.player.dy > self.scenes[self.current_scene_id].map_size[1] - self.player.dimensions[1] or self.player.location[1] + self.player.dy < 0:
+            if self.player.location[1] + self.player.dy < 0 or self.player.location[1] + self.player.dy + self.player.dimensions[1] >= self.scenes[self.current_scene_id].map_size[1]:
                 self.player.dy = 0
 
     def process_movement(self):
         if self.player_in_scene:
+            self.player_off_map()
+
             self.player.location = [self.player.location[0] + self.player.dx,self.player.location[1]+self.player.dy]
             self.player.dx = 0
             self.player.dy = 0

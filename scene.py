@@ -31,15 +31,15 @@ class Scene:
                         cur_col = 0
                         cur_row += 1
             num_rows = cur_row
-            #create borders around edge of map
-            top_n_bottom = (-1,num_rows)
-            for i in top_n_bottom:
-                for j in range(-1,num_cols+1):
-                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
-            sides = (-1,num_cols)
-            for i in range(0,num_rows):
-                for j in sides:
-                    self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
+            #create borders around edge of map - this is a bad idea.
+            # top_n_bottom = (-1,num_rows)
+            # for i in top_n_bottom:
+            #     for j in range(-1,num_cols+1):
+            #         self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
+            # sides = (-1,num_cols)
+            # for i in range(0,num_rows):
+            #     for j in sides:
+            #         self.things.append(thing.Thing({'location':[j,i],'dimensions':[self.grid_size,self.grid_size],"on_collision":{"type":"block","actions":[]}},self.grid_size))
 
         if 'things' in scene_data:
             for t in scene_data['things']:
