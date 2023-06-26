@@ -25,7 +25,14 @@ class World():
         self.scenes = []
         for s in data['scenes']:
             self.scenes.append(scene.Scene(s))
-        gui.initialize_display(self.gamename)
+        print("Pick game mode:")
+        print(" 1. Windowed")
+        print(" 2. Full screen")
+        selection = input("Selection:")
+        fullscreen = False
+        if selection == "2":
+            fullscreen = True
+        gui.initialize_display(self.gamename, fullscreen)
         self.initialize_scene(self.first_scene,self.start_player_pos)
 
         self.move_base = 1
@@ -400,7 +407,14 @@ class World():
 
     def action_if(self,action):
         actions = []
-        if eval(self.get_param(action['eval'])):
+        condition = False
+        if 'eval' in action:
+            condition = eval(self.get_param(action['eval']))
+        elif 'in_inventory' in action:
+            for item in self.player.inventory:
+                if action['in_inventory'] == item.id:
+                    condition = True
+        if condition:
             for a in action['actions']:
                 actions.append(a)
         else:

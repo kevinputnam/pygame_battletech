@@ -182,11 +182,21 @@
                      "triggered":false,
                      "trigger":true,
                      "on_collision":{"type":"once","actions":[
-                     {
-                        "name":"change_scene",
-                        "scene_id":5,
-                        "player_pos": [9,13]
-                      }
+                        {
+                        "name":"if",
+                        "in_inventory":7,
+                        "actions":[
+                            {"name":"change_scene",
+                             "scene_id":5,
+                             "player_pos": [9,13]
+                            }
+                        ],
+                        "else":[
+                            {"name":"message",
+                             "text_lines": [
+                             "Access Denied!"
+                            ]}
+                        ]}
                       ]}
                      },
              {"name":"teleporter",

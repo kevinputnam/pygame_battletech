@@ -32,13 +32,16 @@ map_offset_y = 0
 message = None
 message_height = 0
 
-def initialize_display(gameName):
+def initialize_display(gameName,fullscreen=False):
     global screen
     global win
     global clock
 
     pygame.init()
-    screen = pygame.display.set_mode((WINWIDTH*SCALING, WINHEIGHT*SCALING))
+    if fullscreen:
+        screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+    else:
+        screen = pygame.display.set_mode((WINWIDTH*SCALING, WINHEIGHT*SCALING))
     pygame.display.set_caption(gameName)
     win = pygame.Surface((WINWIDTH,WINHEIGHT))
     clock = pygame.time.Clock()
