@@ -177,7 +177,7 @@
              },
                     {"name":"caretaker info",
                      "id":3,
-                     "location":[25,46],
+                     "location":[25,45],
                      "dimensions":[8,8],
                      "triggered":false,
                      "trigger":true,
@@ -300,6 +300,7 @@
                     "location":[53,47],
                     "dimensions":[16,16],
                     "hidden": false,
+                    "trigger": true,
                     "description": "It looks like a key card.",
                     "actions": [],
                     "on_collision":{"type":"pick_up","actions":[]}
@@ -356,7 +357,7 @@
             },
             "things":[
              {"name":"go back",
-                "id":1,
+                "id":10,
                 "location":[10,16],
                 "dimensions":[8,8],
               "triggered":false,
@@ -365,7 +366,7 @@
                      {
                     "name":"change_scene",
                     "scene_id":3,
-                    "player_pos": [25,47]
+                    "player_pos": [25,46]
                      }
                  ]}
              }

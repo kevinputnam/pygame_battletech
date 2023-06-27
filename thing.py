@@ -23,6 +23,7 @@ class Thing():
         self.grid_size = grid_size
         self.inventory = []
         self.mechs = []
+        self.id = 0
 
         for key in attr_dict:
             setattr(self,key,attr_dict[key])

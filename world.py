@@ -352,12 +352,11 @@ class World():
         receiver.triggered = True
 
     def collision_pick_up(self,actor,receiver,arg_list):
-        actor.inventory.append(receiver)
-        self.scenes[self.current_scene_id].things.remove(receiver)
-        gui.remove_thing(receiver)
-        lines = ["You pick up:"]
-        lines.append(receiver.name)
-        self.message_display(lines)
+        receiver.triggered = True
+        menu_action = {"name":"menu","options":["Pick up " + receiver.name + "?"],"variable":"menu_selection"}
+        if_actions = [{"name":"add_to_inventory","actor_id":actor.id,"thing_id":receiver.id}]
+        if_action = {"name":"if","eval":"`$menu_selection` == 0","actions":if_actions}
+        self.actions = [menu_action,if_action] + self.actions
 
     def collision_default(self,actor,receiver,arg_list):
         print("Invalid collision: " + receiver.on_collision['type'])
@@ -422,6 +421,21 @@ class World():
                 for a in action['else']:
                     actions.append(a)
         self.actions = actions + self.actions
+
+    def action_add_to_inventory(self,action):
+        actor = self.player #need to index actors like things
+        receiver = None
+        for t in self.scenes[self.current_scene_id].things:
+            if t.id == action["thing_id"]:
+                receiver = t
+        if receiver:
+            actor.inventory.append(receiver)
+            self.scenes[self.current_scene_id].things.remove(receiver)
+            gui.remove_thing(receiver)
+            lines = ["You pick up:"]
+            lines.append(receiver.name)
+            self.message_display(lines)
+
 
     def action_default(self,action):
         print("Invalid action: " + action['name'])
