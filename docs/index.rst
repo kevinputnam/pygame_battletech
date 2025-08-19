@@ -5,3 +5,8 @@ Python Battletech Documentation
    :members:
 
    .. automethod:: __init__
+
+.. toctree::
+   :hidden:
+
+   readme.md
