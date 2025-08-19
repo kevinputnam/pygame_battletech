@@ -10,8 +10,25 @@ from copy import deepcopy
 from os.path import isfile
 
 class World():
+    """Main game class
+
+       Example game instantiation:
+
+       .. code::
+
+          import world
+
+          game = world.World('test_world.json')
+          game.start()
+
+    """
 
     def __init__(self,world_path):
+        """Loads game data from file and initializes all the ``objects``
+
+           :path: path to ``.json`` world file
+
+        """
         data = self.load(world_path)
         self.mech_data = {}
         self.variables = {}
@@ -126,8 +143,8 @@ class World():
         next_action = [{"name":"command_menu_display"}]
         self.actions = next_action + self.actions
 
-    # main game loop
     def start(self):
+        """Main game loop"""
         while 1:
             gui.process_user_input()
             self.process_player_collisions()
